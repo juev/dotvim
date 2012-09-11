@@ -22,11 +22,9 @@ syntax enable
 set background=dark
 colorscheme solarized
 
-let g:is_posix = 1
-
 " Keys
 let mapleader=","
-" let localmapleader="	"
+let localmapleader=",,"
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -40,8 +38,6 @@ no <silent> <leader>w :w!<CR>
 map j gj
 map k gk
 map <silent> // :noh<CR>
-
-" ino jk      <Esc>
 
 nn  <silent> vv    <C-w>v
 nn  <silent> ss    <C-w>s
@@ -68,7 +64,12 @@ nno <silent> <Leader>1 :CtrlPBuffer<CR>
 nno <silent> <Leader>2 :CtrlP<CR>
 nno <silent> <Leader>t :CtrlP<CR>
 
+nno <Leader>a :Ack<Space>
+nno <D-F>     :Ack<Space>
+nno <Leader>n :NERDTreeToggle<CR>
+
 nmap <leader>fef ggVG=
 cmap w!! %!sudo tee > /dev/null %
 
+let g:is_posix = 1
 let g:Powerline_symbols = 'fancy'
