@@ -1,6 +1,5 @@
 ---
 - https://github.com/tpope/vim-pathogen
-- https://github.com/scrooloose/nerdtree
 - https://github.com/vim-scripts/L9
 - https://github.com/mileszs/ack.vim
 - https://github.com/tpope/vim-rails
@@ -21,7 +20,6 @@
 - https://github.com/vim-scripts/Align
 - https://github.com/Lokaltog/vim-easymotion
 - https://github.com/vim-scripts/ZoomWin
-- https://github.com/vim-scripts/tComment
 - https://github.com/kien/ctrlp.vim
 - https://github.com/Lokaltog/vim-powerline
 - https://github.com/Raimondi/delimitMate
@@ -33,3 +31,4 @@
 - https://github.com/vim-scripts/eruby.vim
 - https://github.com/groenewege/vim-less
 - https://github.com/altercation/vim-colors-solarized
+- https://github.com/tpope/vim-commentary.git

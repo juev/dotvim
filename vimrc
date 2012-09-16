@@ -4,16 +4,16 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-set hid ai aw ar lbr lz confirm wmnu wim=full swb=useopen so=8 vb fdc=1
-set hlsearch ignorecase smartcase incsearch
+set hid ai aw ar lbr lz tf confirm wmnu wim=full swb=useopen so=8 siso=8 noeb vb t_vb= fdc=1
+set nohlsearch ignorecase smartcase incsearch
 set laststatus=2 shortmess=atI showcmd
 set gcr=a:blinkwait0,a:block-cursor
 set timeoutlen=250
 set nobackup nowritebackup noswapfile
-set modeline modelines=5
+set modeline modelines=0
 
 set list
-set listchars=tab:\ ⌁,trail:.,extends:»,precedes:«
+set listchars=tab:▸\ ,trail:. ",eol:¬
 map <silent> <F12> :set invlist<CR>
 
 let g:solarized_termcolors=256    "default value is 16
@@ -25,6 +25,7 @@ colorscheme solarized
 " Keys
 let mapleader=","
 let localmapleader=",,"
+ino jj <ESC>
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -34,14 +35,24 @@ set keymap=russian-jcuken iminsert=0 imsearch=0
 
 no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
+nn <leader><leader> <c-^>
+
+nn ; :
+nn \ ;
 
 map j gj
 map k gk
-map <silent> // :noh<CR>
+" map <silent> // :noh<CR>
 
 nn  <silent> vv    <C-w>v
 nn  <silent> ss    <C-w>s
 map <silent> <D-0> <C-w>o
+
+" easier navigation between split windows
+nn <c-j> <c-w>j
+nn <c-k> <c-w>k
+nn <c-h> <c-w>h
+nn <c-l> <c-w>l
 
 vmap <D-]> >gv
 vmap <D-[> <gv
@@ -55,9 +66,6 @@ omap <D-[> <<
 imap <D-]> <Esc>>>i
 imap <D-[> <Esc><<i
 
-nnoremap <D-/> :TComment<CR>
-vnoremap <D-/> :TComment<CR>
-
 " let g:ctrlp_map = '<leader>t'
 nno <silent> <Leader>b :CtrlPBuffer<CR>
 nno <silent> <Leader>1 :CtrlPBuffer<CR>
@@ -66,10 +74,10 @@ nno <silent> <Leader>t :CtrlP<CR>
 
 nno <Leader>a :Ack<Space>
 nno <D-F>     :Ack<Space>
-nno <Leader>n :NERDTreeToggle<CR>
 
 nmap <leader>fef ggVG=
 cmap w!! %!sudo tee > /dev/null %
 
 let g:is_posix = 1
 let g:Powerline_symbols = 'fancy'
+let delimitMate_autoclose = 0
