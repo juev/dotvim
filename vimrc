@@ -4,7 +4,7 @@ call pathogen#infect()
 syntax on
 filetype plugin indent on
 
-set hid ai aw ar lbr lz tf confirm wmnu wim=full swb=useopen so=8 siso=8 noeb vb t_vb= fdc=1
+set hid ai aw ar lbr lz tf confirm wmnu wim=full swb=useopen so=8 siso=8 noeb vb t_vb= fdc=1 nosb
 set nohlsearch ignorecase smartcase incsearch
 set laststatus=2 shortmess=atI showcmd
 set gcr=a:blinkwait0,a:block-cursor
@@ -67,13 +67,16 @@ imap <D-]> <Esc>>>i
 imap <D-[> <Esc><<i
 
 " let g:ctrlp_map = '<leader>t'
-nno <silent> <Leader>b :CtrlPBuffer<CR>
-nno <silent> <Leader>1 :CtrlPBuffer<CR>
-nno <silent> <Leader>2 :CtrlP<CR>
-nno <silent> <Leader>t :CtrlP<CR>
+no <silent> <Leader>b :CtrlPBuffer<CR>
+no <silent> <Leader>1 :CtrlPBuffer<CR>
+no <silent> <Leader>2 :CtrlP<CR>
+no <silent> <Leader>t :CtrlP<CR>
 
-nno <Leader>a :Ack<Space>
-nno <D-F>     :Ack<Space>
+no <Leader>a :Ack<Space>
+no <D-F>     :Ack<Space>
+
+" don't use Ex-mode
+nn Q <nop>
 
 nmap <leader>fef ggVG=
 cmap w!! %!sudo tee > /dev/null %
