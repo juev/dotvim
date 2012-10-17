@@ -11,6 +11,7 @@ set gcr=a:blinkwait0,a:block-cursor
 set timeoutlen=250
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
+set noesckeys
 
 set list
 set listchars=tab:▸\ ,trail:. ",eol:¬
