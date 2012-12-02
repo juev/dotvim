@@ -32,7 +32,7 @@ ino jj <ESC>
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
-set keymap=russian-jcuken iminsert=0 imsearch=0
+set keymap=russian-jcukenmac iminsert=0 imsearch=0
 
 no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
@@ -44,6 +44,8 @@ nn \ ;
 map j gj
 map k gk
 " map <silent> // :noh<CR>
+
+inoremap <S-TAB> <C-X><C-O>
 
 nn  <silent> vv    <C-w>v
 nn  <silent> ss    <C-w>s
