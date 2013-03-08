@@ -24,7 +24,7 @@ set background=dark
 colorscheme solarized
 
 " Keys
-let mapleader=","
+let mapleader=" "
 let localmapleader=",,"
 ino jj <ESC>
 
@@ -44,6 +44,12 @@ nn \ ;
 map j gj
 map k gk
 " map <silent> // :noh<CR>
+
+"Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 
 inoremap <S-TAB> <C-X><C-O>
 
@@ -87,3 +93,6 @@ cmap w!! %!sudo tee > /dev/null %
 let g:is_posix = 1
 let g:Powerline_symbols = 'fancy'
 let delimitMate_autoclose = 0
+
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
