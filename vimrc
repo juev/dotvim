@@ -12,6 +12,8 @@ set timeoutlen=250
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
 set noesckeys
+nnoremap / /\v
+vnoremap / /\v
 
 set list
 set listchars=tab:▸\ ,trail:. ",eol:¬
