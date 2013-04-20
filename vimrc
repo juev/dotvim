@@ -26,9 +26,9 @@ set background=dark
 colorscheme solarized
 
 " Keys
-let mapleader=" "
+let mapleader=","
 let localmapleader=",,"
-ino jj <ESC>
+" ino jj <ESC>
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
