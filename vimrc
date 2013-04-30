@@ -19,6 +19,7 @@ set list
 set listchars=tab:▸\ ,trail:. ",eol:¬
 map <silent> <F12> :set invlist<CR>
 
+set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
 " let g:solarized_visibility="low"    "default value is normal
 syntax enable
