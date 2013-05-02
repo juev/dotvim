@@ -15,8 +15,10 @@ set noesckeys
 nnoremap / /\v
 vnoremap / /\v
 
+set encoding=utf-8
+
 set list
-set listchars=tab:▸\ ,trail:. ",eol:¬
+set listchars=tab:▸\ ,trail:. ",eol:¬ " alternative character for end of line -> ¶
 map <silent> <F12> :set invlist<CR>
 
 set t_Co=256
