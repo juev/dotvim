@@ -17,10 +17,11 @@
 - https://github.com/vim-scripts/Align
 - https://github.com/Lokaltog/vim-easymotion
 - https://github.com/kien/ctrlp.vim
-- https://github.com/Lokaltog/vim-powerline
 - https://github.com/Raimondi/delimitMate
 - https://github.com/tpope/vim-markdown
 - https://github.com/altercation/vim-colors-solarized
 - https://github.com/tpope/vim-commentary.git
 - https://github.com/shvechikov/vim-keymap-russian-jcukenmac
 - https://github.com/airblade/vim-rooter.git
+- https://github.com/kchmck/vim-coffee-script.git
+- https://github.com/Lokaltog/vim-powerline
