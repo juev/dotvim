@@ -37,7 +37,8 @@ let localmapleader=",,"
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
 imap <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
-set iminsert=0 imsearch=0
+set keymap=russian-jcukenmac iminsert=0 imsearch=0
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
