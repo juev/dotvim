@@ -98,7 +98,7 @@ cmap w!! %!sudo tee > /dev/null %
 
 let g:is_posix = 1
 " let g:Powerline_symbols = 'fancy'
-let delimitMate_autoclose = 0
+" let delimitMate_autoclose = 0
 
 set statusline=   " clear the statusline for when vimrc is reloaded
 set statusline+=%-3.3n\                      " buffer number
