@@ -43,8 +43,8 @@ no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
 nn <leader><leader> <c-^>
 
-nn ; :
-nn \ ;
+" nn ; :
+" nn \ ;
 
 map j gj
 map k gk
@@ -96,8 +96,15 @@ nmap <leader>fef ggVG=
 cmap w!! %!sudo tee > /dev/null %
 
 let g:is_posix = 1
-let g:Powerline_symbols = 'fancy'
+" let g:Powerline_symbols = 'fancy'
 let delimitMate_autoclose = 0
 
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
+set statusline=   " clear the statusline for when vimrc is reloaded
+set statusline+=%-3.3n\                      " buffer number
+set statusline+=%f\                          " file name
+set statusline+=%h%m%r%w                     " flags
+set statusline+=[%{strlen(&ft)?&ft:'none'},  " filetype
+set statusline+=%{strlen(&fenc)?&fenc:&enc}, " encoding
+set statusline+=%{&fileformat}]              " file format
+set statusline+=%=                           " right align
+set statusline+=%-14.(%l,%c%V%)\ %<%P        " offset
