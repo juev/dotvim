@@ -1,9 +1,10 @@
 source ~/.vim/vundle.vim
 
+filetype off
+filetype plugin on
 syntax on
-filetype plugin indent off
 
-set nocp hid aw ar ai nocin lbr lz tf confirm ru cul sb spr mh
+set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
 set wmnu wim=full swb=useopen so=8 siso=8
 set noeb vb t_vb= fdc=1
 set magic nohlsearch ignorecase smartcase incsearch

@@ -8,6 +8,7 @@
         silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
         let iCanHazVundle=0
     endif
+    filetype plugin indent on
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
     Bundle 'gmarik/vundle'
