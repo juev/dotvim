@@ -1,3 +1,7 @@
+if has('win32') || has('win64')
+  set runtimepath^=~/.vim
+endif
+
 source ~/.vim/vundle.vim
 
 filetype off
@@ -37,6 +41,8 @@ colorscheme solarized
 " Keys
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+let mapleader=","
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
