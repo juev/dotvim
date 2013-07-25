@@ -6,7 +6,7 @@ The distribution also requires `git`.
 
 ##Installation
 
-*Mac* or *Linux*:
+**Mac** or **Linux**:
 
     $ curl https://raw.github.com/Juev/dotvim/master/install.sh | sh
 
@@ -20,7 +20,7 @@ or manual:
 
 Done!
 
-*Windows*:
+**Windows**:
 
     > git clone https://github.com/Juev/dotvim.git %USERPROFILE%\.vim
     > cd %USERPROFILE%\.vim
