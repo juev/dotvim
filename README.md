@@ -6,31 +6,28 @@ The distribution also requires `git`.
 
 ##Installation
 
-First clone this repo:
+*Mac* or *Linux*:
+
+    $ curl https://github.com/Juev/dotvim/raw/master/install.sh | sh
+
+or manual:
 
     $ git clone https://github.com/Juev/dotvim.git ~/.vim
-
-Finally create symlinks:
-
+    $ git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     $ ln -s ~/.vim/vimrc ~/.vimrc
     $ ln -s ~/.vim/gvimrc ~/.gvimrc
-
-Then run:
-
-    $ vim
+    $ vim +BundleInstall +qall
 
 Done!
+
+*Windows*:
+
+    > git clone https://github.com/Juev/dotvim.git %USERPROFILE%\.vim
+    > cd %USERPROFILE%\.vim
+    > install.cmd
+    > copy vimrc %USERPROFILE%\_vimrc
+    > copy gvimrc %USERPROFILE%\_gvimrc
 
 ##Appearance
 
 ![macvim](http://juev.s3.amazonaws.com/macvim.png "MacVim")
-
-##TODO
-
-Unify the configuration for different operating systems.
-
-##Thanks
-
-File vundle.vim based on article [Auto Installing Vundle From Your Vimrc](http://www.erikzaadi.com/2012/03/19/auto-installing-vundle-from-your-vimrc/)
-
-To manage the plug-ins used [gmarik/vundle](https://github.com/gmarik/vundle).
