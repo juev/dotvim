@@ -8,7 +8,7 @@ The distribution also requires `git`.
 
 *Mac* or *Linux*:
 
-    $ curl https://github.com/Juev/dotvim/raw/master/install.sh | sh
+    $ curl https://raw.github.com/Juev/dotvim/master/install.sh | sh
 
 or manual:
 
