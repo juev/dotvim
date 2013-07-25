@@ -1,11 +1,29 @@
-if has('win32') || has('win64')
-  set runtimepath^=~/.vim
-endif
-
-source ~/.vim/vundle.vim
+let $LANG = 'en'
+set runtimepath^=~/.vim
 
 filetype off
-filetype plugin on
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+"Add your bundles here
+Bundle 'vim-scripts/L9'
+Bundle 'mileszs/ack.vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
+Bundle 'tpope/vim-surround'
+Bundle 'MarcWeber/vim-addon-mw-utils.git'
+Bundle 'tpope/vim-repeat'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-markdown'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'kchmck/vim-coffee-script.git'
+Bundle 'tpope/vim-commentary.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
+
+filetype plugin indent on
 syntax on
 
 set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
