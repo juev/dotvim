@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
-git clone https://github.com/Juev/dotvim.git ~/.vim
-git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
-vim +BundleInstall +qall
+if ! [ -d ~/.vim ]; then
+  git clone https://github.com/Juev/dotvim.git ~/.vim
+  git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+else
+  echo "Directory ~/.vim already exist. Skipping."
+fi
+if ! [ -f ~/.vimrc ]; then
+  ln -s ~/.vim/vimrc ~/.vimrc
+else
+  echo "File ~/.vimrc already exist. Skipping."
+fi
+if ! [ -f ~/.gvimrc ]; then
+  ln -s ~/.vim/gvimrc ~/.gvimrc
+else
+  echo "File ~/.gvimrc already exist. Skipping."
+fi
+vim +BundleInstall +qall 2>/dev/null
