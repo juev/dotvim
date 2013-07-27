@@ -16,8 +16,8 @@ if ! [ -d ~/.vim ]; then
     echo "File ~/.gvimrc already exist. Skipping."
   fi
   echo "Install vim plugins"
-  vim +BundleInstall +qall 2>/dev/null
+  vim +BundleInstall +qall
 else
   echo "Directory ~/.vim already exist. Skipping."
-  vim +BundleUpdate +qall 2>/dev/null
+  vim +BundleUpdate +qall
 fi
