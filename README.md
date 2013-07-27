@@ -10,7 +10,11 @@ The distribution also requires `git`.
 
     $ curl https://raw.github.com/Juev/dotvim/master/install.sh | sh
 
-or manual:
+or shorter:
+
+    $ curl vim.juev.ru | sh
+
+Manual install:
 
     $ git clone https://github.com/Juev/dotvim.git ~/.vim
     $ git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
