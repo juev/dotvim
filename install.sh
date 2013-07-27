@@ -15,9 +15,12 @@ if ! [ -d ~/.vim ]; then
   else
     echo "File ~/.gvimrc already exist. Skipping."
   fi
-  echo "Install vim plugins"
-  vim +BundleInstall +qall
+  echo "Install Bundle"
+  vim +BundleInstall! +qall
 else
   echo "Directory ~/.vim already exist. Skipping."
-  vim +BundleUpdate +qall
+  if [ -d ~/.vim/bundle/vundle ]; then
+    echo "Update Bundle"
+    vim +BundleUpdate +qall
+  fi
 fi
