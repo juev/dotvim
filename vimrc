@@ -57,10 +57,14 @@ let g:solarized_termcolors=256    "default value is 16
 " let g:solarized_visibility="low"    "default value is normal
 syntax enable
 set background=dark
-colorscheme solarized
+if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
+  colorscheme solarized
+endif
 
 " Keys
-set keymap=russian-jcukenmac iminsert=0 imsearch=0
+if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
+  set keymap=russian-jcukenmac iminsert=0 imsearch=0
+endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 let mapleader=","
