@@ -67,6 +67,7 @@ if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
 endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
+mapclear
 let mapleader=","
 no ' ,
 ino <C-k> <Esc>
