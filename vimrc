@@ -30,7 +30,7 @@ set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
 set wmnu wim=full swb=useopen so=8 siso=8
 set noeb vb t_vb= fdc=1
 set magic nohlsearch ignorecase smartcase incsearch
-set expandtab smarttab nowrap
+set expandtab smarttab "nowrap
 set laststatus=2 shortmess=atI showcmd
 set gcr=a:blinkwait0,a:block-cursor
 set noto ttimeout ttimeoutlen=100
