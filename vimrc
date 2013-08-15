@@ -22,6 +22,11 @@ Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'tpope/vim-commentary.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
+" Bundle 'tpope/vim-fireplace.git'
+" Bundle 'tpope/vim-classpath.git'
+" Bundle 'guns/vim-clojure-static'
+" Bundle 'derekwyatt/vim-scala'
+Bundle 'jergason/scala.vim'
 
 filetype plugin indent on
 syntax on
@@ -105,3 +110,6 @@ nmap Q gqap
 
 nmap <leader>fef gg=G
 cmap w!! %!sudo tee > /dev/null %
+
+let g:vimclojure#HighlightBuiltins = 1
+let g:vimclojure#ParenRainbow = 1
