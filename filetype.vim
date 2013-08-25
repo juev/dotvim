@@ -1,6 +1,6 @@
 au FileType * setlocal fo-=c fo-=r fo-=o ts=2 sts=2 sw=2 et
 au FileType markdown,vimwiki setlocal ts=4 sts=4 sw=4
-au BufEnter * cd %:p:h
+" au BufEnter * cd %:p:h
 au BufWritePost .vimrc source $MYVIMRC
 
 " au FocusLost * :wa

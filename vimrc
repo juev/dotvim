@@ -15,18 +15,17 @@ Bundle 'tpope/vim-surround'
 Bundle 'MarcWeber/vim-addon-mw-utils.git'
 Bundle 'tpope/vim-repeat'
 Bundle 'kien/ctrlp.vim'
-Bundle 'Raimondi/delimitMate'
 Bundle 'tpope/vim-markdown'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'kchmck/vim-coffee-script.git'
-Bundle 'tpope/vim-commentary.git'
+Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
-" Bundle 'tpope/vim-fireplace.git'
-" Bundle 'tpope/vim-classpath.git'
-" Bundle 'guns/vim-clojure-static'
-" Bundle 'derekwyatt/vim-scala'
-Bundle 'jergason/scala.vim'
+Bundle 'airblade/vim-rooter'
+Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'Townk/vim-autoclose'
+Bundle 'jnwhiteh/vim-golang'
+Bundle 'Blackrush/vim-gocode'
 
 filetype plugin indent on
 syntax on
@@ -35,7 +34,7 @@ set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
 set wmnu wim=full swb=useopen so=8 siso=8
 set noeb vb t_vb= fdc=1
 set magic nohlsearch ignorecase smartcase incsearch
-set expandtab smarttab "nowrap
+set expandtab smarttab nowrap
 set laststatus=2 shortmess=atI showcmd
 set gcr=a:blinkwait0,a:block-cursor
 set noto ttimeout ttimeoutlen=100
@@ -110,6 +109,3 @@ nmap Q gqap
 
 nmap <leader>fef gg=G
 cmap w!! %!sudo tee > /dev/null %
-
-let g:vimclojure#HighlightBuiltins = 1
-let g:vimclojure#ParenRainbow = 1
