@@ -26,6 +26,7 @@ Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'Townk/vim-autoclose'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on
 syntax on
