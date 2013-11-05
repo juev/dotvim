@@ -27,6 +27,9 @@ Bundle 'Townk/vim-autoclose'
 Bundle 'jnwhiteh/vim-golang'
 Bundle 'Blackrush/vim-gocode'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-fireplace'
+Bundle 'tpope/vim-classpath'
+Bundle 'guns/vim-clojure-static'
 
 filetype plugin indent on
 syntax on
