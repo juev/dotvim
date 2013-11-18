@@ -41,10 +41,8 @@ set magic nohlsearch ignorecase smartcase incsearch
 set expandtab smarttab nowrap
 set laststatus=2 shortmess=atI showcmd
 set gcr=a:blinkwait0,a:block-cursor
-set noto ttimeout ttimeoutlen=100
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
-set noesckeys
 set nrformats=
 set backspace=eol,start,indent
 set modelines=0
