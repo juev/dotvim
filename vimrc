@@ -6,9 +6,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "Add your bundles here
-Bundle 'vim-scripts/L9'
-Bundle 'tomtom/tlib_vim'
-Bundle 'Blackrush/vim-gocode'
 Bundle 'MarcWeber/vim-addon-mw-utils.git'
 Bundle 'Townk/vim-autoclose'
 Bundle 'airblade/vim-rooter'
@@ -19,11 +16,17 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
+Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'vim-scripts/L9'
+"Golang
+Bundle 'Blackrush/vim-gocode'
+Bundle 'nsf/gocode'
+
 
 filetype plugin indent on
 syntax on
