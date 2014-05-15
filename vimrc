@@ -47,10 +47,9 @@ set modelines=0
 set encoding=utf-8
 
 set list
-set listchars=tab:>\ ,trail:.,extends:>,precedes:<,nbsp:+
-if !has('win32') && (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8')
-  set listchars=tab:▸\ ,trail:. ",eol:¬ " alternative character for end of line -> ¶
-endif
+"set listchars=tab:\ ·,eol:¬
+set listchars=trail:·
+set listchars+=extends:»,precedes:«
 map <silent> <F12> :set invlist<CR>
 
 let g:is_posix = 1
