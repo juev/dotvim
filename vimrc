@@ -1,6 +1,5 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
-set shell=/bin/bash
 
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -25,7 +24,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/L9'
 "Golang
-Bundle 'nsf/gocode'
+"Bundle 'nsf/gocode'
 Bundle 'Blackrush/vim-gocode'
 
 filetype plugin indent on
