@@ -6,24 +6,24 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "Add your bundles here
-Bundle 'MarcWeber/vim-addon-mw-utils.git'
-Bundle 'Townk/vim-autoclose'
 Bundle 'airblade/vim-rooter'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'ervandew/supertab'
 Bundle 'garbas/vim-snipmate'
 Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils.git'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
 Bundle 'tomtom/tlib_vim'
+Bundle 'Townk/vim-autoclose'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/L9'
-"Golang
 "Bundle 'nsf/gocode'
 Bundle 'Blackrush/vim-gocode'
 
