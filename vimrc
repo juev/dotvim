@@ -24,7 +24,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/L9'
-"Bundle 'nsf/gocode'
+"Golang
 Bundle 'Blackrush/vim-gocode'
 
 filetype plugin indent on
@@ -98,8 +98,6 @@ nn <c-l> <c-w>l
 
 no <silent> <Leader>b :CtrlPBuffer<CR>
 no <silent> <Leader>t :CtrlP<CR>
-
-no <Leader>a :Ack<Space>
 
 vmap Q gq
 nmap Q gqap
