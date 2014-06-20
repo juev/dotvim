@@ -25,7 +25,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/L9'
 "Golang
-Bundle 'Blackrush/vim-gocode'
+Bundle 'fatih/vim-go'
 
 filetype plugin indent on
 syntax on
@@ -52,6 +52,7 @@ set encoding=utf-8
 "map <silent> <F12> :set invlist<CR>
 
 let g:is_posix = 1
+let g:SuperTabDefaultCompletionType = "context"
 
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
