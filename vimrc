@@ -9,10 +9,9 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-rooter'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'ervandew/supertab'
-Bundle 'garbas/vim-snipmate'
+Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
-Bundle 'MarcWeber/vim-addon-mw-utils.git'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'scrooloose/syntastic'
 Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
@@ -22,8 +21,6 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/L9'
 "Golang
 Bundle 'fatih/vim-go'
 
@@ -53,6 +50,10 @@ set encoding=utf-8
 
 let g:is_posix = 1
 let g:SuperTabDefaultCompletionType = "context"
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
