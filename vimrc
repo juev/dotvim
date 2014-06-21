@@ -22,7 +22,9 @@ Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 "Golang
-Bundle 'fatih/vim-go'
+if executable("go")
+  Bundle 'fatih/vim-go'
+endif
 
 filetype plugin indent on
 syntax on
