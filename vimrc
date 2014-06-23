@@ -57,6 +57,9 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
+let g:syntastic_mode_map = { 'mode': 'passive',
+      \ 'active_filetypes': ['go'] }
+
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
 " let g:solarized_visibility="low"    "default value is normal
