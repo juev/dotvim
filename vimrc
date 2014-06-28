@@ -1,35 +1,6 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-"Add your bundles here
-Bundle 'airblade/vim-rooter'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ervandew/supertab'
-Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
-Bundle 'tomtom/tlib_vim'
-Bundle 'Townk/vim-autoclose'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-"Golang
-if executable("go")
-  Bundle 'fatih/vim-go'
-endif
-
-filetype plugin indent on
-syntax on
-
 set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
 set wmnu wim=full swb=useopen so=8 siso=8
 set noeb vb t_vb= fdc=1
@@ -43,13 +14,45 @@ set nrformats=
 set backspace=eol,start,indent
 set modelines=0
 
+scriptencoding utf-8
 set encoding=utf-8
 
-"set list
-"set listchars=tab:\ ·,eol:¬
-"set listchars=trail:·
-"set listchars+=extends:»,precedes:«
-"map <silent> <F12> :set invlist<CR>
+set list
+set listchars=tab:\ ·,eol:¬
+set listchars=trail:·
+set listchars+=extends:»,precedes:«
+map <silent> <F12> :set invlist<CR>
+
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+"Add your bundles here
+Plugin 'airblade/vim-rooter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
+Plugin 'tomtom/tlib_vim'
+Plugin 'Townk/vim-autoclose'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+"Golang
+if executable("go")
+  Plugin 'fatih/vim-go'
+endif
+
+filetype plugin indent on
+syntax on
+
 
 let g:is_posix = 1
 let g:SuperTabDefaultCompletionType = "context"
