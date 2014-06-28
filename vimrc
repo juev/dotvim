@@ -12,6 +12,7 @@ Bundle 'ervandew/supertab'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'shvechikov/vim-keymap-russian-jcukenmac'
 Bundle 'tomtom/tlib_vim'
@@ -102,6 +103,8 @@ nn <c-j> <c-w>j
 nn <c-k> <c-w>k
 nn <c-h> <c-w>h
 nn <c-l> <c-w>l
+
+map <Leader>n :NERDTreeToggle<CR>
 
 no <silent> <Leader>b :CtrlPBuffer<CR>
 no <silent> <Leader>t :CtrlP<CR>
