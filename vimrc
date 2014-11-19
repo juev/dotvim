@@ -33,8 +33,10 @@ Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
+Plugin 'haya14busa/incsearch.vim'
 Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
+Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
@@ -45,10 +47,6 @@ Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
-"Golang
-if executable("go")
-  Plugin 'fatih/vim-go'
-endif
 
 filetype plugin indent on
 syntax on
@@ -114,6 +112,11 @@ no <silent> <Leader>t :CtrlP<CR>
 
 vmap Q gq
 nmap Q gqap
+
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+
 
 nmap <leader>fef gg=G
 map w!! %!sudo tee > /dev/null %
