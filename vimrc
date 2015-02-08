@@ -16,6 +16,7 @@ set modelines=0
 
 scriptencoding utf-8
 set encoding=utf-8
+set shell=bash
 
 set list
 set listchars=tab:\ ·,eol:¬
@@ -29,35 +30,31 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 "Add your bundles here
+Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ervandew/supertab'
-Plugin 'SirVer/ultisnips'
+Plugin 'fatih/vim-go'
+Plugin 'guns/vim-clojure-static'
 Plugin 'haya14busa/incsearch.vim'
-Plugin 'honza/vim-snippets'
 Plugin 'kien/ctrlp.vim'
-Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
-Plugin 'Townk/vim-autoclose'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fireplace'
 Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plugin 'vim-scripts/paredit.vim'
 
 filetype plugin indent on
 syntax on
 
-
 let g:is_posix = 1
-let g:SuperTabDefaultCompletionType = "context"
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:syntastic_mode_map = { 'mode': 'passive',
       \ 'active_filetypes': ['go'] }
