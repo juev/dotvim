@@ -16,7 +16,12 @@ set modelines=0
 
 scriptencoding utf-8
 set encoding=utf-8
-set shell=bash
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    set shell=bash
+  endif
+endif
 
 set list
 set listchars=tab:\ ·,eol:¬
