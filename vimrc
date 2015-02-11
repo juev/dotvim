@@ -17,10 +17,7 @@ set modelines=0
 scriptencoding utf-8
 set encoding=utf-8
 if has("unix")
-  let s:uname = system("uname")
-  if s:uname == "Darwin\n"
-    set shell=bash
-  endif
+  set shell=bash
 endif
 
 set list
@@ -80,7 +77,7 @@ endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 mapclear
-let mapleader=","
+let mapleader="-"
 no ' ,
 ino <C-k> <Esc>
 
