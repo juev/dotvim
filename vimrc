@@ -32,13 +32,13 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 "Add your bundles here
-Plugin 'Townk/vim-autoclose'
+"Plugin 'Townk/vim-autoclose'
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-static'
-Plugin 'haya14busa/incsearch.vim'
+"Plugin 'haya14busa/incsearch.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -46,12 +46,14 @@ Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'kien/rainbow_parentheses.vim'
 
 filetype plugin indent on
 syntax on
@@ -112,10 +114,5 @@ no <silent> <Leader>t :CtrlP<CR>
 vmap Q gq
 nmap Q gqap
 
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-
 nmap <leader>fef gg=G
-map w!! %!sudo tee > /dev/null %
+"map w!! %!sudo tee > /dev/null %
