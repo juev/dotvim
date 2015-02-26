@@ -1,6 +1,31 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Plugin 'gmarik/vundle'
+"Add your bundles here
+Plugin 'airblade/vim-rooter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
+Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fireplace'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-scripts/paredit.vim'
+
+filetype plugin indent on
+syntax on
+
 set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
 set wmnu wim=full swb=useopen so=8 siso=8
 set noeb vb t_vb= fdc=1
@@ -26,42 +51,8 @@ set listchars=trail:·
 set listchars+=extends:»,precedes:«
 map <silent> <F12> :set invlist<CR>
 
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Plugin 'gmarik/vundle'
-"Add your bundles here
-"Plugin 'Townk/vim-autoclose'
-Plugin 'airblade/vim-rooter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'ervandew/supertab'
-"Plugin 'fatih/vim-go'
-Plugin 'guns/vim-clojure-static'
-"Plugin 'haya14busa/incsearch.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'kien/rainbow_parentheses.vim'
-
-filetype plugin indent on
-syntax on
-
-let g:is_posix = 1
-
-let g:syntastic_mode_map = { 'mode': 'passive',
-      \ 'active_filetypes': ['go'] }
+" let g:syntastic_mode_map = { 'mode': 'passive',
+"       \ 'active_filetypes': ['go'] }
 
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
@@ -107,9 +98,6 @@ nn <c-h> <c-w>h
 nn <c-l> <c-w>l
 
 map <Leader>n :NERDTreeToggle<CR>
-
-no <silent> <Leader>b :CtrlPBuffer<CR>
-no <silent> <Leader>t :CtrlP<CR>
 
 vmap Q gq
 nmap Q gqap
