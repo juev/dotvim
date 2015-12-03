@@ -71,7 +71,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 mapclear
 let mapleader="-"
 no ' ,
-ino <C-k> <Esc>
+ino <C-j> <Esc>
 
 " Toggle paste mode
 nmap <silent> <F4> :set invpaste<CR>:set paste?<CR>
