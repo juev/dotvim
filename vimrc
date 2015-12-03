@@ -38,6 +38,7 @@ set modeline modelines=0
 set nrformats=
 set backspace=eol,start,indent
 set modelines=0
+set tabstop=4 shiftwidth=4
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -45,11 +46,11 @@ if has("unix")
   set shell=bash
 endif
 
-set list
-set listchars=tab:\ ·,eol:¬
-set listchars=trail:·
-set listchars+=extends:»,precedes:«
-map <silent> <F12> :set invlist<CR>
+"set list
+"set listchars=tab:\ ·,eol:¬
+"set listchars=trail:·
+"set listchars+=extends:»,precedes:«
+"map <silent> <F12> :set invlist<CR>
 
 " let g:syntastic_mode_map = { 'mode': 'passive',
 "       \ 'active_filetypes': ['go'] }
