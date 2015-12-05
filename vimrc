@@ -9,6 +9,7 @@ Plugin 'gmarik/vundle'
 "Add your bundles here
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
