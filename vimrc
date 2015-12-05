@@ -22,6 +22,12 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/paredit.vim'
 
+if has('mac') || has('unix')
+  " For using this plugin, install https://github.com/powerline/fonts
+  Plugin 'bling/vim-airline'
+  let g:airline_powerline_fonts = 1
+end
+
 filetype plugin indent on
 syntax on
 
@@ -41,22 +47,12 @@ set tabstop=4 shiftwidth=4
 
 scriptencoding utf-8
 set encoding=utf-8
-if has("unix")
+if has('mac') || has('unix')
   set shell=bash
 endif
 
-"set list
-"set listchars=tab:\ ·,eol:¬
-"set listchars=trail:·
-"set listchars+=extends:»,precedes:«
-"map <silent> <F12> :set invlist<CR>
-
-" let g:syntastic_mode_map = { 'mode': 'passive',
-"       \ 'active_filetypes': ['go'] }
-
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
-" let g:solarized_visibility="low"    "default value is normal
 syntax enable
 set background=dark
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
