@@ -11,6 +11,9 @@ Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
@@ -25,13 +28,14 @@ Plugin 'vim-scripts/paredit.vim'
 filetype plugin indent on
 syntax on
 
-set nocp hid aw ar ai nosi nocin lbr lz tf confirm ru cul sb spr mh
-set wmnu wim=full swb=useopen so=8 siso=8
-set noeb vb t_vb= fdc=1
+set nocompatible hidden autowrite autoread autoindent nosmartindent nocindent 
+set linebreak lazyredraw ttyfast confirm ruler cursorline splitbelow splitright mousehide
+set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
+set noerrorbells visualbell t_vb= foldcolumn=1
 set magic nohlsearch ignorecase smartcase incsearch
 set expandtab smarttab nowrap
 set laststatus=2 shortmess=atI showcmd
-set gcr=a:blinkwait0,a:block-cursor
+set guicursor=a:blinkwait0,a:block-cursor
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
 set nrformats=
@@ -44,15 +48,6 @@ set encoding=utf-8
 if has("unix")
   set shell=bash
 endif
-
-"set list
-"set listchars=tab:\ ·,eol:¬
-"set listchars=trail:·
-"set listchars+=extends:»,precedes:«
-"map <silent> <F12> :set invlist<CR>
-
-" let g:syntastic_mode_map = { 'mode': 'passive',
-"       \ 'active_filetypes': ['go'] }
 
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
