@@ -2,7 +2,7 @@ au FileType * setlocal fo-=c fo-=r fo-=o ts=2 sts=2 sw=2 et
 au FileType markdown,vimwiki setlocal ts=4 sts=4 sw=4
 au FileType go,golang setlocal ts=4 sts=4 sw=4 et
 " au BufEnter * cd %:p:h
-au BufWritePost .vimrc source $MYVIMRC
+" au BufWritePost .vimrc source $MYVIMRC
 
 " au FocusLost * :wa
 au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby ts=2 sts=2 sw=2 et sta
