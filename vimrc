@@ -87,6 +87,12 @@ nmap <space> :
 map j gj
 map k gk
 
+" Visual shifting (does not exit Visual mode)
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap Y y$
+
 nn  <silent> vv    <C-w>v
 nn  <silent> ss    <C-w>s
 map <silent> <leader>0 <C-w>o
@@ -104,6 +110,9 @@ nmap Q gqap
 
 nmap <leader>fef gg=G
 "map w!! %!sudo tee > /dev/null %
+
+nmap <silent> <BS> :nohlsearch<CR>
+nmap S :%s//g<LEFT><LEFT>
 
 " For Jekyll
 
