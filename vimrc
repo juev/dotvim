@@ -9,7 +9,6 @@ Plugin 'gmarik/vundle'
 "Add your bundles here
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'editorconfig/editorconfig-vim'
 Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
@@ -26,9 +25,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/paredit.vim'
 
 if has('mac') || has('unix')
+  Plugin 'editorconfig/editorconfig-vim'
   " For using this plugin, install https://github.com/powerline/fonts
-  Plugin 'bling/vim-airline'
-  let g:airline_powerline_fonts = 1
+  " Plugin 'bling/vim-airline'
+  " let g:airline_powerline_fonts = 1
 end
 
 filetype plugin indent on
@@ -40,7 +40,7 @@ set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
 set noerrorbells visualbell t_vb= foldcolumn=1
 set magic nohlsearch ignorecase smartcase incsearch
 set expandtab smarttab nowrap
-set laststatus=2 shortmess=atI showcmd
+set laststatus=0 shortmess=atI showcmd
 set guicursor=a:blinkwait0,a:block-cursor
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
