@@ -41,7 +41,7 @@ set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
 set noerrorbells visualbell t_vb= foldcolumn=1
 set magic nohlsearch ignorecase smartcase incsearch
 set expandtab smarttab nowrap
-set laststatus=0 shortmess=atI showcmd
+set laststatus=0
 set guicursor=a:blinkwait0,a:block-cursor
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
