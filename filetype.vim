@@ -16,3 +16,5 @@ au! BufWritePost      *.snippet                                       call Reloa
 "     \| exe "normal! g`\"" | endif
 "au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
 "au BufEnter *.org            call org#SetOrgFileType()
+
+" au BufEnter * silent! lcd %:p:h

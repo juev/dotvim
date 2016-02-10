@@ -1,7 +1,7 @@
 highlight FoldColumn guibg=#002B36 guifg=white
 set vb t_vb=
-set clipboard+=unnamed
-set go=aAce
+" set clipboard+=unnamed
+set guioptions=ce
 set antialias
 
 if has('mac')

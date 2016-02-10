@@ -9,11 +9,13 @@ Plugin 'gmarik/vundle'
 "Add your bundles here
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'guns/vim-clojure-static'
+Plugin 'henrik/rename.vim'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'mhinz/vim-startify'
 Plugin 'scrooloose/syntastic'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
@@ -40,7 +42,7 @@ set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
 set noerrorbells visualbell t_vb= foldcolumn=1
 set magic nohlsearch ignorecase smartcase incsearch
 set expandtab smarttab nowrap
-set laststatus=0 shortmess=atI showcmd
+set laststatus=0
 set guicursor=a:blinkwait0,a:block-cursor
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
@@ -102,8 +104,6 @@ nn <c-j> <c-w>j
 nn <c-k> <c-w>k
 nn <c-h> <c-w>h
 nn <c-l> <c-w>l
-
-map <Leader>n :NERDTreeToggle<CR>
 
 vmap Q gq
 nmap Q gqap
