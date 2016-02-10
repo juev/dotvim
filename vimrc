@@ -116,3 +116,4 @@ nmap <silent> <BS> :nohlsearch<CR>
 nmap S :%s//g<LEFT><LEFT>
 
 let g:jekyll_path = "~/Projects/juev.org/source"
+let no_buffers_menu = 1
