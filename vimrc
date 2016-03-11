@@ -54,6 +54,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'wellle/targets.vim'
 
 if has('mac') || has('unix')
   Plugin 'editorconfig/editorconfig-vim'
