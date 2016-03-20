@@ -122,3 +122,5 @@ nn <leader>fef gg=G
 
 nn <silent> <BS> :nohlsearch<CR>
 nn S :%s//g<LEFT><LEFT>
+
+cmap w!! w !sudo tee > /dev/null %
