@@ -5,8 +5,8 @@ set guioptions=ce
 set antialias
 
 if has('mac')
-  set guifont=Dejavu\ Sans\ Mono\ for\ Powerline:h15
-  "set guifont=Menlo:h14
+  "set guifont=Dejavu\ Sans\ Mono\ for\ Powerline:h15
+  set guifont=Menlo:h15
   " set macmeta
 elseif has('win32') || has('win64')
     set guifont=Lucida_Console:h12
