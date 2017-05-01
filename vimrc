@@ -31,7 +31,9 @@ call vundle#rc()
 
 Plugin 'gmarik/vundle'
 "Add your bundles here
+
 Plugin 'Juev/vim-jekyll'
+Plugin 'WolfgangMehner/c-support'
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -42,6 +44,7 @@ Plugin 'henrik/rename.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mhinz/vim-startify'
+Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
@@ -55,7 +58,6 @@ Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'wellle/targets.vim'
-
 if has('mac') || has('unix')
   Plugin 'editorconfig/editorconfig-vim'
 end
@@ -71,6 +73,10 @@ set background=dark
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
   colorscheme solarized
 endif
+
+" Suntastic
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " Keymap
 if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
