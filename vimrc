@@ -32,20 +32,18 @@ call vundle#rc()
 Plugin 'gmarik/vundle'
 "Add your bundles here
 
+" Plugin 'scrooloose/syntastic'
 Plugin 'Juev/vim-jekyll'
-Plugin 'WolfgangMehner/c-support'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'fatih/vim-go'
-Plugin 'guns/vim-clojure-highlight'
-Plugin 'guns/vim-clojure-static'
 Plugin 'henrik/rename.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mhinz/vim-startify'
-Plugin 'rust-lang/rust.vim'
-Plugin 'scrooloose/syntastic'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rdnetto/YCM-Generator'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-commentary'
@@ -56,6 +54,7 @@ Plugin 'tpope/vim-projectionist'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-surround'
+Plugin 'vhdirk/vim-cmake'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'wellle/targets.vim'
 if has('mac') || has('unix')
@@ -69,14 +68,17 @@ syntax on
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
 syntax enable
-set background=dark
+set background=light
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
   colorscheme solarized
 endif
 
+" YCM
+let g:ycm_confirm_extra_conf = 0
+
 " Suntastic
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+" let g:syntastic_cpp_compiler = 'g++'
+" let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 
 " Keymap
 if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
