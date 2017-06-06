@@ -70,15 +70,13 @@ let g:solarized_termcolors=256    "default value is 16
 syntax enable
 set background=light
 if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
-  colorscheme solarized
+  if has("gui_running")
+    colorscheme solarized
+  endif
 endif
 
 " YCM
 let g:ycm_confirm_extra_conf = 0
-
-" Suntastic
-" let g:syntastic_cpp_compiler = 'g++'
-" let g:syntastic_cpp_compiler_options = "-std=c++11 -Wall -Wextra -Wpedantic"
 
 " Keymap
 if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
@@ -88,7 +86,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 mapclear
-let g:mapleader="-"
+let g:mapleader=","
 no ' ,
 ino <C-j> <Esc>
 vn <C-j> <Esc>
