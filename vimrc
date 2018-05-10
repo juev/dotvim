@@ -16,6 +16,10 @@ set backspace=eol,start,indent
 set modelines=0
 set tabstop=4 shiftwidth=4
 
+if !has("gui_running")
+  set nocursorline
+end
+
 let g:jekyll_path = "~/Projects/juev.org/source"
 let no_buffers_menu = 1
 
@@ -34,7 +38,7 @@ Plugin 'gmarik/vundle'
 
 " Plugin 'scrooloose/syntastic'
 Plugin 'Juev/vim-jekyll'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'WolfgangMehner/c-support'
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
@@ -43,9 +47,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'mhinz/vim-startify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'rdnetto/YCM-Generator'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
+Plugin 'tpope/vim-apathy'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-dispatch'
 Plugin 'tpope/vim-fireplace'
@@ -64,6 +68,9 @@ end
 filetype plugin indent on
 syntax on
 
+" Use cmake
+let g:C_UseTool_cmake = 'yes'
+
 " Colors
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
@@ -74,9 +81,6 @@ if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
     colorscheme solarized
   endif
 endif
-
-" YCM
-let g:ycm_confirm_extra_conf = 0
 
 " Keymap
 if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
