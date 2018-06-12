@@ -124,6 +124,12 @@ nn <c-k> <c-w>k
 nn <c-h> <c-w>h
 nn <c-l> <c-w>l
 
+" Fix common typos
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
 vn Q gq
 nn Q gqap
 
