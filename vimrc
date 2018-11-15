@@ -42,11 +42,15 @@ Plugin 'WolfgangMehner/c-support'
 Plugin 'airblade/vim-rooter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'fatih/vim-go'
 Plugin 'henrik/rename.vim'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'liuchengxu/vim-which-key'
 Plugin 'mhinz/vim-startify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'pearofducks/ansible-vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-apathy'
@@ -124,12 +128,6 @@ nn <c-k> <c-w>k
 nn <c-h> <c-w>h
 nn <c-l> <c-w>l
 
-" Fix common typos
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
-
 vn Q gq
 nn Q gqap
 
@@ -138,5 +136,9 @@ nn <leader>fef gg=G
 
 nn <silent> <BS> :nohlsearch<CR>
 nn S :%s//g<LEFT><LEFT>
+
+
+" NeoTree
+map <F8> :NERDTreeToggle<CR>
 
 cmap w!! w !sudo tee > /dev/null %

@@ -12,6 +12,6 @@ elseif has('win32') || has('win64')
     set guifont=Lucida_Console:h12
     set lines=50 columns=150
 else
-  set guifont=Terminus\ 18
+  set guifont=Fira\ Code\ 11
 end
 
