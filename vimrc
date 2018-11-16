@@ -13,7 +13,6 @@ set nobackup nowritebackup noswapfile
 set modeline modelines=0
 set nrformats=
 set backspace=eol,start,indent
-set modelines=0
 set tabstop=4 shiftwidth=4
 
 if !has("gui_running")
