@@ -36,6 +36,7 @@ Plugin 'gmarik/vundle'
 "Add your bundles here
 
 " Plugin 'scrooloose/syntastic'
+" Plugin 'mhinz/vim-startify'
 Plugin 'Juev/vim-jekyll'
 Plugin 'WolfgangMehner/c-support'
 Plugin 'airblade/vim-rooter'
@@ -47,9 +48,9 @@ Plugin 'itchyny/vim-gitbranch'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'liuchengxu/vim-which-key'
-" Plugin 'mhinz/vim-startify'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'pearofducks/ansible-vim'
+Plugin 'qpkorr/vim-bufkill'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
 Plugin 'srcery-colors/srcery-vim'
@@ -112,7 +113,9 @@ no <silent> <F4> :set invpaste<CR>:set paste?<CR>
 ino <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 no <silent> <Leader>q :bw<CR>
+no <silent> <c-w> :bw<CR>
 no <silent> <leader>w :w!<CR>
+no <silent> <c-s> :w!<CR>
 no <leader><leader> <c-^>
 
 no <space> :
