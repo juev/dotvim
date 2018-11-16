@@ -147,6 +147,9 @@ nn S :%s//g<LEFT><LEFT>
 
 cmap w!! w !sudo tee > /dev/null %
 
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
 " NeoTree
 map <F8> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

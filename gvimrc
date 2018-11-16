@@ -15,3 +15,4 @@ else
   set guifont=Fira\ Code\ 11
 end
 
+set lines=999 columns=999
