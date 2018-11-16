@@ -113,9 +113,7 @@ no <silent> <F4> :set invpaste<CR>:set paste?<CR>
 ino <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 no <silent> <Leader>q :bw<CR>
-no <silent> <c-w> :bw<CR>
 no <silent> <leader>w :w!<CR>
-no <silent> <c-s> :w!<CR>
 no <leader><leader> <c-^>
 
 no <space> :
