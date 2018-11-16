@@ -76,18 +76,6 @@ syntax on
 " Use cmake
 let g:C_UseTool_cmake = 'yes'
 
-" NeoTree
-map <F8> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-" CtrlP
-let g:ctrlp_working_path_mode = 'cr'
-nmap <Leader>b :CtrlPBuffer<CR>
-nmap <Leader>o :CtrlP<CR>
-
 " Lightline
 let g:lightline = {
       \ 'active': {
@@ -158,3 +146,16 @@ nn <silent> <BS> :nohlsearch<CR>
 nn S :%s//g<LEFT><LEFT>
 
 cmap w!! w !sudo tee > /dev/null %
+
+" NeoTree
+map <F8> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'cr'
+nmap <Leader>b :CtrlPBuffer<CR>
+nmap <Leader>o :CtrlP<CR>
+
