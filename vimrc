@@ -7,7 +7,7 @@ set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
 set noerrorbells visualbell t_vb= foldcolumn=1
 set magic nohlsearch ignorecase smartcase incsearch
 set expandtab smarttab nowrap
-set laststatus=0
+set laststatus=2
 set guicursor=a:blinkwait0,a:block-cursor
 set nobackup nowritebackup noswapfile
 set modeline modelines=0
@@ -39,10 +39,11 @@ Plugin 'gmarik/vundle'
 Plugin 'Juev/vim-jekyll'
 Plugin 'WolfgangMehner/c-support'
 Plugin 'airblade/vim-rooter'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'henrik/rename.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'itchyny/vim-gitbranch'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'liuchengxu/vim-which-key'
@@ -51,6 +52,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'pearofducks/ansible-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
+Plugin 'srcery-colors/srcery-vim'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-apathy'
 Plugin 'tpope/vim-commentary'
@@ -74,16 +76,35 @@ syntax on
 " Use cmake
 let g:C_UseTool_cmake = 'yes'
 
+" NeoTree
+map <F8> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" CtrlP
+let g:ctrlp_working_path_mode = 'cr'
+nmap <Leader>b :CtrlPBuffer<CR>
+nmap <Leader>o :CtrlP<CR>
+
+" Lightline
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'gitbranch#name'
+      \ },
+      \ }
+
 " Colors
 set t_Co=256
 let g:solarized_termcolors=256    "default value is 16
 syntax enable
-set background=light
-if filereadable(expand("~/.vim/bundle/vim-colors-solarized/README.mkd"))
-  if has("gui_running")
-    colorscheme solarized
-  endif
-endif
+
+colorscheme srcery
 
 " Keymap
 if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
@@ -135,13 +156,5 @@ nn <leader>fef gg=G
 
 nn <silent> <BS> :nohlsearch<CR>
 nn S :%s//g<LEFT><LEFT>
-
-
-" NeoTree
-map <F8> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 cmap w!! w !sudo tee > /dev/null %
