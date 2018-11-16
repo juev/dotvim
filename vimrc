@@ -40,11 +40,12 @@ Plugin 'gmarik/vundle'
 Plugin 'Juev/vim-jekyll'
 Plugin 'WolfgangMehner/c-support'
 Plugin 'airblade/vim-rooter'
+" Plugin 'ap/vim-buftabline'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'fatih/vim-go'
 Plugin 'henrik/rename.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'itchyny/vim-gitbranch'
+" Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/vim-gitbranch'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'liuchengxu/vim-which-key'
@@ -65,6 +66,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-salve'
 Plugin 'tpope/vim-surround'
 Plugin 'vhdirk/vim-cmake'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'wellle/targets.vim'
 if has('mac') || has('unix')
@@ -78,20 +80,20 @@ syntax on
 let g:C_UseTool_cmake = 'yes'
 
 " Lightline
-let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name',
-      \   'filename': 'LightLineFilename'
-      \ }
-      \ }
+" let g:lightline = {
+"       \ 'active': {
+"       \   'left': [ [ 'mode', 'paste' ],
+"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+"       \ },
+"       \ 'component_function': {
+"       \   'gitbranch': 'gitbranch#name',
+"       \   'filename': 'LightLineFilename'
+"       \ }
+"       \ }
 
-function! LightLineFilename()
-  return expand('%')
-endfunction
+" function! LightLineFilename()
+"   return expand('%')
+" endfunction
 
 " Colors
 set t_Co=256
@@ -108,7 +110,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 mapclear
-let g:mapleader=","
+let g:mapleader="\\"
 no ' ,
 ino <C-j> <Esc>
 vn <C-j> <Esc>
@@ -156,6 +158,10 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
+" Commentary
+nmap <Leader>c :Commentary<CR>
+vmap <Leader>c :Commentary<CR>
+
 " NeoTree
 map <F8> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -164,7 +170,10 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " CtrlP
-let g:ctrlp_working_path_mode = 'cr'
+" let g:ctrlp_working_path_mode = 'cr'
 nmap <Leader>b :CtrlPBuffer<CR>
 nmap <Leader>o :CtrlP<CR>
 
+" Airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1

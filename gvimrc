@@ -1,4 +1,4 @@
-highlight FoldColumn guibg=#002B36 guifg=white
+" highlight FoldColumn guibg=#002B36 guifg=white
 set vb t_vb=
 " set clipboard+=unnamed
 set guioptions=ce
