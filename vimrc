@@ -84,13 +84,18 @@ let g:lightline = {
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'gitbranch#name'
-      \ },
+      \   'gitbranch': 'gitbranch#name',
+      \   'filename': 'LightLineFilename'
       \ }
+      \ }
+
+function! LightLineFilename()
+  return expand('%')
+endfunction
 
 " Colors
 set t_Co=256
-let g:solarized_termcolors=256    "default value is 16
+" let g:solarized_termcolors=256    "default value is 16
 syntax enable
 
 colorscheme srcery
