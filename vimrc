@@ -1,6 +1,8 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
+set rtp+=~/.fzf
+
 set nocompatible hidden autowrite autoread autoindent nosmartindent nocindent 
 set linebreak lazyredraw ttyfast confirm ruler cursorline splitbelow splitright mousehide
 set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
@@ -29,49 +31,50 @@ if has('mac') || has('unix')
 endif
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
 
-Plugin 'gmarik/vundle'
+call plug#begin('~/.vim/plugged')
+
 "Add your bundles here
 
 " Plugin 'scrooloose/syntastic'
-" Plugin 'mhinz/vim-startify'
-Plugin 'Juev/vim-jekyll'
-Plugin 'WolfgangMehner/c-support'
-Plugin 'airblade/vim-rooter'
-" Plugin 'ap/vim-buftabline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'fatih/vim-go'
-Plugin 'henrik/rename.vim'
-" Plugin 'itchyny/lightline.vim'
-" Plugin 'itchyny/vim-gitbranch'
-Plugin 'junegunn/goyo.vim'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'liuchengxu/vim-which-key'
-Plugin 'octol/vim-cpp-enhanced-highlight'
-Plugin 'pearofducks/ansible-vim'
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'scrooloose/nerdtree'
-Plugin 'shvechikov/vim-keymap-russian-jcukenmac'
-Plugin 'srcery-colors/srcery-vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-apathy'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-fireplace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-projectionist'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-salve'
-Plugin 'tpope/vim-surround'
-Plugin 'vhdirk/vim-cmake'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-scripts/paredit.vim'
-Plugin 'wellle/targets.vim'
+Plug 'Juev/vim-jekyll'
+Plug 'WolfgangMehner/c-support'
+Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
+Plug 'fatih/vim-go'
+Plug 'henrik/rename.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'liuchengxu/vim-which-key'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'pearofducks/ansible-vim'
+Plug 'qpkorr/vim-bufkill'
+Plug 'scrooloose/nerdtree'
+Plug 'shvechikov/vim-keymap-russian-jcukenmac'
+Plug 'srcery-colors/srcery-vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-salve'
+Plug 'tpope/vim-surround'
+Plug 'vhdirk/vim-cmake'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/paredit.vim'
+Plug 'w0rp/ale'
+Plug 'wellle/targets.vim'
 if has('mac') || has('unix')
-  Plugin 'editorconfig/editorconfig-vim'
+  Plug 'editorconfig/editorconfig-vim'
 end
+
+call plug#end()
 
 filetype plugin indent on
 syntax on
@@ -79,25 +82,8 @@ syntax on
 " Use cmake
 let g:C_UseTool_cmake = 'yes'
 
-" Lightline
-" let g:lightline = {
-"       \ 'active': {
-"       \   'left': [ [ 'mode', 'paste' ],
-"       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-"       \ },
-"       \ 'component_function': {
-"       \   'gitbranch': 'gitbranch#name',
-"       \   'filename': 'LightLineFilename'
-"       \ }
-"       \ }
-
-" function! LightLineFilename()
-"   return expand('%')
-" endfunction
-
 " Colors
 set t_Co=256
-" let g:solarized_termcolors=256    "default value is 16
 syntax enable
 
 colorscheme srcery
@@ -169,10 +155,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-" CtrlP
-" let g:ctrlp_working_path_mode = 'cr'
-nmap <Leader>b :CtrlPBuffer<CR>
-nmap <Leader>o :CtrlP<CR>
+" fzf
+nmap <Leader>b :Buffers<CR>
+nmap <Leader>o :Files<CR>
 
 " Airline
 let g:airline_powerline_fonts = 1
