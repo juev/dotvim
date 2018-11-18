@@ -17,7 +17,7 @@ set nrformats=
 set backspace=eol,start,indent
 set tabstop=4 shiftwidth=4
 
-" mapclear
+mapclear
 
 if !has("gui_running")
   set nocursorline
@@ -148,12 +148,9 @@ nnoremap <S-Tab> :bprevious<CR>
 nmap <Leader>c :Commentary<CR>
 vmap <Leader>c :Commentary<CR>
 
-" NeoTree
+" NERDTree
 map <F8> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " fzf
 nmap <Leader>b :Buffers<CR>
