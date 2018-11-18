@@ -17,6 +17,8 @@ set nrformats=
 set backspace=eol,start,indent
 set tabstop=4 shiftwidth=4
 
+" mapclear
+
 if !has("gui_running")
   set nocursorline
 end
@@ -30,8 +32,6 @@ if has('mac') || has('unix')
   set shell=bash
 endif
 
-filetype off
-
 call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
@@ -41,12 +41,16 @@ Plug 'Juev/vim-jekyll'
 Plug 'WolfgangMehner/c-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'aperezdc/vim-template'
 Plug 'fatih/vim-go'
 Plug 'henrik/rename.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'liuchengxu/vim-which-key'
+Plug 'mhinz/vim-startify'
+Plug 'nsf/gocode', { 'rtp': 'vim' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
@@ -76,9 +80,6 @@ end
 
 call plug#end()
 
-filetype plugin indent on
-syntax on
-
 " Use cmake
 let g:C_UseTool_cmake = 'yes'
 
@@ -95,8 +96,7 @@ endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " Keys
-mapclear
-let g:mapleader="\\"
+let g:mapleader=","
 no ' ,
 ino <C-j> <Esc>
 vn <C-j> <Esc>
@@ -152,8 +152,8 @@ vmap <Leader>c :Commentary<CR>
 map <F8> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " fzf
 nmap <Leader>b :Buffers<CR>
@@ -162,3 +162,7 @@ nmap <Leader>o :Files<CR>
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+
+" Vim-Rooter
+let g:rooter_silent_chdir = 1
+let g:rooter_resolve_links = 1
