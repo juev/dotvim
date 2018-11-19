@@ -8,7 +8,7 @@ au FileType go,golang setlocal ts=4 sts=4 sw=4 et
 au BufRead,BufNewFile {Gemfile,Rakefile,Capfile,*.rake,config.ru}     set ft=ruby ts=2 sts=2 sw=2 et sta
 au BufRead,BufNewFile {*.md,*.mkd,*.markdown}                         set ft=markdown
 au BufRead,BufNewFile {*.txt,*.md,*.mkd,*.markdown}                   set spell spelllang=ru,en wrap linebreak
-au! BufReadPost       {COMMIT_EDITMSG,*/COMMIT_EDITMSG}               set ft=gitcommit noml list| norm 1G
+au! BufReadPost       {COMMIT_EDITMSG,*/COMMIT_EDITMSG}               set ft=gitcommit
 au! BufWritePost      *.snippet                                       call ReloadAllSnippets()
 " open help in vertical split
 " au BufWinEnter *.txt if &ft == 'help' | wincmd H | endif
