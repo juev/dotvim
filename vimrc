@@ -87,10 +87,12 @@ let g:C_UseTool_cmake = 'yes'
 set t_Co=256
 syntax enable
 
-colorscheme srcery
+if filereadable(expand("~/.vim/plugged/srcery-vim/README.md"))
+  colorscheme srcery
+endif
 
 " Keymap
-if filereadable(expand("~/.vim/bundle/vim-keymap-russian-jcukenmac/README.md"))
+if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
   set keymap=russian-jcukenmac iminsert=0 imsearch=0
 endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
