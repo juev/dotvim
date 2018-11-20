@@ -53,6 +53,7 @@ Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nsf/gocode', { 'rtp': '~/.vim' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
@@ -174,3 +175,6 @@ let g:go_template_autocreate = 0
 
 " Ansible-Vault
 let g:ansible_vault_password_file = '~/.vault_pass'
+
+" Indent guides
+let g:indent_guides_enable_on_vim_startup = 1
