@@ -182,3 +182,7 @@ let g:ansible_vault_password_file = '~/.vault_pass'
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
+
+" vim-template
+let g:username = "Denis Evsyukov"
+let g:email = "denis (at) evsyukov.org"
