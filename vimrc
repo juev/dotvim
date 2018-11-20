@@ -43,7 +43,7 @@ Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
 Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -60,6 +60,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
+Plug 'SirVer/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -173,6 +174,9 @@ let g:rooter_resolve_links = 1
 
 " Vim-Go
 let g:go_template_autocreate = 0
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
 
 " Ansible-Vault
 let g:ansible_vault_password_file = '~/.vault_pass'
