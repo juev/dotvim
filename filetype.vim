@@ -18,3 +18,5 @@ au! BufWritePost      *.snippet                                       call Reloa
 "au BufEnter *.org            call org#SetOrgFileType()
 
 " au BufEnter * silent! lcd %:p:h
+" Remove trailing spaces
+" autocmd BufWritePre * :%s/\s\+$//e
