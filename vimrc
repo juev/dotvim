@@ -54,7 +54,6 @@ Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'nsf/gocode', { 'rtp': '~/.vim' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
