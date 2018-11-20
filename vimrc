@@ -3,7 +3,7 @@ set runtimepath^=~/.vim
 
 set rtp+=~/.fzf
 
-set nocompatible hidden autowrite autoread autoindent nosmartindent nocindent 
+set nocompatible hidden autowrite autoread autoindent nosmartindent nocindent
 set linebreak lazyredraw ttyfast confirm ruler cursorline splitbelow splitright mousehide
 set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
 set noerrorbells visualbell t_vb= foldcolumn=1
