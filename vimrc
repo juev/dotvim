@@ -37,20 +37,21 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 
 " Plugin 'scrooloose/syntastic'
-Plug 'Juev/vim-jekyll'
-Plug 'WolfgangMehner/c-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
+Plug 'bhurlow/vim-parinfer'
 Plug 'fatih/vim-go'
 Plug 'henrik/rename.vim'
+Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'kien/rainbow_parentheses.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
-Plug 'nsf/gocode', { 'rtp': 'vim' }
+Plug 'nsf/gocode', { 'rtp': '~/.vim' }
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
@@ -63,7 +64,6 @@ Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
@@ -74,6 +74,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/paredit.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
+Plug 'WolfgangMehner/c-support'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
