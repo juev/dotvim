@@ -60,6 +60,7 @@ Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
+Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tlib_vim'
@@ -91,8 +92,8 @@ let g:C_UseTool_cmake = 'yes'
 set t_Co=256
 syntax enable
 
-if filereadable(expand("~/.vim/plugged/srcery-vim/README.md"))
-  colorscheme srcery
+if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
+  colorscheme badwolf
 endif
 
 " Keymap
