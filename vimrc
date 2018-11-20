@@ -166,3 +166,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Vim-Rooter
 let g:rooter_silent_chdir = 1
 let g:rooter_resolve_links = 1
+
+" Vim-Go
+let g:go_template_autocreate = 0
