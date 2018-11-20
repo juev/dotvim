@@ -169,3 +169,7 @@ let g:rooter_resolve_links = 1
 
 " Vim-Go
 let g:go_template_autocreate = 0
+
+" Startify
+set viminfo='100,n$HOME/.vim/viminfo
+
