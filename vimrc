@@ -16,6 +16,7 @@ set modeline modelines=0
 set nrformats=
 set backspace=eol,start,indent
 set tabstop=4 shiftwidth=4
+set viminfo='100,n$HOME/.vim/viminfo
 
 mapclear
 
@@ -40,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
+Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'fatih/vim-go'
 Plug 'henrik/rename.vim'
@@ -170,6 +172,5 @@ let g:rooter_resolve_links = 1
 " Vim-Go
 let g:go_template_autocreate = 0
 
-" Startify
-set viminfo='100,n$HOME/.vim/viminfo
-
+" Ansible-Vault
+let g:ansible_vault_password_file = '~/.vault_pass'
