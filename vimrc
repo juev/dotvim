@@ -77,7 +77,6 @@ Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/paredit.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'WolfgangMehner/c-support'
