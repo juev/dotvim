@@ -38,6 +38,7 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 
 " Plugin 'scrooloose/syntastic'
+" Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
@@ -58,8 +59,8 @@ Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdtree'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
-Plug 'SirVer/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -73,6 +74,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --rust-completer' }
 Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/paredit.vim'
