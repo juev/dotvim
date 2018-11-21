@@ -46,6 +46,7 @@ Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -74,7 +75,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --go-completer --rust-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/paredit.vim'
@@ -187,4 +188,4 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " vim-template
 let g:username = "Denis Evsyukov"
-let g:email = "denis (at) evsyukov.org"
+let g:email = "denis@evsyukov.org"
