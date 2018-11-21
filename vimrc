@@ -1,8 +1,6 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
-set rtp+=~/.fzf
-
 set nocompatible hidden autowrite autoread autoindent nosmartindent nocindent
 set linebreak lazyredraw ttyfast confirm ruler cursorline splitbelow splitright mousehide
 set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
@@ -39,6 +37,7 @@ call plug#begin('~/.vim/plugged')
 
 " Plugin 'scrooloose/syntastic'
 " Plug 'SirVer/ultisnips'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
@@ -46,10 +45,9 @@ Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim', { 'rtp': '~/.fzf/' }
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
@@ -59,6 +57,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
+Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
