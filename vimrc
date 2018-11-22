@@ -113,7 +113,7 @@ vn <C-j> <Esc>
 no <silent> <F4> :set invpaste<CR>:set paste?<CR>
 ino <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
-no <silent> <Leader>q :bw<CR>
+no <silent> <Leader>q :BW<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
@@ -142,7 +142,6 @@ vn Q gq
 nn Q gqap
 
 nn <leader>fef gg=G
-"map w!! %!sudo tee > /dev/null %
 
 nn <silent> <BS> :nohlsearch<CR>
 nn S :%s//g<LEFT><LEFT>
@@ -194,4 +193,3 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " vim-template
 let g:username = "Denis Evsyukov"
-let g:email = "denis@evsyukov.org"
