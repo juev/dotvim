@@ -198,3 +198,6 @@ let g:templates_directory = ['~/.vim/templates/']
 
 " DelimitMate
 let delimitMate_expand_cr = 1
+
+" YouCompleteMe
+let g:ycm_auto_trigger = 0
