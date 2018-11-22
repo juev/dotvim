@@ -193,3 +193,5 @@ let g:indent_guides_enable_on_vim_startup = 1
 
 " vim-template
 let g:username = "Denis Evsyukov"
+let g:templates_no_builtin_templates = 1
+let g:templates_directory = ['~/.vim/templates/']
