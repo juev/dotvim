@@ -39,13 +39,13 @@ Plug 'Juev/vim-jekyll'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'SirVer/ultisnips'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'WolfgangMehner/c-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -103,10 +103,8 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " Keys
 let g:mapleader=","
 no ' ,
-" ino <C-j> <Esc>
-" vn <C-j> <Esc>
-ino jj <Esc>
-vn jj <Esc>
+ino <C-j> <Esc>
+vn <C-j> <Esc>
 
 " Toggle paste mode
 no <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -132,10 +130,10 @@ nn <silent> ss    <C-w>s
 no <silent> <leader>0 <C-w>o
 
 " easier navigation between split windows
-" nn <c-j> <c-w>j
-" nn <c-k> <c-w>k
-" nn <c-h> <c-w>h
-" nn <c-l> <c-w>l
+nn <c-j> <c-w>j
+nn <c-k> <c-w>k
+nn <c-h> <c-w>h
+nn <c-l> <c-w>l
 
 vn Q gq
 nn Q gqap
@@ -197,11 +195,3 @@ let g:templates_directory = ['~/.vim/templates/']
 
 " DelimitMate
 let delimitMate_expand_cr = 1
-
-" YouCompleteMe
-" let g:ycm_auto_trigger = 1
-
-" UltiSnip
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
