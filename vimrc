@@ -35,9 +35,12 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
-" Plugin 'scrooloose/syntastic'
-" Plug 'SirVer/ultisnips'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'Juev/vim-jekyll'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'SirVer/ultisnips'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'WolfgangMehner/c-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
@@ -45,21 +48,17 @@ Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
-Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
-Plug 'liuchengxu/vim-which-key'
 Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
-Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
@@ -74,12 +73,10 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
-Plug 'WolfgangMehner/c-support'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
@@ -106,8 +103,10 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " Keys
 let g:mapleader=","
 no ' ,
-ino <C-j> <Esc>
-vn <C-j> <Esc>
+" ino <C-j> <Esc>
+" vn <C-j> <Esc>
+ino jj <Esc>
+vn jj <Esc>
 
 " Toggle paste mode
 no <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -133,10 +132,10 @@ nn <silent> ss    <C-w>s
 no <silent> <leader>0 <C-w>o
 
 " easier navigation between split windows
-nn <c-j> <c-w>j
-nn <c-k> <c-w>k
-nn <c-h> <c-w>h
-nn <c-l> <c-w>l
+" nn <c-j> <c-w>j
+" nn <c-k> <c-w>k
+" nn <c-h> <c-w>h
+" nn <c-l> <c-w>l
 
 vn Q gq
 nn Q gqap
@@ -200,4 +199,9 @@ let g:templates_directory = ['~/.vim/templates/']
 let delimitMate_expand_cr = 1
 
 " YouCompleteMe
-let g:ycm_auto_trigger = 0
+" let g:ycm_auto_trigger = 1
+
+" UltiSnip
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
