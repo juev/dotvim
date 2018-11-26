@@ -35,10 +35,6 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
-Plug 'Juev/vim-jekyll'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
@@ -46,6 +42,7 @@ Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
+Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -56,8 +53,11 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
+Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
+Plug 'SirVer/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -80,9 +80,6 @@ if has('mac') || has('unix')
 end
 
 call plug#end()
-
-" Use cmake
-let g:C_UseTool_cmake = 'yes'
 
 " Colors
 set t_Co=256
@@ -169,6 +166,8 @@ endif
 " Airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_detect_spell = 0
+let g:airline#extensions#keymap#enabled = 0
 
 " Vim-Rooter
 let g:rooter_silent_chdir = 1
