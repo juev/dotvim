@@ -40,6 +40,7 @@ Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
 Plug 'Juev/vim-jekyll'
@@ -154,7 +155,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " fzf
 set rtp+=~/.fzf
 nmap <Leader>b :Buffers<CR>
-nmap <Leader>o :Files<CR>
+nmap <Leader>f :Files<CR>
 set updatetime=100
 
 if exists('&signcolumn')  " Vim 7.4.2201
@@ -192,3 +193,13 @@ let g:templates_directory = ['~/.vim/templates/']
 
 " DelimitMate
 let delimitMate_expand_cr = 1
+
+" Diff
+if &diff
+    set cursorline
+    map ] ]c
+    map [ [c
+    " hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
+    " hi DiffChange ctermbg=233  guibg=#ececec gui=none   cterm=none
+    " hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+endif
