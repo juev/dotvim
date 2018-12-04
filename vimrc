@@ -27,6 +27,8 @@ let no_buffers_menu = 1
 
 scriptencoding utf-8
 set encoding=utf-8
+set fileencodings=utf-8,cp1251,koi8-r
+
 if has('mac') || has('unix')
   set shell=bash
 endif
@@ -58,7 +60,6 @@ Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
-Plug 'SirVer/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -199,9 +200,9 @@ if &diff
     set cursorline
     map ] ]c
     map [ [c
-    " hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
-    " hi DiffChange ctermbg=233  guibg=#ececec gui=none   cterm=none
-    " hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+    hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
+    hi DiffChange ctermbg=233  guibg=#ececec gui=none   cterm=none
+    hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
     map <leader>1 :diffget LOCAL<CR>
     map <leader>2 :diffget BASE<CR>
     map <leader>3 :diffget REMOTE<CR>
