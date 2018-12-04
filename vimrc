@@ -37,6 +37,9 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
+Plug 'Juev/vim-jekyll'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
@@ -45,7 +48,6 @@ Plug 'bhurlow/vim-parinfer'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
-Plug 'Juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
@@ -56,9 +58,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'pearofducks/ansible-vim'
 Plug 'qpkorr/vim-bufkill'
-Plug 'Raimondi/delimitMate'
 Plug 'scrooloose/nerdtree'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
@@ -73,6 +73,7 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
+Plug 'tweekmonster/startuptime.vim'
 Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
