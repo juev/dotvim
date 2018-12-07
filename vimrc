@@ -1,19 +1,54 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
-set nocompatible hidden autowrite autoread autoindent nosmartindent nocindent
-set linebreak lazyredraw ttyfast confirm ruler cursorline splitbelow splitright mousehide
-set wildmenu wildmode=full switchbuf=useopen scrolloff=8 sidescrolloff=8
-set noerrorbells visualbell t_vb= foldcolumn=1
-set magic nohlsearch ignorecase smartcase incsearch
-set expandtab smarttab nowrap
+set nocompatible        " Disable vi compatibility
+set hidden " can put buffer to the background without writing
+                            "   to disk, will remember history/marks.
+set autowrite
+set autoread " reload files if changed externally
+set autoindent
+set nosmartindent
+set nocindent
+set linebreak
+set lazyredraw " don't update the display while executing macros
+set ttyfast " Send more characters at a given time.
+set confirm
+set ruler
+set cursorline
+set splitbelow
+set splitright
+set mousehide
+set wildmenu
+set wildmode=full
+set switchbuf=useopen
+set scrolloff=8
+set sidescrolloff=8
+set noerrorbells
+set visualbell
+set t_vb=
+set foldcolumn=1
+set magic
+set nohlsearch
+set ignorecase
+set smartcase
+set incsearch
+set expandtab
+set smarttab
+set nowrap
 set laststatus=2
 set guicursor=a:blinkwait0,a:block-cursor
-set nobackup nowritebackup noswapfile
-set modeline modelines=0
+
+" --- backup and swap files ---
+" I save all the time, those are annoying and unnecessary...
+set nobackup
+set nowritebackup
+set noswapfile
+set modeline
+set modelines=0
 set nrformats=
 set backspace=eol,start,indent
-set tabstop=4 shiftwidth=4
+set tabstop=4
+set shiftwidth=4
 set viminfo='100,n$HOME/.vim/viminfo
 
 mapclear
