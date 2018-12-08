@@ -15,10 +15,9 @@ set ttyfast                  " Send more characters at a given time.
 set confirm
 set ruler
 set cursorline               " Highlight current line
-set splitbelow
-set splitright
+set splitbelow splitright    " how to split new windows.
 set mousehide
-set wildmenu
+set wildmenu                 " Hitting TAB in command mode will
 set wildmode=full
 set switchbuf=useopen
 set scrolloff=8
