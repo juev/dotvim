@@ -1,20 +1,20 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
-set nocompatible        " Disable vi compatibility
-set hidden " can put buffer to the background without writing
-                            "   to disk, will remember history/marks.
+set nocompatible             " Disable vi compatibility
+set hidden                   " can put buffer to the background without writing
+                             " to disk, will remember history/marks.
 set autowrite
-set autoread " reload files if changed externally
-set autoindent
-set nosmartindent
+set autoread                 " reload files if changed externally
+set autoindent nosmartindent " auto/smart indent
 set nocindent
+set nocopyindent             " copy previous indentation on auto indent
 set linebreak
-set lazyredraw " don't update the display while executing macros
-set ttyfast " Send more characters at a given time.
+set lazyredraw               " don't update the display while executing macros
+set ttyfast                  " Send more characters at a given time.
 set confirm
 set ruler
-set cursorline
+set cursorline               " Highlight current line
 set splitbelow
 set splitright
 set mousehide
@@ -89,6 +89,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install  --no-bash' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-easy-align'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'mhinz/vim-startify'
 Plug 'octol/vim-cpp-enhanced-highlight'
