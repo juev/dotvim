@@ -2,39 +2,52 @@ let $LANG = 'en'
 set runtimepath^=~/.vim
 
 set nocompatible             " Disable vi compatibility
+
+" --- performance / buffer ---
 set hidden                   " can put buffer to the background without writing
-                             " to disk, will remember history/marks.
-set autowrite
-set autoread                 " reload files if changed externally
-set autoindent nosmartindent " auto/smart indent
-set nocindent
-set nocopyindent             " copy previous indentation on auto indent
-set linebreak
 set lazyredraw               " don't update the display while executing macros
 set ttyfast                  " Send more characters at a given time.
-set confirm
-set ruler
+                             " to disk, will remember history/marks.
+" --- history / file handling ---
+set history=999              " Increase history (default = 20)
+set undolevels=999           " Moar undo (default=100)
+set autoread                 " reload files if changed externally
+
+set autoindent nosmartindent " auto/smart indent
+set nocindent                " Enables automatic C program indenting.
+set nocopyindent             " copy previous indentation on auto indent
+set ruler                    " Show the line and column number of the cursor position,
+                             " separated by a comma.
 set cursorline               " Highlight current line
 set splitbelow splitright    " how to split new windows.
-set mousehide
+set mousehide                " When on, the mouse pointer is hidden when characters are typed.
 set wildmenu                 " Hitting TAB in command mode will
-set wildmode=full
-set switchbuf=useopen
-set scrolloff=8
-set sidescrolloff=8
+set wildmode=full            " Complete first full match, next match, etc.  (the default)
+set switchbuf=useopen        " useopen	If included, jump to the first open window that
+			                       " contains the specified buffer (if there is one).
+set scrolloff=4              " Minimal number of screen lines to keep above and below the cursor.
+set sidescrolloff=4          " Start scrolling n chars before end of screen.
+
+" --- remove sounds effects ---
 set noerrorbells
 set visualbell
 set t_vb=
-set foldcolumn=1
-set magic
-set nohlsearch
-set ignorecase
-set smartcase
-set incsearch
-set expandtab
-set smarttab
-set nowrap
-set laststatus=2
+
+set foldcolumn=1             " Column with the specified width is shown at the side of the widow
+
+" --- search / regexp ---
+set gdefault                 " RegExp global by default
+set magic                    " Enable extended regexes.
+set hlsearch                 " highlight searches
+set ignorecase smartcase     " make searches case-insensitive, unless they
+                             " contain upper-case letters
+set incsearch                " show the `best match so far' astyped
+
+set expandtab                " Expand tabs to spaces
+set smarttab                 " At start of line, <Tab> inserts shift width
+                             " spaces, <Bs> deletes shift width spaces.
+set nowrap                   " wrap lines
+set laststatus=2             " Always show status line
 set guicursor=a:blinkwait0,a:block-cursor
 
 " --- backup and swap files ---
@@ -42,12 +55,15 @@ set guicursor=a:blinkwait0,a:block-cursor
 set nobackup
 set nowritebackup
 set noswapfile
-set modeline
-set modelines=0
-set nrformats=
-set backspace=eol,start,indent
-set tabstop=4
-set shiftwidth=4
+
+set nomodeline                 " don't use modeline (security)
+set backspace=eol,start,indent " allow backspacing over everything.
+set esckeys                    " Allow cursor keys in insert mode.
+set nostartofline              " Make j/k respect the columns
+set softtabstop=2              " Tab key results in # spaces
+set tabstop=2                  " Tab is # spaces
+set shiftwidth=2               " The # of spaces for indenting.
+
 set viminfo='100,n$HOME/.vim/viminfo
 
 mapclear
@@ -60,7 +76,7 @@ let g:jekyll_path = "~/Projects/juev.org/source"
 let no_buffers_menu = 1
 
 scriptencoding utf-8
-set encoding=utf-8
+set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,koi8-r
 
 if has('mac') || has('unix')
@@ -136,7 +152,10 @@ endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
 
 " Keys
-let g:mapleader=","
+" Change mapleader (easier to type), at the top since its used everywhere
+let mapleader=","
+let maplocalleader=";"
+
 no ' ,
 ino <C-j> <Esc>
 vn <C-j> <Esc>
