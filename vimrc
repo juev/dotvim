@@ -33,7 +33,7 @@ set noerrorbells
 set visualbell
 set t_vb=
 
-set foldcolumn=1             " Column with the specified width is shown at the side of the widow
+set foldcolumn=2             " Column with the specified width is shown at the side of the widow
 
 " --- search / regexp ---
 set gdefault                 " RegExp global by default
@@ -97,21 +97,21 @@ Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'henrik/rename.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install  --no-bash' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kshenoy/vim-signature'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'mhinz/vim-startify'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'pearofducks/ansible-vim'
+Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'reedes/vim-one'
 Plug 'scrooloose/nerdtree'
+Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
@@ -127,7 +127,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
 Plug 'tweekmonster/startuptime.vim'
-Plug 'vhdirk/vim-cmake'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
@@ -211,10 +210,10 @@ map <F8> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " fzf
-set rtp+=~/.fzf
-nmap <Leader>b :Buffers<CR>
-nmap <Leader>f :Files<CR>
-set updatetime=100
+" set rtp+=~/.fzf
+" nmap <Leader>b :Buffers<CR>
+" nmap <Leader>f :Files<CR>
+" set updatetime=100
 
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
@@ -264,3 +263,7 @@ if &diff
     map <leader>2 :diffget BASE<CR>
     map <leader>3 :diffget REMOTE<CR>
 endif
+
+" CtrP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
