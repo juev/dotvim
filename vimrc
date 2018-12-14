@@ -130,6 +130,7 @@ Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
+Plug 'will133/vim-dirdiff'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
@@ -256,14 +257,23 @@ if &diff
     set cursorline
     map ] ]c
     map [ [c
-    hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
-    hi DiffChange ctermbg=233  guibg=#ececec gui=none   cterm=none
-    hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
+    " hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
+    " hi DiffChange ctermbg=233  guibg=#ececec gui=none   cterm=none
+    " hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
     map <leader>1 :diffget LOCAL<CR>
     map <leader>2 :diffget BASE<CR>
     map <leader>3 :diffget REMOTE<CR>
+    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
+    set diffopt+=iwhite
+    set diffexpr=""
 endif
 
 " CtrP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
