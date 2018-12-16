@@ -100,6 +100,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -277,3 +278,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
+" vim-markdown
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
