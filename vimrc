@@ -87,6 +87,7 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
+" Plug 'scrooloose/nerdtree'
 Plug 'Juev/vim-jekyll'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -102,6 +103,7 @@ Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
+Plug 'jceb/vim-orgmode'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
@@ -111,7 +113,6 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'reedes/vim-one'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
@@ -127,11 +128,13 @@ Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-salve'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'will133/vim-dirdiff'
+Plug 'wincent/terminus'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
@@ -208,8 +211,8 @@ nmap <Leader>c :Commentary<CR>
 vmap <Leader>c :Commentary<CR>
 
 " NERDTree
-map <F8> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" map <F8> :NERDTreeToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " fzf
 " set rtp+=~/.fzf
