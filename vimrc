@@ -111,6 +111,7 @@ Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
+Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
@@ -277,3 +278,7 @@ endif
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
+
+" Rust
+let g:rustfmt_autosave = 1
+let g:racer_cmd = "~/.cargo/bin/racer"
