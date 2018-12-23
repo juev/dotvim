@@ -87,7 +87,6 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
-" Plug 'scrooloose/nerdtree'
 Plug 'Juev/vim-jekyll'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
@@ -113,6 +112,7 @@ Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'reedes/vim-one'
+Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
@@ -210,16 +210,6 @@ nnoremap <S-Tab> :bprevious<CR>
 " Commentary
 nmap <Leader>c :Commentary<CR>
 vmap <Leader>c :Commentary<CR>
-
-" NERDTree
-" map <F8> :NERDTreeToggle<CR>
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-" fzf
-" set rtp+=~/.fzf
-" nmap <Leader>b :Buffers<CR>
-" nmap <Leader>f :Files<CR>
-" set updatetime=100
 
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
