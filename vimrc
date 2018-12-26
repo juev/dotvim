@@ -266,9 +266,15 @@ endif
 " CtrP
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 nnoremap <leader>p :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
+
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+endif
 
 " Ack
 if executable('ag')
