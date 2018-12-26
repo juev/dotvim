@@ -110,6 +110,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
+Plug 'neovimhaskell/haskell-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
@@ -268,6 +269,8 @@ endif
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+nnoremap <leader>p :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRUFiles<CR>
 
 " Ack
 if executable('ag')
