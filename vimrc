@@ -110,7 +110,6 @@ Plug 'kshenoy/vim-signature'
 Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
