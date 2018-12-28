@@ -222,6 +222,7 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
+let g:airline#extensions#ale#enabled = 1
 
 " Vim-Rooter
 let g:rooter_silent_chdir = 1
@@ -289,3 +290,17 @@ let g:vim_markdown_toml_frontmatter = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
+
+" Ale
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'haskell': ['hfmt'],
+\}
+let g:ale_linters = {
+\   'haskell': ['stack-ghc', 'hlint'],
+\}
+
+nmap <silent> <Leader><  <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>>  <Plug>(ale_next_wrap)
+nmap <silent> <Leader>? <Plug>(ale_detail)
