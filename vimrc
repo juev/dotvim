@@ -100,6 +100,7 @@ Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fvictorio/vim-yank-queue'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
 Plug 'jceb/vim-orgmode'
