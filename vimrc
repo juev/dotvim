@@ -98,7 +98,6 @@ Plug 'b4b4r07/vim-ansible-vault'
 Plug 'bhurlow/vim-parinfer'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fvictorio/vim-yank-queue'
 Plug 'godlygeek/tabular'
@@ -114,6 +113,7 @@ Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
+Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
@@ -305,3 +305,12 @@ let g:ale_linters = {
 nmap <silent> <Leader><  <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>>  <Plug>(ale_next_wrap)
 nmap <silent> <Leader>? <Plug>(ale_detail)
+
+" Clang-format
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+autocmd FileType c ClangFormatAutoEnable
