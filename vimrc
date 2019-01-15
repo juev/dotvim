@@ -88,6 +88,7 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 
 Plug 'Juev/vim-jekyll'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Yggdroot/indentLine'
@@ -133,6 +134,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'will133/vim-dirdiff'
@@ -147,8 +149,9 @@ call plug#end()
 set t_Co=256
 syntax enable
 
-if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
-  colorscheme badwolf
+if filereadable(expand("~/.vim/plugged/papercolor-theme/README.md"))
+  set background=dark
+  colorscheme PaperColor
 endif
 
 " Keymap
@@ -224,6 +227,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
+let g:airline_theme='papercolor'
 
 " Vim-Rooter
 let g:rooter_silent_chdir = 1
