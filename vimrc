@@ -87,9 +87,9 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
+" Plug 'Raimondi/delimitMate'
 Plug 'Juev/vim-jekyll'
 Plug 'NLKNguyen/papercolor-theme'
-Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
@@ -120,6 +120,7 @@ Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
 Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tmsvg/pear-tree'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
