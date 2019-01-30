@@ -72,7 +72,7 @@ if !has("gui_running")
   set nocursorline
 end
 
-let g:jekyll_path = "~/Projects/juev.org/source"
+let g:jekyll_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
 
 scriptencoding utf-8
