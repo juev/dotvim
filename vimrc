@@ -163,7 +163,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
-let mapleader=","
+let mapleader=" "
 let maplocalleader=";"
 
 no ' ,
@@ -274,7 +274,7 @@ endif
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-nnoremap <leader>p :CtrlPBuffer<CR>
+nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRUFiles<CR>
 
 if executable('rg')
