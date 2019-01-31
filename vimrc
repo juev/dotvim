@@ -103,7 +103,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fvictorio/vim-yank-queue'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
-Plug 'jceb/vim-orgmode'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
