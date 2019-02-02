@@ -13,9 +13,9 @@ set history=999              " Increase history (default = 20)
 set undolevels=999           " Moar undo (default=100)
 set autoread                 " reload files if changed externally
 
-set autoindent nosmartindent " auto/smart indent
-set nocindent                " Enables automatic C program indenting.
-set nocopyindent             " copy previous indentation on auto indent
+set autoindent smartindent   " auto/smart indent
+set cindent                  " Enables automatic C program indenting.
+set nocopyindent             " Do not copy previous indentation on auto indent
 set ruler                    " Show the line and column number of the cursor position,
                              " separated by a comma.
 set cursorline               " Highlight current line
