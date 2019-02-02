@@ -9,13 +9,11 @@ set lazyredraw               " don't update the display while executing macros
 set ttyfast                  " Send more characters at a given time.
                              " to disk, will remember history/marks.
 " --- history / file handling ---
-set history=999              " Increase history (default = 20)
-set undolevels=999           " Moar undo (default=100)
 set autoread                 " reload files if changed externally
 
-set autoindent smartindent   " auto/smart indent
-set cindent                  " Enables automatic C program indenting.
-set nocopyindent             " Do not copy previous indentation on auto indent
+" set autoindent smartindent   " auto/smart indent
+" set cindent                  " Enables automatic C program indenting.
+" set nocopyindent             " Do not copy previous indentation on auto indent
 set ruler                    " Show the line and column number of the cursor position,
                              " separated by a comma.
 set cursorline               " Highlight current line
@@ -45,7 +43,7 @@ set incsearch                " show the `best match so far' astyped
 set expandtab                " Expand tabs to spaces
 set smarttab                 " At start of line, <Tab> inserts shift width
                              " spaces, <Bs> deletes shift width spaces.
-set nowrap                   " wrap lines
+" set nowrap                   " wrap lines
 set laststatus=2             " Always show status line
 set guicursor=a:blinkwait0,a:block-cursor
 
@@ -65,7 +63,7 @@ set shiftwidth=2               " The # of spaces for indenting.
 
 set viminfo='100,n$HOME/.vim/viminfo
 
-mapclear
+" mapclear
 
 if !has("gui_running")
   set nocursorline
@@ -286,6 +284,7 @@ endif
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_auto_insert_bullets = 1
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -309,10 +308,6 @@ nmap <silent> <Leader>? <Plug>(ale_detail)
 " map to <Leader>cf in C++ code
 autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
-
-autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
-
-" Disables automatic commenting on newline:
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
