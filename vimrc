@@ -36,7 +36,6 @@ set t_vb=
 set foldcolumn=2             " Column with the specified width is shown at the side of the widow
 
 " --- search / regexp ---
-set gdefault                 " RegExp global by default
 set magic                    " Enable extended regexes.
 set hlsearch                 " highlight searches
 set ignorecase smartcase     " make searches case-insensitive, unless they
@@ -103,11 +102,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'fvictorio/vim-yank-queue'
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kshenoy/vim-signature'
-Plug 'l04m33/vlime', {'rtp': '~/.vim/'}
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
@@ -116,8 +113,6 @@ Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
-Plug 'sjl/badwolf'
-Plug 'srcery-colors/srcery-vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmsvg/pear-tree'
 Plug 'tomtom/tlib_vim'
@@ -177,7 +172,7 @@ no <silent> <Leader>q :BW<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
-no <space> :
+" no <space> :
 
 no j gj
 no k gk
@@ -318,7 +313,6 @@ autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
-
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
