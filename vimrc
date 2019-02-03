@@ -11,9 +11,9 @@ set ttyfast                  " Send more characters at a given time.
 " --- history / file handling ---
 set autoread                 " reload files if changed externally
 
-" set autoindent smartindent   " auto/smart indent
-" set cindent                  " Enables automatic C program indenting.
-" set nocopyindent             " Do not copy previous indentation on auto indent
+set autoindent smartindent   " auto/smart indent
+set cindent                  " Enables automatic C program indenting.
+set nocopyindent             " Do not copy previous indentation on auto indent
 set ruler                    " Show the line and column number of the cursor position,
                              " separated by a comma.
 set cursorline               " Highlight current line
@@ -61,9 +61,12 @@ set softtabstop=2              " Tab key results in # spaces
 set tabstop=2                  " Tab is # spaces
 set shiftwidth=2               " The # of spaces for indenting.
 
+" highlight a matching [{()}] when cursor is placed on start/end character
+set showmatch
+
 set viminfo='100,n$HOME/.vim/viminfo
 
-" mapclear
+mapclear
 
 if !has("gui_running")
   set nocursorline
@@ -128,6 +131,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-scripts/c.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'will133/vim-dirdiff'
@@ -155,7 +159,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
-let mapleader=" "
+let mapleader=","
 let maplocalleader=";"
 
 no ' ,
@@ -311,3 +315,6 @@ autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
+
+" Set built-in file system explorer to use layout similar to the NERDTree plugin
+let g:netrw_liststyle=3
