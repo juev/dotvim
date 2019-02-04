@@ -109,6 +109,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
+" Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
@@ -307,7 +308,12 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " Netrw
 let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
+let g:netrw_liststyle = 0
+let g:netrw_browse_split = 0
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+autocmd FileType netrw setl bufhidden=wipe
+
+" NerdTree
+" map <C-n> :NERDTreeToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
