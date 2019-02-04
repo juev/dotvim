@@ -131,7 +131,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-scripts/c.vim'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'will133/vim-dirdiff'
@@ -174,7 +173,7 @@ no <silent> <Leader>q :BW<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
-" no <space> :
+no <space> :
 
 no j gj
 no k gk
