@@ -109,7 +109,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
-" Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
@@ -226,6 +226,9 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 
+" Anibsle
+let g:ansible_unindent_after_newline = 1
+
 " Ansible-Vault
 let g:ansible_vault_password_file = '~/.vault_pass'
 
@@ -315,5 +318,5 @@ let g:netrw_browse_split = 0
 autocmd FileType netrw setl bufhidden=wipe
 
 " NerdTree
-" map <C-n> :NERDTreeToggle<CR>
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
