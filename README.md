@@ -1,10 +1,10 @@
-##Pre-requisites
+## Pre-requisites
 
 The distribution is designed to work with Vim >= 7.3.
 
 The distribution also requires `git`.
 
-##Installation
+## Installation
 
 **Mac** or **Linux**:
 
@@ -32,6 +32,6 @@ Done!
     > copy vimrc %USERPROFILE%\_vimrc
     > copy gvimrc %USERPROFILE%\_gvimrc
 
-##Appearance
+## Appearance
 
 ![macvim](http://juev.s3.amazonaws.com/macvim.png "MacVim")
