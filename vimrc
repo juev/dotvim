@@ -318,5 +318,6 @@ let g:netrw_browse_split = 0
 autocmd FileType netrw setl bufhidden=wipe
 
 " NerdTree
+let NERDTreeHijackNetrw=1
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
