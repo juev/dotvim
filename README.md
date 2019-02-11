@@ -8,7 +8,7 @@ The distribution also requires `git`.
 
 **Mac** or **Linux**:
 
-    $ curl https://raw.githubusercontent.com/Juev/dotvim/master/install.sh | sh
+    $ curl https://raw.githubusercontent.com/juev/dotvim/master/install.sh | sh
 
 or shorter:
 
@@ -20,7 +20,7 @@ Manual install:
     $ git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
     $ ln -s ~/.vim/vimrc ~/.vimrc
     $ ln -s ~/.vim/gvimrc ~/.gvimrc
-    $ vim +BundleInstall +qall
+    $ vim +PlugUpgrade! +PlugInstall! +qall
 
 Done!
 
