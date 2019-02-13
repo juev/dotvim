@@ -87,6 +87,8 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
+" Plug 'tpope/vim-vinegar'
+" Plug 'scrooloose/nerdtree'
 Plug 'Juev/vim-jekyll'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'Raimondi/delimitMate'
@@ -109,7 +111,6 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
-Plug 'scrooloose/nerdtree'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
@@ -119,7 +120,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -198,6 +198,12 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 
+" Disable arrow keys completely in Insert Mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
 " Commentary
 nmap <Leader>c :Commentary<CR>
 vmap <Leader>c :Commentary<CR>
@@ -210,9 +216,9 @@ endif
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
-let g:airline#extensions#keymap#enabled = 0
+" let g:airline#extensions#keymap#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='papercolor'
 
@@ -234,6 +240,8 @@ let g:ansible_vault_password_file = '~/.vault_pass'
 
 " Indent guides
 let g:indent_guides_enable_on_vim_startup = 1
+let g:indentLine_enabled = 1
+let g:indentLine_char = "⟩"
 
 " vim-template
 let g:username = "Denis Evsyukov"
@@ -311,13 +319,13 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " Netrw
 let g:netrw_banner = 0
-let g:netrw_liststyle = 0
+let g:netrw_liststyle = 3
 let g:netrw_browse_split = 0
-" let g:netrw_altv = 1
-" let g:netrw_winsize = 25
+let g:netrw_altv = 0
+let g:netrw_winsize = 25
 autocmd FileType netrw setl bufhidden=wipe
 
 " NerdTree
-let NERDTreeHijackNetrw=1
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" let NERDTreeHijackNetrw=1
+" map <C-n> :NERDTreeToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
