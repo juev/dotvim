@@ -234,6 +234,15 @@ let g:go_highlight_functions = 1
 
 " Anibsle
 let g:ansible_unindent_after_newline = 1
+au BufRead,BufNewFile */defaults/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */tasks/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */handler/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */*_vars/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */roles/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */*ansible*/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */vars/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
 
 " Ansible-Vault
 let g:ansible_vault_password_file = '~/.vault_pass'
