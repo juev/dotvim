@@ -87,8 +87,6 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
-" Plug 'tpope/vim-vinegar'
-" Plug 'scrooloose/nerdtree'
 Plug 'Juev/vim-jekyll'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'Raimondi/delimitMate'
@@ -98,10 +96,11 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kshenoy/vim-signature'
@@ -120,6 +119,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -276,19 +276,6 @@ if &diff
     set diffexpr=""
 endif
 
-" CtrP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-" let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMRUFiles<CR>
-
-if executable('rg')
-  set grepprg=rg\ --color=never
-  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
-  let g:ctrlp_use_caching = 0
-endif
-
 " Ack
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
@@ -334,7 +321,21 @@ let g:netrw_altv = 0
 let g:netrw_winsize = 25
 autocmd FileType netrw setl bufhidden=wipe
 
-" NerdTree
-" let NERDTreeHijackNetrw=1
-" map <C-n> :NERDTreeToggle<CR>
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" fzf
+" Mapping selecting mappings
+nmap <leader><tab> <plug>(fzf-maps-n)
+xmap <leader><tab> <plug>(fzf-maps-x)
+omap <leader><tab> <plug>(fzf-maps-o)
+
+" Insert mode completion
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
+" Advanced customization using autoload functions
+inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+"
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>m :History<CR>
+nnoremap <leader>f :Files<CR>
