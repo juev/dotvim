@@ -317,3 +317,5 @@ let g:fzf_buffers_jump = 1
 nnoremap ; :Buffers<CR>
 nnoremap <leader>m :History<CR>
 nnoremap <leader>f :Files<CR>
+
+let g:netrw_altv = 1
