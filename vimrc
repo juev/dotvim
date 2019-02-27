@@ -95,10 +95,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
+Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
-Plug 'henrik/rename.vim'
-Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -115,6 +114,7 @@ Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -135,9 +135,10 @@ call plug#end()
 set t_Co=256
 syntax enable
 
-if filereadable(expand("~/.vim/plugged/papercolor-theme/README.md"))
-  set background=dark
-  colorscheme PaperColor
+if filereadable(expand("~/.vim/plugged/dracula/README.md"))
+  " set background=dark
+  " set termguicolors
+  colorscheme dracula
 endif
 
 " Keymap
@@ -163,7 +164,7 @@ no <silent> <Leader>q :BW<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
-no <space> :
+" no <space> :
 
 no j gj
 no k gk
@@ -220,10 +221,6 @@ let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='papercolor'
-
-" Vim-Rooter
-" let g:rooter_silent_chdir = 1
-" let g:rooter_resolve_links = 1
 
 " Vim-Go
 let g:go_template_autocreate = 0
@@ -312,29 +309,10 @@ autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
-" Netrw
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_browse_split = 0
-" let g:netrw_altv = 0
-" let g:netrw_winsize = 25
-" autocmd FileType netrw setl bufhidden=wipe
-
 " fzf
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
+" " [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
 
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-"
-nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
+nnoremap ; :Buffers<CR>
 nnoremap <leader>m :History<CR>
 nnoremap <leader>f :Files<CR>
