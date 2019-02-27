@@ -93,12 +93,12 @@ Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'henrik/rename.vim'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -117,7 +117,6 @@ Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tweekmonster/startuptime.vim'
@@ -149,7 +148,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
-let mapleader=","
+let mapleader=" "
 let maplocalleader=";"
 
 no ' ,
@@ -195,8 +194,8 @@ nn S :%s//g<LEFT><LEFT>
 
 cmap w!! w !sudo tee > /dev/null %
 
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nnoremap <silent> <Tab> :bn<CR>
+nnoremap <silent> <S-Tab> :bp<CR>
 
 " Disable arrow keys completely in Insert Mode
 imap <up> <nop>
@@ -216,15 +215,15 @@ endif
 
 " Airline
 let g:airline_powerline_fonts = 1
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme='papercolor'
 
 " Vim-Rooter
-let g:rooter_silent_chdir = 1
-let g:rooter_resolve_links = 1
+" let g:rooter_silent_chdir = 1
+" let g:rooter_resolve_links = 1
 
 " Vim-Go
 let g:go_template_autocreate = 0
@@ -314,12 +313,12 @@ autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 " Netrw
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 0
-let g:netrw_altv = 0
-let g:netrw_winsize = 25
-autocmd FileType netrw setl bufhidden=wipe
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 0
+" let g:netrw_altv = 0
+" let g:netrw_winsize = 25
+" autocmd FileType netrw setl bufhidden=wipe
 
 " fzf
 " Mapping selecting mappings
@@ -336,6 +335,6 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 " Advanced customization using autoload functions
 inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
 "
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>b :BufExplorerHorizontalSplit<CR>
 nnoremap <leader>m :History<CR>
 nnoremap <leader>f :Files<CR>
