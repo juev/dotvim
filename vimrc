@@ -150,7 +150,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
-let mapleader=" "
+" let mapleader=" "
 " let maplocalleader=";"
 
 no ' ,
@@ -165,7 +165,7 @@ no <silent> <Leader>q :BW<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
-" no <space> :
+no <space> :
 
 no j gj
 no k gk
@@ -314,8 +314,8 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 " " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 
-nnoremap ; :Buffers<CR>
+nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>m :History<CR>
 nnoremap <leader>f :Files<CR>
 
-let g:netrw_altv = 1
+let g:netrw_altfile = 1
