@@ -4,12 +4,13 @@ set runtimepath^=~/.vim
 set nocompatible             " Disable vi compatibility
 
 " --- performance / buffer ---
-set hidden                   " can put buffer to the background without writing
+" set hidden                   " can put buffer to the background without writing
 set lazyredraw               " don't update the display while executing macros
 set ttyfast                  " Send more characters at a given time.
                              " to disk, will remember history/marks.
 " --- history / file handling ---
 set autoread                 " reload files if changed externally
+set autowrite                " autowite when changing file
 
 set autoindent smartindent   " auto/smart indent
 set cindent                  " Enables automatic C program indenting.
@@ -71,6 +72,14 @@ mapclear
 if !has("gui_running")
   set nocursorline
 end
+
+if exists('+breakindent')
+  set breakindent showbreak=\ +
+endif
+
+if exists('+macmeta')
+  setglobal macmeta
+endif
 
 let g:jekyll_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
