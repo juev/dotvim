@@ -145,10 +145,10 @@ call plug#end()
 set t_Co=256
 syntax enable
 
-if filereadable(expand("~/.vim/plugged/dracula/README.md"))
-  " set background=dark
-  " set termguicolors
-  colorscheme dracula
+if filereadable(expand("~/.vim/plugged/papercolor-theme/README.md"))
+  set background=dark
+  set termguicolors
+  colorscheme Papercolor
 endif
 
 " Keymap
