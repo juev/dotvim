@@ -7,9 +7,8 @@ set antialias
 if has('mac')
   "set guifont=Dejavu\ Sans\ Mono\ for\ Powerline:h15
   " set guifont=Menlo:h15
-  " set guifont=Fira\ Code:h14
-  set guifont=Source\ Code\ Pro:h14
-  set lines=60 columns=150
+  set guifont=Fira\ Code:h14
+  set lines=60 columns=230
   " set macmeta
 elseif has('win32') || has('win64')
     set guifont=Lucida_Console:h12
