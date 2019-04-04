@@ -95,45 +95,45 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
-Plug 'will133/vim-dirdiff'
-Plug 'wellle/targets.vim'
-Plug 'w0rp/ale'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
-Plug 'tweekmonster/startuptime.vim'
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-apathy'
-Plug 'tomtom/tlib_vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'shvechikov/vim-keymap-russian-jcukenmac'
-Plug 'sheerun/vim-polyglot'
-Plug 'rhysd/vim-clang-format'
-Plug 'reedes/vim-one'
-Plug 'racer-rust/vim-racer'
-Plug 'qpkorr/vim-bufkill'
-Plug 'mileszs/ack.vim'
-Plug 'mhinz/vim-startify'
-Plug 'kshenoy/vim-signature'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'godlygeek/tabular'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'b4b4r07/vim-ansible-vault'
-Plug 'aperezdc/vim-template'
-Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Raimondi/delimitMate'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'Juev/vim-jekyll'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'Yggdroot/indentLine'
+Plug 'airblade/vim-gitgutter'
+Plug 'aperezdc/vim-template'
+Plug 'b4b4r07/vim-ansible-vault'
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'godlygeek/tabular'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'kshenoy/vim-signature'
+Plug 'mhinz/vim-startify'
+Plug 'mileszs/ack.vim'
+Plug 'qpkorr/vim-bufkill'
+Plug 'racer-rust/vim-racer'
+Plug 'reedes/vim-one'
+Plug 'rhysd/vim-clang-format'
+Plug 'sheerun/vim-polyglot'
+Plug 'shvechikov/vim-keymap-russian-jcukenmac'
+Plug 'tomtom/tcomment_vim'
+Plug 'tomtom/tlib_vim'
+Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
+Plug 'tweekmonster/startuptime.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'w0rp/ale'
+Plug 'wellle/targets.vim'
+Plug 'will133/vim-dirdiff'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
@@ -213,9 +213,9 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-" Commentary
-nmap <Leader>c :Commentary<CR>
-vmap <Leader>c :Commentary<CR>
+" T-commentary
+nmap <Leader>c :TComment<CR>
+vmap <Leader>c :TComment<CR>
 
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
