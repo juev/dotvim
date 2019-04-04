@@ -57,9 +57,9 @@ set noswapfile
 set nomodeline                 " don't use modeline (security)
 set backspace=eol,start,indent " allow backspacing over everything.
 set nostartofline              " Make j/k respect the columns
-set softtabstop=4              " Tab key results in # spaces
-set tabstop=4                  " Tab is # spaces
-set shiftwidth=4               " The # of spaces for indenting.
+set softtabstop=2              " Tab key results in # spaces
+set tabstop=2                  " Tab is # spaces
+set shiftwidth=2               " The # of spaces for indenting.
 
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
