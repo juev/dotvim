@@ -64,7 +64,7 @@ set shiftwidth=2               " The # of spaces for indenting.
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
 
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 set viminfo='100,n$HOME/.vim/viminfo
 
