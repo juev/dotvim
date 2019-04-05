@@ -106,10 +106,9 @@ Plug 'b4b4r07/vim-ansible-vault'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'kien/ctrlp.vim'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -318,12 +317,12 @@ autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
-" fzf
-" " [Buffers] Jump to the existing window if possible
-let g:fzf_buffers_jump = 1
-
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>m :History<CR>
-nnoremap <leader>f :Files<CR>
-
 let g:netrw_altfile = 1
+
+" CtrP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <leader>m :CtrlPMRU<CR>
+nnoremap <leader>f :CtrlP<CR>
