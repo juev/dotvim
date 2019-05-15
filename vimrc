@@ -115,11 +115,11 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
+Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-apathy'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -202,10 +202,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
-
-" T-commentary
-nmap <Leader>c :Commentary<CR>
-vmap <Leader>c :Commentary<CR>
 
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
