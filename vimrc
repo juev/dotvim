@@ -22,8 +22,8 @@ set splitbelow splitright    " how to split new windows.
 set mousehide                " When on, the mouse pointer is hidden when characters are typed.
 set wildmenu                 " Hitting TAB in command mode will
 set wildmode=full            " Complete first full match, next match, etc.  (the default)
-set switchbuf=useopen        " useopen	If included, jump to the first open window that
-			                       " contains the specified buffer (if there is one).
+set switchbuf=useopen        " useopen If included, jump to the first open window that
+                          " contains the specified buffer (if there is one).
 set scrolloff=4              " Minimal number of screen lines to keep above and below the cursor.
 set sidescrolloff=4          " Start scrolling n chars before end of screen.
 
@@ -98,11 +98,11 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 
 Plug 'Juev/vim-jekyll'
-Plug 'NLKNguyen/papercolor-theme'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -145,10 +145,10 @@ call plug#end()
 set t_Co=256
 syntax enable
 
-if filereadable(expand("~/.vim/plugged/papercolor-theme/README.md"))
-  set background=dark
+if filereadable(expand("~/.vim/plugged/vim-colors-solarized/README.mkd"))
+  set background=light
   set termguicolors
-  colorscheme Papercolor
+  colorscheme solarized
 endif
 
 " Keymap
@@ -207,12 +207,6 @@ cmap w!! w !sudo tee > /dev/null %
 
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
-
-" Disable arrow keys completely in Insert Mode
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
 
 " T-commentary
 nmap <Leader>c :TComment<CR>
