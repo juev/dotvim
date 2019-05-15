@@ -100,6 +100,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
@@ -306,3 +307,12 @@ let g:ctrlp_working_path_mode = 'ra'
 nnoremap <leader>b :CtrlPBuffer<CR>
 nnoremap <leader>m :CtrlPMRU<CR>
 nnoremap <leader>f :CtrlP<CR>
+
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" vim-rooter
+let g:rooter_resolve_links = 1
+let g:rooter_silent_chdir = 1
