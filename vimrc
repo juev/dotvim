@@ -32,7 +32,7 @@ set noerrorbells
 set visualbell
 set t_vb=
 
-set foldcolumn=2             " Column with the specified width is shown at the side of the widow
+set foldcolumn=0             " Column with the specified width is shown at the side of the widow
 
 " --- search / regexp ---
 set magic                    " Enable extended regexes.
@@ -57,9 +57,9 @@ set noswapfile
 set nomodeline                 " don't use modeline (security)
 set backspace=eol,start,indent " allow backspacing over everything.
 set nostartofline              " Make j/k respect the columns
-set softtabstop=2              " Tab key results in # spaces
-set tabstop=2                  " Tab is # spaces
-set shiftwidth=2               " The # of spaces for indenting.
+set softtabstop=4              " Tab key results in # spaces
+set tabstop=4                  " Tab is # spaces
+set shiftwidth=4               " The # of spaces for indenting.
 
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
@@ -100,12 +100,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'Juev/vim-jekyll'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'Yggdroot/indentLine'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
-Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'junegunn/rainbow_parentheses.vim'
@@ -120,9 +118,9 @@ Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
-Plug 'tomtom/tcomment_vim'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -163,8 +161,6 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " let maplocalleader=";"
 
 no ' ,
-ino <C-j> <Esc>
-vn <C-j> <Esc>
 
 " Toggle paste mode
 no <silent> <F4> :set invpaste<CR>:set paste?<CR>
@@ -209,8 +205,8 @@ nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
 " T-commentary
-nmap <Leader>c :TComment<CR>
-vmap <Leader>c :TComment<CR>
+nmap <Leader>c :Commentary<CR>
+vmap <Leader>c :Commentary<CR>
 
 if exists('&signcolumn')  " Vim 7.4.2201
   set signcolumn=yes
@@ -224,7 +220,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme='papercolor'
+let g:airline_theme='solarized'
 
 " Vim-Go
 let g:go_template_autocreate = 0
@@ -246,11 +242,6 @@ au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
 
 " Ansible-Vault
 let g:ansible_vault_password_file = '~/.vault_pass'
-
-" Indent guides
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indentLine_enabled = 1
-let g:indentLine_char = "⟩"
 
 " vim-template
 let g:username = "Denis Evsyukov"
@@ -277,8 +268,10 @@ if &diff
 endif
 
 " Ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
+if executable("rg")
+    set grepprg=rg\ --vimgrep\ --no-heading
+    set grepformat=%f:%l:%c:%m,%f:%l:%m
+    let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
 " vim-markdown
@@ -294,11 +287,7 @@ let g:racer_cmd = "~/.cargo/bin/racer"
 " Ale
 let g:ale_fix_on_save = 1
 let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'haskell': ['hfmt'],
-\}
-let g:ale_linters = {
-\   'haskell': ['stack-ghc', 'hlint'],
+\   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
 
 nmap <silent> <Leader><  <Plug>(ale_previous_wrap)
