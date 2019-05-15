@@ -87,7 +87,7 @@ let no_buffers_menu = 1
 
 scriptencoding utf-8
 set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
-set fileencodings=utf-8,cp1251,koi8-r
+set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 if has('mac') || has('unix')
   set shell=bash
