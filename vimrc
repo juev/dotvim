@@ -64,8 +64,6 @@ set shiftwidth=4               " The # of spaces for indenting.
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
 
-set clipboard=unnamed
-
 set viminfo='100,n$HOME/.vim/viminfo
 
 mapclear
@@ -98,6 +96,7 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 
 Plug 'Juev/vim-jekyll'
+Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
