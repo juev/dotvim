@@ -145,11 +145,7 @@ call plug#end()
 set t_Co=256
 syntax enable
 
-if filereadable(expand("~/.vim/plugged/vim-colors-solarized/README.mkd"))
-  set background=light
-  set termguicolors
-  colorscheme solarized
-endif
+colorscheme darkblue
 
 " Keymap
 if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
@@ -213,12 +209,13 @@ else
 endif
 
 " Airline
-let g:airline_powerline_fonts = 1
+if has("gui_running")
+  let g:airline_powerline_fonts = 1
+end
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme='solarized'
 
 " Vim-Go
 let g:go_template_autocreate = 0
