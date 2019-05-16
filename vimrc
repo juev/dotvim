@@ -106,10 +106,10 @@ Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'kien/ctrlp.vim'
-Plug 'konfekt/vim-select-replace'
 Plug 'kshenoy/vim-signature'
 Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
@@ -117,11 +117,11 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
-Plug 'scrooloose/nerdcommenter'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
 Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -301,18 +301,26 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 
 let g:netrw_altfile = 1
 
-" CtrP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
-nnoremap <leader>b :CtrlPBuffer<CR>
-nnoremap <leader>m :CtrlPMRU<CR>
-nnoremap <leader>f :CtrlP<CR>
+" fzf
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>m :History<CR>
+nnoremap <leader>f :Files<CR>
 
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 
 " vim-rooter
 let g:rooter_resolve_links = 1
