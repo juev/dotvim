@@ -297,6 +297,7 @@ autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
 " Toggle auto formatting:
 nmap <Leader>C :ClangFormatAutoToggle<CR>
 
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
 
 " fzf
