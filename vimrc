@@ -44,7 +44,7 @@ set incsearch                " show the `best match so far' astyped
 set expandtab                " Expand tabs to spaces
 set smarttab                 " At start of line, <Tab> inserts shift width
                              " spaces, <Bs> deletes shift width spaces.
-" set nowrap                   " wrap lines
+set nowrap                   " no wrap lines
 set laststatus=2             " Always show status line
 set guicursor=a:blinkwait0,a:block-cursor
 
