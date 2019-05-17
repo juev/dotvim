@@ -4,12 +4,6 @@ set vb t_vb=
 set guioptions=gtm
 set antialias
 
-if filereadable(expand("~/.vim/plugged/vim-colors-solarized/README.mkd"))
-  set background=light
-  set termguicolors
-  colorscheme solarized
-endif
-
 let g:airline_theme='solarized'
 
 if has('mac')

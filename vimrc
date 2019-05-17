@@ -135,6 +135,10 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'will133/vim-dirdiff'
+Plug 'Shougo/deoplete.nvim'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
@@ -146,6 +150,15 @@ set t_Co=256
 syntax enable
 
 colorscheme darkblue
+
+if has("gui_running")
+  if filereadable(expand("~/.vim/plugged/vim-colors-solarized/README.mkd"))
+    set background=light
+    set termguicolors
+    colorscheme solarized
+  endif
+end
+
 
 " Keymap
 if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
@@ -325,3 +338,6 @@ let g:fzf_colors =
 let g:rooter_resolve_links = 1
 let g:rooter_silent_chdir = 1
 let g:rooter_use_lcd = 1
+
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
