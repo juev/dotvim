@@ -98,12 +98,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'Juev/vim-jekyll'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'aperezdc/vim-template'
 Plug 'b4b4r07/vim-ansible-vault'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -117,6 +119,8 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
 Plug 'reedes/vim-one'
 Plug 'rhysd/vim-clang-format'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'tomtom/tlib_vim'
@@ -135,10 +139,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'wellle/targets.vim'
 Plug 'will133/vim-dirdiff'
-Plug 'Shougo/deoplete.nvim'
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
 if has('mac') || has('unix')
   Plug 'editorconfig/editorconfig-vim'
 end
