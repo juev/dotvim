@@ -225,7 +225,7 @@ endif
 if has("gui_running")
   let g:airline_powerline_fonts = 1
 end
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1

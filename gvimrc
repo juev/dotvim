@@ -1,7 +1,7 @@
 " highlight FoldColumn guibg=#002B36 guifg=white
 set vb t_vb=
 " set clipboard+=unnamed
-set guioptions=gtm
+set guioptions=gtme
 set antialias
 
 let g:airline_theme='solarized'
