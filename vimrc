@@ -113,7 +113,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'kshenoy/vim-signature'
-Plug 'mhinz/vim-startify'
 Plug 'mileszs/ack.vim'
 Plug 'qpkorr/vim-bufkill'
 Plug 'racer-rust/vim-racer'
@@ -236,7 +235,7 @@ let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
 
-" Anibsle
+" Ansible
 let g:ansible_unindent_after_newline = 1
 au BufRead,BufNewFile */defaults/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */tasks/*.yml set filetype=yaml.ansible
