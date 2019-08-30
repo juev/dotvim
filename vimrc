@@ -313,8 +313,11 @@ let g:netrw_altfile = 1
 
 " fzf
 nnoremap <leader>b :Buffers<CR>
+nnoremap <M-b> :Buffers<CR>
 nnoremap <leader>m :History<CR>
+nnoremap <M-m> :History<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <M-f> :Files<CR>
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -336,6 +339,3 @@ let g:fzf_colors =
 let g:rooter_resolve_links = 1
 let g:rooter_silent_chdir = 1
 let g:rooter_use_lcd = 1
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
