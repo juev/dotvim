@@ -97,7 +97,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'Juev/vim-jekyll'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'Raimondi/delimitMate'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
