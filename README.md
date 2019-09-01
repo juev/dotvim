@@ -35,4 +35,4 @@ Done!
 
 ## Appearance
 
-![macvim](http://juev.s3.amazonaws.com/macvim.png "MacVim")
+![macvim](macvim.png "MacVim")
