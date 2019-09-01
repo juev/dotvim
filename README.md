@@ -1,3 +1,5 @@
+# juev/dotvim
+
 ## Pre-requisites
 
 The distribution is designed to work with Vim >= 7.3.
@@ -16,8 +18,7 @@ or shorter:
 
 Manual install:
 
-    $ git clone https://github.com/Juev/dotvim.git ~/.vim
-    $ git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    $ git clone https://github.com/juev/dotvim.git ~/.vim
     $ ln -s ~/.vim/vimrc ~/.vimrc
     $ ln -s ~/.vim/gvimrc ~/.gvimrc
     $ vim +PlugUpgrade! +PlugInstall! +qall
@@ -26,7 +27,7 @@ Done!
 
 **Windows**:
 
-    > git clone https://github.com/Juev/dotvim.git %USERPROFILE%\.vim
+    > git clone https://github.com/juev/dotvim.git %USERPROFILE%\.vim
     > cd %USERPROFILE%\.vim
     > install.cmd
     > copy vimrc %USERPROFILE%\_vimrc

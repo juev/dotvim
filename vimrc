@@ -95,7 +95,7 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 
-Plug 'Juev/vim-jekyll'
+Plug 'juev/vim-jekyll'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'airblade/vim-gitgutter'
