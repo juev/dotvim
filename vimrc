@@ -68,10 +68,6 @@ set viminfo='100,n$HOME/.vim/viminfo
 
 mapclear
 
-if !has("gui_running")
-  set nocursorline
-end
-
 if exists('+breakindent')
   set breakindent showbreak=\ +
 endif
@@ -156,6 +152,10 @@ if has("gui_running")
   endif
 end
 
+if !has("gui_running")
+  set nocursorline
+  hi Search term=bold cterm=bold guibg=Grey40
+end
 
 " Keymap
 if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
@@ -312,11 +312,8 @@ let g:netrw_altfile = 1
 
 " fzf
 nnoremap <leader>b :Buffers<CR>
-nnoremap <M-b> :Buffers<CR>
 nnoremap <leader>m :History<CR>
-nnoremap <M-m> :History<CR>
 nnoremap <leader>f :Files<CR>
-nnoremap <M-f> :Files<CR>
 
 " Customize fzf colors to match your color scheme
 let g:fzf_colors =
