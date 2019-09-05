@@ -66,6 +66,9 @@ set showmatch
 
 set viminfo='100,n$HOME/.vim/viminfo
 
+" persistent undo
+set undodir=~/.vim/undodir
+
 mapclear
 
 if exists('+breakindent')
