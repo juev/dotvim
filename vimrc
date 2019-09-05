@@ -144,7 +144,7 @@ call plug#end()
 set t_Co=256
 syntax enable
 
-colorscheme darkblue
+colorscheme default
 
 if has("gui_running")
   if filereadable(expand("~/.vim/plugged/vim-colors-solarized/README.mkd"))
