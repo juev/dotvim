@@ -2,3 +2,4 @@ bundle
 .netrwhist
 plugged/
 viminfo
+undodir/*

@@ -67,6 +67,7 @@ set showmatch
 set viminfo='100,n$HOME/.vim/viminfo
 
 " persistent undo
+set undofile
 set undodir=~/.vim/undodir
 
 mapclear
