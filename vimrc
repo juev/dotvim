@@ -1,36 +1,20 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
-set nocompatible             " Disable vi compatibility
-
-" dein.vim settings {{{
-" install dir {{{
-let s:dein_dir = expand('~/.cache/dein')
-let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-" }}}
-
-" dein installation check {{{
-if &runtimepath !~# '/dein.vim'
-	if !isdirectory(s:dein_repo_dir)
-		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
-	endif
-	execute 'set runtimepath^=' . s:dein_repo_dir
+if &compatible
+  set nocompatible
 endif
-" }}}
 
-" Required:
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
-  " Let dein manage dein
-  " Required:
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  " Add or remove your plugins here like this:
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('wsdjeg/dein-ui.vim')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/neosnippet-snippets')
-
   call dein#add('MattesGroeger/vim-bookmarks')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('SirVer/ultisnips')
@@ -89,24 +73,11 @@ if dein#load_state('~/.cache/dein')
   call dein#save_state()
 endif
 
-" Required:
-filetype plugin indent on
-syntax enable
-
 " If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
 endif
 
-" plugin remove check {{{
-let s:removed_plugins = dein#check_clean()
-if len(s:removed_plugins) > 0
-	call map(s:removed_plugins, "delete(v:val, 'rf')")
-	call dein#recache_runtimepath()
-endif
-" }}}
-
-"End dein Scripts-------------------------
 
 " --- performance / buffer ---
 " set hidden                   " can put buffer to the background without writing
