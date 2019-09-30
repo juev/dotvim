@@ -3,6 +3,111 @@ set runtimepath^=~/.vim
 
 set nocompatible             " Disable vi compatibility
 
+" dein.vim settings {{{
+" install dir {{{
+let s:dein_dir = expand('~/.cache/dein')
+let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+" }}}
+
+" dein installation check {{{
+if &runtimepath !~# '/dein.vim'
+	if !isdirectory(s:dein_repo_dir)
+		execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
+	endif
+	execute 'set runtimepath^=' . s:dein_repo_dir
+endif
+" }}}
+
+" Required:
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  " Add or remove your plugins here like this:
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('wsdjeg/dein-ui.vim')
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  call dein#add('MattesGroeger/vim-bookmarks')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
+  call dein#add('SirVer/ultisnips')
+  call dein#add('airblade/vim-gitgutter')
+  call dein#add('airblade/vim-rooter')
+  call dein#add('altercation/vim-colors-solarized')
+  call dein#add('aperezdc/vim-template')
+  call dein#add('b4b4r07/vim-ansible-vault')
+  call dein#add('fatih/vim-go', { 'build': ':GoUpdateBinaries' })
+  call dein#add('godlygeek/tabular')
+  call dein#add('honza/vim-snippets')
+  call dein#add('jiangmiao/auto-pairs')
+  call dein#add('juev/vim-jekyll')
+  call dein#add('junegunn/fzf', { 'path': '~/.fzf', 'build': './install --bin'})
+  call dein#add('junegunn/fzf.vim')
+  call dein#add('junegunn/rainbow_parentheses.vim')
+  call dein#add('junegunn/vim-easy-align')
+  call dein#add('kshenoy/vim-signature')
+  call dein#add('mileszs/ack.vim')
+  call dein#add('qpkorr/vim-bufkill')
+  call dein#add('racer-rust/vim-racer')
+  call dein#add('reedes/vim-one')
+  call dein#add('rhysd/vim-clang-format')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('sheerun/vim-polyglot')
+  call dein#add('shvechikov/vim-keymap-russian-jcukenmac')
+  call dein#add('tmux-plugins/vim-tmux')
+  call dein#add('tomtom/tlib_vim')
+  call dein#add('tpope/vim-apathy')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-eunuch')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-repeat')
+  call dein#add('tpope/vim-sensible')
+  call dein#add('tpope/vim-sleuth')
+  call dein#add('tpope/vim-surround')
+  call dein#add('tpope/vim-unimpaired')
+  call dein#add('tpope/vim-vinegar')
+  call dein#add('tweekmonster/startuptime.vim')
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('w0rp/ale')
+  call dein#add('wellle/targets.vim')
+  call dein#add('will133/vim-dirdiff')
+  if has('mac') || has('unix')
+    call dein#add('editorconfig/editorconfig-vim')
+  end
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+
+  " Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+" plugin remove check {{{
+let s:removed_plugins = dein#check_clean()
+if len(s:removed_plugins) > 0
+	call map(s:removed_plugins, "delete(v:val, 'rf')")
+	call dein#recache_runtimepath()
+endif
+" }}}
+
+"End dein Scripts-------------------------
+
 " --- performance / buffer ---
 " set hidden                   " can put buffer to the background without writing
 set lazyredraw               " don't update the display while executing macros
@@ -91,59 +196,6 @@ if has('mac') || has('unix')
   set shell=bash
 endif
 
-call plug#begin('~/.vim/plugged')
-
-"Add your bundles here
-
-Plug 'MattesGroeger/vim-bookmarks'
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-Plug 'SirVer/ultisnips'
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-Plug 'altercation/vim-colors-solarized'
-Plug 'aperezdc/vim-template'
-Plug 'b4b4r07/vim-ansible-vault'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'godlygeek/tabular'
-Plug 'honza/vim-snippets'
-Plug 'jiangmiao/auto-pairs'
-Plug 'juev/vim-jekyll'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'kshenoy/vim-signature'
-Plug 'mileszs/ack.vim'
-Plug 'qpkorr/vim-bufkill'
-Plug 'racer-rust/vim-racer'
-Plug 'reedes/vim-one'
-Plug 'rhysd/vim-clang-format'
-Plug 'roxma/nvim-yarp'
-Plug 'sheerun/vim-polyglot'
-Plug 'shvechikov/vim-keymap-russian-jcukenmac'
-Plug 'tmux-plugins/vim-tmux'
-Plug 'tomtom/tlib_vim'
-Plug 'tpope/vim-apathy'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
-Plug 'tweekmonster/startuptime.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'w0rp/ale'
-Plug 'wellle/targets.vim'
-Plug 'will133/vim-dirdiff'
-if has('mac') || has('unix')
-  Plug 'editorconfig/editorconfig-vim'
-end
-
-call plug#end()
 
 " Colors
 set t_Co=256
@@ -152,7 +204,7 @@ syntax enable
 colorscheme default
 
 if has("gui_running")
-  if filereadable(expand("~/.vim/plugged/vim-colors-solarized/README.mkd"))
+  if filereadable(expand("~/.cache/dein/repos/github.com/altercation/vim-colors-solarized/README.mkd"))
     set background=light
     set termguicolors
     colorscheme solarized
@@ -165,7 +217,7 @@ if !has("gui_running")
 end
 
 " Keymap
-if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
+if filereadable(expand("~/.cache/dein/repos/github.com/shvechikov/vim-keymap-russian-jcukenmac/README.md"))
   set keymap=russian-jcukenmac iminsert=0 imsearch=0
 endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
