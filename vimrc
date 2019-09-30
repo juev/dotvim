@@ -40,6 +40,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('roxma/nvim-yarp')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('shvechikov/vim-keymap-russian-jcukenmac')
+  call dein#add('sonph/onehalf', {'rtp': 'vim/'})
+  call dein#add('thinca/vim-quickrun')
   call dein#add('tmux-plugins/vim-tmux')
   call dein#add('tomtom/tlib_vim')
   call dein#add('tpope/vim-apathy')
@@ -378,3 +380,15 @@ let g:better_whitespace_enabled = 1
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
+let g:deoplete#auto_complete_delay = 0
+
+" Visual
+colorscheme onehalfdark
+autocmd ColorScheme * highlight Normal ctermfg=grey ctermbg=black
+autocmd ColorScheme * highlight Comment ctermfg=33
+let g:airline_powerline_fonts = 1
+
+" Auto-Save
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_silent = 1
