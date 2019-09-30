@@ -21,6 +21,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('aperezdc/vim-template')
   call dein#add('b4b4r07/vim-ansible-vault')
+  call dein#add('dense-analysis/ale')
   call dein#add('fatih/vim-go')
   call dein#add('godlygeek/tabular')
   call dein#add('guns/vim-sexp')
@@ -34,10 +35,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('mileszs/ack.vim')
   call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('qpkorr/vim-bufkill')
-  call dein#add('racer-rust/vim-racer')
-  call dein#add('reedes/vim-one')
-  call dein#add('rhysd/vim-clang-format')
-  call dein#add('roxma/nvim-yarp')
   call dein#add('sheerun/vim-polyglot')
   call dein#add('shvechikov/vim-keymap-russian-jcukenmac')
   call dein#add('sonph/onehalf', {'rtp': 'vim/'})
@@ -57,7 +54,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('tweekmonster/startuptime.vim')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('w0rp/ale')
   call dein#add('wellle/targets.vim')
   call dein#add('will133/vim-dirdiff')
   call dein#add('wsdjeg/dein-ui.vim')
@@ -184,11 +180,6 @@ if has("gui_running")
   endif
 end
 
-if !has("gui_running")
-  set nocursorline
-  hi Search term=bold cterm=bold guibg=Grey40
-end
-
 " Keymap
 if filereadable(expand("~/.cache/dein/repos/github.com/shvechikov/vim-keymap-russian-jcukenmac/README.md"))
   set keymap=russian-jcukenmac iminsert=0 imsearch=0
@@ -198,7 +189,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
 let mapleader="\<Space>"
-" let maplocalleader=";"
+let maplocalleader="\<Space>"
 
 no ' ,
 
