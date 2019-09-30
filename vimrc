@@ -224,7 +224,7 @@ set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLM
 
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
-" let mapleader=" "
+let mapleader="\<Space>"
 " let maplocalleader=";"
 
 no ' ,
