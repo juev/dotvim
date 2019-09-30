@@ -13,8 +13,6 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('MattesGroeger/vim-bookmarks')
   call dein#add('Shougo/deoplete.nvim')
-  call dein#add('Shougo/neosnippet-snippets')
-  call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('SirVer/ultisnips')
   call dein#add('airblade/vim-gitgutter')
@@ -27,8 +25,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('honza/vim-snippets')
   call dein#add('jiangmiao/auto-pairs')
   call dein#add('juev/vim-jekyll')
-  call dein#add('junegunn/fzf', { 'path': '~/.fzf', 'build': './install --bin'})
-  call dein#add('junegunn/fzf.vim')
+  call dein#add('junegunn/fzf', { 'build': './install --bin', 'merged': 0 })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   call dein#add('junegunn/rainbow_parentheses.vim')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('kshenoy/vim-signature')
@@ -376,3 +374,6 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
+
+" Deoplete
+let g:deoplete#enable_at_startup = 1
