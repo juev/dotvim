@@ -11,11 +11,10 @@ if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
 
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
-  call dein#add('Shougo/deoplete.nvim')
-  call dein#add('wsdjeg/dein-ui.vim')
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('MattesGroeger/vim-bookmarks')
+  call dein#add('Shougo/deoplete.nvim')
+  call dein#add('Shougo/neosnippet-snippets')
+  call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('SirVer/ultisnips')
   call dein#add('airblade/vim-gitgutter')
@@ -23,7 +22,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('altercation/vim-colors-solarized')
   call dein#add('aperezdc/vim-template')
   call dein#add('b4b4r07/vim-ansible-vault')
-  call dein#add('fatih/vim-go', { 'build': ':GoUpdateBinaries' })
+  call dein#add('fatih/vim-go')
   call dein#add('godlygeek/tabular')
   call dein#add('honza/vim-snippets')
   call dein#add('jiangmiao/auto-pairs')
@@ -34,6 +33,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('junegunn/vim-easy-align')
   call dein#add('kshenoy/vim-signature')
   call dein#add('mileszs/ack.vim')
+  call dein#add('ntpeters/vim-better-whitespace')
   call dein#add('qpkorr/vim-bufkill')
   call dein#add('racer-rust/vim-racer')
   call dein#add('reedes/vim-one')
@@ -59,6 +59,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('w0rp/ale')
   call dein#add('wellle/targets.vim')
   call dein#add('will133/vim-dirdiff')
+  call dein#add('wsdjeg/dein-ui.vim')
   if has('mac') || has('unix')
     call dein#add('editorconfig/editorconfig-vim')
   end
@@ -371,3 +372,7 @@ let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 let g:UltiSnipsRemoveSelectModeMappings = 0
+
+" Better whitespace
+let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
+let g:better_whitespace_enabled = 1
