@@ -140,6 +140,9 @@ set showmatch
 
 set viminfo='100,n$HOME/.vim/viminfo
 
+" timeout
+set timeoutlen=250 ttimeoutlen=0
+
 " persistent undo
 set undofile
 set undodir=~/.vim/undodir
@@ -384,5 +387,3 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_silent = 1
 
-" timeout
-let tm = 50

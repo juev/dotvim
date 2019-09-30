@@ -22,6 +22,9 @@ if ! [ -d ~/.vim ]; then
   else
     echo "File ~/.gvimrc already exist. Skipping creating symlink."
   fi
+
+  mdkir -p ~/.config/nvim
+  cp init.vim ~/.config/nvim/
   curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
   sh ./installer.sh ~/.cache/dein
   # echo "Install Plugins"
