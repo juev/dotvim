@@ -9,8 +9,9 @@ set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
-
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+
+  " call dein#add('jiangmiao/auto-pairs')
   call dein#add('MattesGroeger/vim-bookmarks')
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
@@ -22,8 +23,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('b4b4r07/vim-ansible-vault')
   call dein#add('fatih/vim-go')
   call dein#add('godlygeek/tabular')
+  call dein#add('guns/vim-sexp')
   call dein#add('honza/vim-snippets')
-  call dein#add('jiangmiao/auto-pairs')
   call dein#add('juev/vim-jekyll')
   call dein#add('junegunn/fzf', { 'build': './install --bin', 'merged': 0 })
   call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
@@ -207,7 +208,7 @@ no <silent> <Leader>q :BW<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
-no <space> :
+" no <space> :
 
 no j gj
 no k gk
