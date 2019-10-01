@@ -18,7 +18,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'godlygeek/tabular'
 Plug 'guns/vim-sexp'
 Plug 'honza/vim-snippets'
-Plug 'jiangmiao/auto-pairs'
 Plug 'juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -135,7 +134,8 @@ set timeoutlen=250 ttimeoutlen=0
 set undofile
 set undodir=~/.vim/undodir
 
-mapclear
+" clipboard system by default
+set clipboard+=unnamedplus
 
 if exists('+breakindent')
   set breakindent showbreak=\ +
@@ -156,20 +156,9 @@ if has('mac') || has('unix')
   set shell=bash
 endif
 
-
 " Colors
 set t_Co=256
 syntax enable
-
-colorscheme default
-
-if has("gui_running")
-  if filereadable(expand("~/.cache/dein/repos/github.com/altercation/vim-colors-solarized/README.mkd"))
-    set background=light
-    set termguicolors
-    colorscheme solarized
-  endif
-end
 
 " Keymap
 if filereadable(expand("~/.cache/dein/repos/github.com/shvechikov/vim-keymap-russian-jcukenmac/README.md"))
@@ -233,10 +222,10 @@ else
 endif
 
 " Airline
-if has("gui_running")
-  let g:airline_powerline_fonts = 1
-end
 " let g:airline#extensions#tabline#enabled = 1
+if has('mac')
+  let g:airline_powerline_fonts = 1
+endif
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
@@ -308,19 +297,11 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace']
 \}
-
 nmap <silent> <Leader><  <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>>  <Plug>(ale_next_wrap)
 nmap <silent> <Leader>? <Plug>(ale_detail)
 
-" Clang-format
-" map to <Leader>cf in C++ code
-autocmd FileType c,cc,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
-autocmd FileType c,cc,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
-autocmd FileType c,cc,cpp,objc ClangFormatAutoEnable
-" Toggle auto formatting:
-nmap <Leader>C :ClangFormatAutoToggle<CR>
-
+" Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
 
@@ -366,9 +347,8 @@ let g:deoplete#auto_complete_delay = 0
 
 " Visual
 colorscheme onehalfdark
-autocmd ColorScheme * highlight Normal ctermfg=grey ctermbg=black
-autocmd ColorScheme * highlight Comment ctermfg=33
-let g:airline_powerline_fonts = 1
+" autocmd ColorScheme * highlight Normal ctermfg=grey ctermbg=black
+" autocmd ColorScheme * highlight Comment ctermfg=33
 
 " Auto-Save
 let g:auto_save = 1
