@@ -44,13 +44,17 @@ endif
 
 call plug#end()
 
+set autoread
+set autowrite
+
 " --- performance / buffer ---
 set lazyredraw               " don't update the display while executing macros
 
 set cursorline               " Highlight current line
 set splitbelow splitright    " how to split new windows.
 set mousehide                " When on, the mouse pointer is hidden when characters are typed.
-set wildmode=full            " Complete first full match, next match, etc.  (the default)
+set wildmenu
+set wildmode=full
 set scrolloff=4              " Minimal number of screen lines to keep above and below the cursor.
 set sidescrolloff=4          " Start scrolling n chars before end of screen.
 
