@@ -135,7 +135,7 @@ set undofile
 set undodir=~/.vim/undodir
 
 " clipboard system by default
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 
 if exists('+breakindent')
   set breakindent showbreak=\ +
