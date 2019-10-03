@@ -244,6 +244,11 @@ nmap <silent> <Leader>< <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>> <Plug>(ale_next_wrap)
 nmap <silent> <Leader>? <Plug>(ale_detail)
 
+let g:ale_pattern_options = {
+\   '.*\.yaml$': {'ale_enabled': 0},
+\   '.*\.yml$': {'ale_enabled': 0},
+\}
+
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
