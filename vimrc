@@ -9,7 +9,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'aperezdc/vim-template'
 Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'juev/vim-jekyll'
@@ -172,6 +171,12 @@ cmap w!! w !sudo tee > /dev/null %
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
+" Keys for clipboard
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+
 set signcolumn=yes
 
 " Airline
@@ -200,11 +205,6 @@ au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */*ansible*/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */vars/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
-
-" vim-template
-let g:username = "Denis Evsyukov"
-let g:templates_no_builtin_templates = 1
-let g:templates_directory = ['~/.vim/templates/']
 
 " Diff
 if &diff
@@ -284,8 +284,3 @@ let g:better_whitespace_enabled = 1
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 0
-
-" Auto-Save
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
-let g:auto_save_silent = 1
