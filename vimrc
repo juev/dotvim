@@ -1,6 +1,8 @@
 let $LANG = 'en'
 set runtimepath^=~/.vim
 
+set nocompatible             " Disable vi compatibility
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -28,7 +30,6 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -46,17 +47,27 @@ endif
 
 call plug#end()
 
-set autoread
-set autowrite
-
 " --- performance / buffer ---
+" set hidden                   " can put buffer to the background without writing
 set lazyredraw               " don't update the display while executing macros
+set ttyfast                  " Send more characters at a given time.
+                             " to disk, will remember history/marks.
+" --- history / file handling ---
+set autoread                 " reload files if changed externally
+set autowrite                " autowite when changing file
 
+set autoindent smartindent   " auto/smart indent
+set cindent                  " Enables automatic C program indenting.
+set nocopyindent             " Do not copy previous indentation on auto indent
+set ruler                    " Show the line and column number of the cursor position,
+                             " separated by a comma.
 set cursorline               " Highlight current line
 set splitbelow splitright    " how to split new windows.
 set mousehide                " When on, the mouse pointer is hidden when characters are typed.
-set wildmenu
-set wildmode=full
+set wildmenu                 " Hitting TAB in command mode will
+set wildmode=full            " Complete first full match, next match, etc.  (the default)
+set switchbuf=useopen        " useopen If included, jump to the first open window that
+                          " contains the specified buffer (if there is one).
 set scrolloff=4              " Minimal number of screen lines to keep above and below the cursor.
 set sidescrolloff=4          " Start scrolling n chars before end of screen.
 
@@ -65,13 +76,21 @@ set noerrorbells
 set visualbell
 set t_vb=
 
+set foldcolumn=0             " Column with the specified width is shown at the side of the widow
+
 " --- search / regexp ---
 set magic                    " Enable extended regexes.
 set hlsearch                 " highlight searches
 set ignorecase smartcase     " make searches case-insensitive, unless they
                              " contain upper-case letters
+set incsearch                " show the `best match so far' astyped
+
 set expandtab                " Expand tabs to spaces
+set smarttab                 " At start of line, <Tab> inserts shift width
+                             " spaces, <Bs> deletes shift width spaces.
 set nowrap                   " no wrap lines
+set laststatus=2             " Always show status line
+set guicursor=a:blinkwait0,a:block-cursor
 
 " --- backup and swap files ---
 " I save all the time, those are annoying and unnecessary...
@@ -80,6 +99,7 @@ set nowritebackup
 set noswapfile
 
 set nomodeline                 " don't use modeline (security)
+set backspace=eol,start,indent " allow backspacing over everything.
 set nostartofline              " Make j/k respect the columns
 set softtabstop=4              " Tab key results in # spaces
 set tabstop=4                  " Tab is # spaces
@@ -90,6 +110,8 @@ set showmatch
 
 " timeout
 setglobal timeoutlen=250 ttimeoutlen=10
+
+set viminfo='100,n$HOME/.vim/viminfo
 
 " persistent undo
 set undofile
@@ -112,6 +134,10 @@ let no_buffers_menu = 1
 scriptencoding utf-8
 set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
+
+if has('mac') || has('unix')
+  set shell=bash
+endif
 
 " Colors
 set t_Co=256
@@ -173,6 +199,9 @@ cmap w!! w !sudo tee > /dev/null %
 
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
+
+map <Leader>ev :edit $MYVIMRC<CR>
+map <Leader>es :source $MYVIMRC<CR>
 
 " Keys for clipboard
 noremap <Leader>y "*y
@@ -255,24 +284,9 @@ let g:netrw_altfile = 1
 
 " fzf
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>m :History<CR>
+nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+nnoremap <leader>s :Rg<Space>
 
 " vim-rooter
 let g:rooter_resolve_links = 1
