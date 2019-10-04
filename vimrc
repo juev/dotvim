@@ -286,6 +286,7 @@ let g:netrw_altfile = 1
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>s :Rg<Space>
 
 " vim-rooter
