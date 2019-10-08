@@ -6,12 +6,6 @@ The distribution is designed to work with Vim >= 7.3.
 
 The distribution also requires `git`.
 
-## PreInstall (only for nvim)
-
-    $ pip3 install --user pynvim
-    $ brew install nvim
-    $ alias vim = "nvim"
-
 ## Installation
 
 **Mac** or **Linux**:
@@ -27,9 +21,6 @@ Manual install:
     $ git clone https://github.com/juev/dotvim.git ~/.vim
     $ ln -s ~/.vim/vimrc ~/.vimrc
     $ ln -s ~/.vim/gvimrc ~/.gvimrc
-    (next commands only for nvim)
-    $ mdkir -p ~/.config/nvim
-    $ cp init.vim ~/.config/nvim/
 
 Done!
 

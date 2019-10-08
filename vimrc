@@ -37,14 +37,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 call plug#end()
 
 " --- performance / buffer ---
@@ -143,10 +135,12 @@ endif
 set t_Co=256
 
 " Visual
-colorscheme badwolf
+if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
+  colorscheme badwolf
+endif
 
 " Keymap
-if filereadable(expand("~/.cache/dein/repos/github.com/shvechikov/vim-keymap-russian-jcukenmac/README.md"))
+if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
   set keymap=russian-jcukenmac iminsert=0 imsearch=0
 endif
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
@@ -213,9 +207,6 @@ set signcolumn=yes
 
 " Airline
 " let g:airline#extensions#tabline#enabled = 1
-if has('mac')
-  let g:airline_powerline_fonts = 1
-endif
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
