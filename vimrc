@@ -11,23 +11,28 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'hashivim/vim-terraform'
 Plug 'juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'racer-rust/vim-racer'
-Plug 'sheerun/vim-polyglot'
+Plug 'pearofducks/ansible-vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'rust-lang/rust.vim' | Plug 'racer-rust/vim-racer'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
-Plug 'tmux-plugins/vim-tmux'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sleuth'
@@ -35,7 +40,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -82,7 +86,7 @@ set smarttab                 " At start of line, <Tab> inserts shift width
                              " spaces, <Bs> deletes shift width spaces.
 set nowrap                   " no wrap lines
 set laststatus=2             " Always show status line
-set guicursor=a:blinkwait0,a:block-cursor
+" set guicursor=a:blinkwait0,a:block-cursor
 
 " --- backup and swap files ---
 " I save all the time, those are annoying and unnecessary...
@@ -160,8 +164,6 @@ no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
 no <leader><leader> <c-^>
 
-" no <space> :
-
 no j gj
 no k gk
 
@@ -206,7 +208,6 @@ noremap <Leader>P "+p
 set signcolumn=yes
 
 " Airline
-" let g:airline#extensions#tabline#enabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline#extensions#ale#enabled = 1
@@ -219,24 +220,12 @@ let g:go_highlight_functions = 1
 
 " Ansible
 let g:ansible_unindent_after_newline = 1
-au BufRead,BufNewFile */defaults/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */tasks/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */handler/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */*_vars/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */roles/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */*ansible*/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */vars/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
 
 " Diff
 if &diff
     set cursorline
     map ] ]c
     map [ [c
-    " hi DiffAdd    ctermfg=233 ctermbg=LightGreen guifg=#003300 guibg=#DDFFDD gui=none cterm=none
-    " hi DiffChange ctermbg=233  guibg=#ececec gui=none   cterm=none
-    " hi DiffText   ctermfg=233  ctermbg=yellow  guifg=#000033 guibg=#DDDDFF gui=none cterm=none
     map <leader>1 :diffget LOCAL<CR>
     map <leader>2 :diffget BASE<CR>
     map <leader>3 :diffget REMOTE<CR>
@@ -254,20 +243,6 @@ let g:vim_markdown_auto_insert_bullets = 1
 " Rust
 let g:rustfmt_autosave = 1
 let g:racer_cmd = "~/.cargo/bin/racer"
-
-" Ale
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace']
-\}
-nmap <silent> <Leader>< <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>> <Plug>(ale_next_wrap)
-nmap <silent> <Leader>? <Plug>(ale_detail)
-
-let g:ale_pattern_options = {
-\   '.*\.yaml$': {'ale_enabled': 0},
-\   '.*\.yml$': {'ale_enabled': 0},
-\}
 
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -294,7 +269,3 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
-
-" Deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 0
