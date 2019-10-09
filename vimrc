@@ -272,3 +272,10 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
+
+" Ale
+set omnifunc=ale#completion#OmniFunc
+let g:ale_pattern_options = {
+\   '.*\.yaml$': {'ale_enabled': 0},
+\   '.*\.yml$': {'ale_enabled': 0},
+\}

@@ -28,3 +28,13 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
+" Ansible
+au BufRead,BufNewFile */defaults/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */tasks/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */handler/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */*_vars/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */roles/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */*ansible*/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */vars/*.yml set filetype=yaml.ansible
+au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
