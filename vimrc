@@ -40,6 +40,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-scripts/bash-support.vim'
 
 call plug#end()
 
