@@ -11,7 +11,6 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'anekos/hledger-vim'
 Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
 Plug 'ekalinin/Dockerfile.vim'
@@ -20,6 +19,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'juev/vim-jekyll'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'ledger/vim-ledger'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
@@ -42,6 +42,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/bash-support.vim'
+
 
 call plug#end()
 

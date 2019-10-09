@@ -28,5 +28,3 @@ au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
-autocmd BufNewFile,BufRead *.ldg,*.ledger,*.journal setlocal filetype=hledger
-autocmd FileType hledger setlocal omnifunc=hledger#complete#omnifunc
