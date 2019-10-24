@@ -17,7 +17,7 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'hashivim/vim-terraform'
 Plug 'haya14busa/incsearch.vim'
-Plug 'juev/vim-jekyll'
+Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
@@ -25,6 +25,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim' | Plug 'racer-rust/vim-racer'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
@@ -127,7 +128,7 @@ if exists('+macmeta')
   setglobal macmeta
 endif
 
-let g:jekyll_path = "~/Projects/juev.org"
+let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
 
 scriptencoding utf-8
