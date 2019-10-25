@@ -7,6 +7,7 @@ set nocompatible             " Disable vi compatibility
 call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
+Plug '907th/vim-auto-save'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
@@ -25,6 +26,7 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'rhysd/clever-f.vim'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'rust-lang/rust.vim' | Plug 'racer-rust/vim-racer'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
@@ -295,3 +297,12 @@ map *  <Plug>(incsearch-nohl-*)
 map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
+
+" autosave
+let g:auto_save        = 1
+let g:auto_save_silent = 1
+
+" clever_f
+let g:clever_f_across_no_line    = 1
+let g:clever_f_fix_key_direction = 1
+let g:clever_f_timeout_ms        = 3000
