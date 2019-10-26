@@ -122,6 +122,8 @@ set undodir=~/.cache/vim/undodir
 " clipboard system by default
 " set clipboard+=unnamedplus
 
+" set nofoldenable
+
 if exists('+breakindent')
   set breakindent showbreak=\ +
 endif
@@ -245,6 +247,7 @@ let g:vim_markdown_conceal = 0
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_auto_insert_bullets = 1
+let g:vim_markdown_folding_disabled = 1
 
 " Rust
 let g:rustfmt_autosave = 1
