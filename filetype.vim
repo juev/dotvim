@@ -1,6 +1,6 @@
-au FileType * setlocal fo-=c fo-=r fo-=o ts=2 sts=2 sw=2 et
+" au FileType * setlocal fo-=c fo-=r fo-=o ts=2 sts=2 sw=2 et
 au FileType markdown,vimwiki setlocal ts=4 sts=4 sw=4
-au FileType go,golang setlocal ts=4 sts=4 sw=4 et
+" au FileType go,golang setlocal ts=4 sts=4 sw=4 et
 " au BufEnter * cd %:p:h
 " au BufWritePost .vimrc source $MYVIMRC
 
@@ -29,14 +29,6 @@ au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Ansible
-au BufRead,BufNewFile */defaults/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */tasks/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */handler/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */*_vars/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */roles/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */*ansible*/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */vars/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
-
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml.ansible foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml.ansible setlocal ts=2 sts=2 sw=2 expandtab
