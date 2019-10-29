@@ -29,6 +29,5 @@ au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Ansible
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml.ansible foldmethod=indent
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType yaml.ansible setlocal ts=2 sts=2 sw=2 expandtab
