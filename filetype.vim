@@ -38,3 +38,5 @@ au BufRead,BufNewFile */playbooks/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */*ansible*/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */vars/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */inventory/*.yml set filetype=yaml.ansible
+
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
