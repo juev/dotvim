@@ -82,7 +82,7 @@ set foldcolumn=0             " Column with the specified width is shown at the s
 
 " --- search / regexp ---
 set magic                    " Enable extended regexes.
-set hlsearch                 " highlight searches
+set nohlsearch                 " highlight searches
 set ignorecase smartcase     " make searches case-insensitive, unless they
                              " contain upper-case letters
 set incsearch                " show the `best match so far' astyped
