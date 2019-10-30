@@ -7,7 +7,6 @@ set nocompatible             " Disable vi compatibility
 call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
-Plug '907th/vim-auto-save'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
@@ -52,13 +51,12 @@ Plug 'vim-scripts/bash-support.vim'
 call plug#end()
 
 " --- performance / buffer ---
-" set hidden                   " can put buffer to the background without writing
+set hidden                   " can put buffer to the background without writing
 set lazyredraw               " don't update the display while executing macros
 set ttyfast                  " Send more characters at a given time.
                              " to disk, will remember history/marks.
 " --- history / file handling ---
 set autoread                 " reload files if changed externally
-set autowrite                " autowite when changing file
 
 set autoindent smartindent   " auto/smart indent
 set cindent                  " Enables automatic C program indenting.
@@ -123,8 +121,6 @@ set undodir=~/.cache/vim/undodir
 
 " clipboard system by default
 " set clipboard+=unnamedplus
-
-" set nofoldenable
 
 if exists('+breakindent')
   set breakindent showbreak=\ +
