@@ -192,6 +192,9 @@ nn <leader>fef gg=G
 nn <silent> <BS> :noh<CR> :let @/=""<CR>
 nn S :%s//g<LEFT><LEFT>
 
+command! Q q
+command! W w
+
 cmap w!! w !sudo tee > /dev/null %
 
 nnoremap <silent> <Tab> :bn<CR>
@@ -251,6 +254,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
 
 " fzf
+nnoremap ; :Buffers<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
