@@ -189,7 +189,8 @@ nn Q gqap
 
 nn <leader>fef gg=G
 
-nn <silent> <BS> :noh<CR> :let @/=""<CR>
+" nn <silent> <BS> :noh<CR> :let @/=""<CR>
+nn <silent> <BS> :noh<CR>
 nn S :%s//g<LEFT><LEFT>
 
 command! Q q
