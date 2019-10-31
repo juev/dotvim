@@ -11,26 +11,20 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
-Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'hashivim/vim-terraform'
-Plug 'haya14busa/incsearch.vim'
 Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
-Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'plasticboy/vim-markdown'
+Plug 'racer-rust/vim-racer'
 Plug 'rhysd/clever-f.vim'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'roxma/vim-tmux-clipboard'
-Plug 'rust-lang/rust.vim' | Plug 'racer-rust/vim-racer'
+Plug 'sheerun/vim-polyglot'
 Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
-Plug 'stephpy/vim-yaml'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
@@ -57,6 +51,7 @@ set ttyfast                  " Send more characters at a given time.
                              " to disk, will remember history/marks.
 " --- history / file handling ---
 set autoread                 " reload files if changed externally
+set autowrite                " reload files if changed externally
 
 set autoindent smartindent   " auto/smart indent
 set cindent                  " Enables automatic C program indenting.
@@ -82,7 +77,7 @@ set foldcolumn=0             " Column with the specified width is shown at the s
 
 " --- search / regexp ---
 set magic                    " Enable extended regexes.
-set nohlsearch                 " highlight searches
+set hlsearch               " highlight searches
 set ignorecase smartcase     " make searches case-insensitive, unless they
                              " contain upper-case letters
 set incsearch                " show the `best match so far' astyped
@@ -194,7 +189,7 @@ nn Q gqap
 
 nn <leader>fef gg=G
 
-nn <silent> <BS> :nohlsearch<CR>
+nn <silent> <BS> :noh<CR> :let @/=""<CR>
 nn S :%s//g<LEFT><LEFT>
 
 cmap w!! w !sudo tee > /dev/null %
@@ -262,6 +257,9 @@ nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>s :Rg<Space>
 
+" This is the default extra key bindings
+let g:fzf_layout = { 'down': '~40%' }
+
 " vim-rooter
 let g:rooter_resolve_links = 1
 let g:rooter_silent_chdir = 1
@@ -283,25 +281,6 @@ let g:ale_pattern_options = {
 \   '.*\.yaml$': {'ale_enabled': 0},
 \   '.*\.yml$': {'ale_enabled': 0},
 \}
-
-" incsearch
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
-
-" :h g:incsearch#auto_nohlsearch
-set hlsearch
-let g:incsearch#auto_nohlsearch = 1
-map n  <Plug>(incsearch-nohl-n)
-map N  <Plug>(incsearch-nohl-N)
-map *  <Plug>(incsearch-nohl-*)
-map #  <Plug>(incsearch-nohl-#)
-map g* <Plug>(incsearch-nohl-g*)
-map g# <Plug>(incsearch-nohl-g#)
-
-" autosave
-let g:auto_save        = 1
-let g:auto_save_silent = 1
 
 " clever_f
 let g:clever_f_across_no_line    = 1
