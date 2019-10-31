@@ -44,28 +44,29 @@ Plug 'vim-scripts/bash-support.vim'
 call plug#end()
 
 " --- performance / buffer ---
-set hidden                   " can put buffer to the background without writing
-set lazyredraw               " don't update the display while executing macros
-set ttyfast                  " Send more characters at a given time.
-                             " to disk, will remember history/marks.
-" --- history / file handling ---
-set autoread                 " reload files if changed externally
-set autowrite                " reload files if changed externally
+set hidden                 " can put buffer to the background without writing
+set lazyredraw             " don't update the display while executing macros
+set ttyfast                " Send more characters at a given time.
+                           " to disk, will remember history/marks.
 
-set autoindent smartindent   " auto/smart indent
-set cindent                  " Enables automatic C program indenting.
-set nocopyindent             " Do not copy previous indentation on auto indent
-set ruler                    " Show the line and column number of the cursor position,
-                             " separated by a comma.
-set cursorline               " Highlight current line
-set splitbelow splitright    " how to split new windows.
-set mousehide                " When on, the mouse pointer is hidden when characters are typed.
-set wildmenu                 " Hitting TAB in command mode will
-set wildmode=full            " Complete first full match, next match, etc.  (the default)
-set switchbuf=useopen        " useopen If included, jump to the first open window that
-                          " contains the specified buffer (if there is one).
-set scrolloff=4              " Minimal number of screen lines to keep above and below the cursor.
-set sidescrolloff=4          " Start scrolling n chars before end of screen.
+" --- history / file handling ---
+set autoread               " reload files if changed externally
+set autowrite              " reload files if changed externally
+
+set autoindent smartindent " auto/smart indent
+set cindent                " Enables automatic C program indenting.
+set nocopyindent           " Do not copy previous indentation on auto indent
+set ruler                  " Show the line and column number of the cursor position,
+                           " separated by a comma.
+set cursorline             " Highlight current line
+set splitbelow splitright  " how to split new windows.
+set mousehide              " When on, the mouse pointer is hidden when characters are typed.
+set wildmenu               " Hitting TAB in command mode will
+set wildmode=full          " Complete first full match, next match, etc.  (the default)
+set switchbuf=useopen      " useopen If included, jump to the first open window that
+                           " contains the specified buffer (if there is one).
+set scrolloff=4            " Minimal number of screen lines to keep above and below the cursor.
+set sidescrolloff=4        " Start scrolling n chars before end of screen.
 
 " --- remove sounds effects ---
 set noerrorbells
