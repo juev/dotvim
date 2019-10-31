@@ -23,7 +23,6 @@ Plug 'rhysd/clever-f.vim'
 Plug 'robertbasic/vim-hugo-helper'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'sheerun/vim-polyglot'
-Plug 'shvechikov/vim-keymap-russian-jcukenmac'
 Plug 'sjl/badwolf'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-apathy'
@@ -145,10 +144,7 @@ if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
 endif
 
 " Keymap
-if filereadable(expand("~/.vim/plugged/vim-keymap-russian-jcukenmac/README.md"))
-  set keymap=russian-jcukenmac iminsert=0 imsearch=0
-endif
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЖ;ABCDEFGHIJKLMNOPQRSTUVWXYZ:,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+set keymap=russian-jcukenmac iminsert=0 imsearch=0
 
 " Keys
 " Change mapleader (easier to type), at the top since its used everywhere
