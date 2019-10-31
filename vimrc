@@ -255,6 +255,7 @@ let g:netrw_altfile = 1
 
 " fzf
 nnoremap ; :Buffers<CR>
+nnoremap ;; <c-^>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
