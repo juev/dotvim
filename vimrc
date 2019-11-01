@@ -160,7 +160,7 @@ ino <silent> <F4> <ESC>:set invpaste<CR>:set paste?<CR>
 
 no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
-no <leader><leader> <c-^>
+no <leader><leader> <C-^>
 
 no j gj
 no k gk
@@ -253,7 +253,6 @@ let g:netrw_altfile = 1
 
 " fzf
 nnoremap ; :Buffers<CR>
-nnoremap ;; <c-^>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
@@ -289,7 +288,3 @@ let g:ale_pattern_options = {
 let g:clever_f_across_no_line    = 1
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_timeout_ms        = 3000
-
-" EasyAlign
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
