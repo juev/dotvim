@@ -106,9 +106,9 @@ set shiftwidth=4               " The # of spaces for indenting.
 set showmatch
 
 " timeout
-setglobal timeoutlen=250 ttimeoutlen=10
+setglobal timeoutlen=250 ttimeoutlen=3
 
-set viminfo='100,n$HOME/.vim/viminfo
+set viminfo='100,n$HOME/.viminfo
 
 " persistent undo
 set undofile
@@ -118,11 +118,11 @@ set undodir=~/.cache/vim/undodir
 " set clipboard+=unnamedplus
 
 if exists('+breakindent')
-  set breakindent showbreak=\ +
+    set breakindent showbreak=\ +
 endif
 
 if exists('+macmeta')
-  setglobal macmeta
+    setglobal macmeta
 endif
 
 let g:hugo_path = "~/Projects/juev.org"
@@ -133,7 +133,7 @@ set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 if has('mac') || has('unix')
-  set shell=bash
+    set shell=bash
 endif
 
 " Colors
@@ -141,7 +141,7 @@ set t_Co=256
 
 " Visual
 if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
-  colorscheme badwolf
+    colorscheme badwolf
 endif
 
 " Keymap
@@ -281,9 +281,9 @@ let g:better_whitespace_enabled = 1
 " Ale
 set omnifunc=ale#completion#OmniFunc
 let g:ale_pattern_options = {
-\   '.*\.yaml$': {'ale_enabled': 0},
-\   '.*\.yml$': {'ale_enabled': 0},
-\}
+            \   '.*\.yaml$': {'ale_enabled': 0},
+            \   '.*\.yml$': {'ale_enabled': 0},
+            \}
 
 " clever_f
 let g:clever_f_across_no_line    = 1
