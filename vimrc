@@ -53,9 +53,9 @@ set ttyfast                " Send more characters at a given time.
 set autoread               " reload files if changed externally
 set autowrite              " reload files if changed externally
 
-set autoindent smartindent " auto/smart indent
-set cindent                " Enables automatic C program indenting.
-set nocopyindent           " Do not copy previous indentation on auto indent
+" set autoindent smartindent " auto/smart indent
+" set cindent                " Enables automatic C program indenting.
+" set nocopyindent           " Do not copy previous indentation on auto indent
 set ruler                  " Show the line and column number of the cursor position,
                            " separated by a comma.
 set cursorline             " Highlight current line
