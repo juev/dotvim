@@ -16,6 +16,7 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'justinmk/vim-dirvish'
 Plug 'ledger/vim-ledger'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer'
@@ -26,6 +27,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'tpope/vim-apathy'
+Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-endwise'
@@ -37,7 +39,6 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/bash-support.vim'
 
@@ -96,7 +97,8 @@ set nowritebackup
 set noswapfile
 
 set nomodeline                 " don't use modeline (security)
-set backspace=eol,start,indent " allow backspacing over everything.
+" set backspace=eol,start,indent " allow backspacing over everything.
+set backspace=2                " make backspace work like most other programs
 set nostartofline              " Make j/k respect the columns
 set softtabstop=4              " Tab key results in # spaces
 set tabstop=4                  " Tab is # spaces
@@ -171,8 +173,8 @@ vn > >gv
 
 nn Y y$
 
-nn <silent> vv    <C-w>v
-nn <silent> ss    <C-w>s
+" nn <silent> vv    <C-w>v
+" nn <silent> ss    <C-w>s
 no <silent> <leader>0 <C-w>o
 
 " easier navigation between split windows
@@ -187,8 +189,8 @@ nn Q gqap
 nn <leader>fef gg=G
 
 " nn <silent> <BS> :noh<CR> :let @/=""<CR>
-nn <silent> <BS> :noh<CR>
-nn S :%s//g<LEFT><LEFT>
+" nn <silent> <BS> :noh<CR>
+" nn S :%s//g<LEFT><LEFT>
 
 command! Q q
 command! W w
@@ -278,7 +280,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
 
 " fzf
-nnoremap ; :Buffers<CR>
+" nnoremap ; :Buffers<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>f :Files<CR>
@@ -311,6 +313,6 @@ let g:ale_pattern_options = {
             \}
 
 " clever_f
-let g:clever_f_across_no_line    = 1
+let g:clever_f_across_no_line    = 0
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_timeout_ms        = 3000
