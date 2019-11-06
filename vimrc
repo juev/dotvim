@@ -207,6 +207,32 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
 
+" y: Yank and go to end of selection
+xnoremap y y`]
+
+" p: Paste in visual mode should not replace the default register with the
+" deleted text
+xnoremap p "_dP
+
+" d: Delete into the blackhole register to not clobber the last yank. To 'cut',
+" use 'x' instead
+xnoremap d "_d
+
+" Backspace: Delete selected and go into insert mode
+xnoremap <bs> c
+
+" .: repeats the last command on every line
+xnoremap . :normal.<cr>
+
+" @: repeats macro on every line
+xnoremap @ :normal@
+
+" Tab: Indent
+xmap <Tab> >
+
+" shift-tab: unindent
+xmap <s-tab> <
+
 set signcolumn=yes
 
 " Airline
