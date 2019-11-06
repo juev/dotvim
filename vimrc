@@ -316,3 +316,7 @@ let g:ale_pattern_options = {
 let g:clever_f_across_no_line    = 0
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_timeout_ms        = 3000
+
+" dirvish
+let g:dirvish_mode = ':sort ,^.*[\/],'
+autocmd FileType dirvish silent keeppatterns g@\v/\.[^\/]+/?$@d _
