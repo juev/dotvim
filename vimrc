@@ -16,7 +16,6 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
-Plug 'justinmk/vim-dirvish'
 Plug 'ledger/vim-ledger'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer'
@@ -36,6 +35,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -319,7 +319,3 @@ let g:ale_pattern_options = {
 let g:clever_f_across_no_line    = 0
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_timeout_ms        = 3000
-
-" dirvish
-let g:dirvish_mode = ':sort ,^.*[\/],'
-autocmd FileType dirvish silent keeppatterns g@\v/\.[^\/]+/?$@d _
