@@ -78,7 +78,7 @@ set foldcolumn=0             " Column with the specified width is shown at the s
 
 " --- search / regexp ---
 set magic                    " Enable extended regexes.
-set nohlsearch               " highlight searches
+set hlsearch               " highlight searches
 set ignorecase smartcase     " make searches case-insensitive, unless they
                              " contain upper-case letters
 set incsearch                " show the `best match so far' astyped
@@ -115,6 +115,8 @@ set viminfo='100,n$HOME/.viminfo
 " persistent undo
 set undofile
 set undodir=~/.cache/vim/undodir
+
+set nrformats=
 
 " clipboard system by default
 " set clipboard+=unnamedplus
@@ -194,6 +196,7 @@ nn <leader>fef gg=G
 " nn <silent> <BS> :noh<CR> :let @/=""<CR>
 " nn <silent> <BS> :noh<CR>
 " nn S :%s//g<LEFT><LEFT>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 command! Q q
 command! W w
