@@ -42,14 +42,6 @@ Plug 'tpope/vim-unimpaired'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/bash-support.vim'
 
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
 call plug#end()
 
 " --- performance / buffer ---
@@ -330,6 +322,3 @@ let g:ale_pattern_options = {
 let g:clever_f_across_no_line    = 0
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_timeout_ms        = 3000
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
