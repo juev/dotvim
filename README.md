@@ -34,4 +34,4 @@ Done!
 
 ## Appearance
 
-![macvim](macvim.png "MacVim")
+![vim](vim.png "Vim")
