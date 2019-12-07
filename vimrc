@@ -325,3 +325,7 @@ let g:ale_pattern_options = {
 let g:clever_f_across_no_line    = 0
 let g:clever_f_fix_key_direction = 1
 let g:clever_f_timeout_ms        = 3000
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/',
+            \ 'syntax': 'markdown', 'ext': '.md'}]
