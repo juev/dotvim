@@ -206,6 +206,9 @@ command! W w
 
 cmap w!! w !sudo tee > /dev/null %
 
+" format json by =j
+vmap =j :%!python -m json.tool<CR>
+
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
