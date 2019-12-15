@@ -11,34 +11,21 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'christoomey/vim-sort-motion'
-Plug 'christoomey/vim-system-copy'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer'
-Plug 'rhysd/clever-f.vim'
-Plug 'robertbasic/vim-hugo-helper'
-Plug 'roxma/vim-tmux-clipboard'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'tpope/vim-apathy'
-Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-scripts/bash-support.vim'
@@ -220,32 +207,6 @@ noremap <Leader>p "*p
 noremap <Leader>Y "+y
 noremap <Leader>P "+p
 
-" y: Yank and go to end of selection
-xnoremap y y`]
-
-" p: Paste in visual mode should not replace the default register with the
-" deleted text
-xnoremap p "_dP
-
-" d: Delete into the blackhole register to not clobber the last yank. To 'cut',
-" use 'x' instead
-xnoremap d "_d
-
-" Backspace: Delete selected and go into insert mode
-xnoremap <bs> c
-
-" .: repeats the last command on every line
-xnoremap . :normal.<cr>
-
-" @: repeats macro on every line
-xnoremap @ :normal@
-
-" Tab: Indent
-xmap <Tab> >
-
-" shift-tab: unindent
-xmap <s-tab> <
-
 set signcolumn=yes
 
 " Airline
@@ -314,11 +275,6 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
-
-" clever_f
-let g:clever_f_across_no_line    = 0
-let g:clever_f_fix_key_direction = 1
-let g:clever_f_timeout_ms        = 3000
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
