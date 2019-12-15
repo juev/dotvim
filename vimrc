@@ -13,7 +13,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'christoomey/vim-sort-motion'
 Plug 'christoomey/vim-system-copy'
-Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
@@ -62,7 +61,7 @@ set autowrite              " reload files if changed externally
 " set nocopyindent           " Do not copy previous indentation on auto indent
 set ruler                  " Show the line and column number of the cursor position,
                            " separated by a comma.
-set cursorline             " Highlight current line
+set nocursorline             " Highlight current line
 set splitbelow splitright  " how to split new windows.
 set mousehide              " When on, the mouse pointer is hidden when characters are typed.
 set wildmenu               " Hitting TAB in command mode will
@@ -252,7 +251,6 @@ set signcolumn=yes
 " Airline
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
-let g:airline#extensions#ale#enabled = 1
 
 " Vim-Go
 let g:go_template_autocreate = 0
@@ -316,13 +314,6 @@ let g:UltiSnipsRemoveSelectModeMappings = 0
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
-
-" Ale
-set omnifunc=ale#completion#OmniFunc
-let g:ale_pattern_options = {
-            \   '.*\.yaml$': {'ale_enabled': 0},
-            \   '.*\.yml$': {'ale_enabled': 0},
-            \}
 
 " clever_f
 let g:clever_f_across_no_line    = 0
