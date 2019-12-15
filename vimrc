@@ -99,7 +99,9 @@ set showmatch
 " timeout
 setglobal timeoutlen=250 ttimeoutlen=3
 
-set viminfo='100,n$HOME/.viminfo
+if !has('nvim')
+    set viminfo='100,n$HOME/.viminfo
+endif
 
 " persistent undo
 set undofile
