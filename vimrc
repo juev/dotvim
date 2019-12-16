@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 Plug 'jreybert/vimagit'
@@ -17,6 +16,7 @@ Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
+Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer'
 Plug 'sheerun/vim-polyglot'
@@ -89,9 +89,10 @@ set shiftwidth=4               " The # of spaces for indenting.
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
 set signcolumn=yes
+set updatetime=100
 
 " timeout
-setglobal timeoutlen=250 ttimeoutlen=3
+setglobal timeoutlen=250 ttimeoutlen=50
 
 if !has('nvim')
     set viminfo='100,n$HOME/.viminfo
