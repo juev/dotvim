@@ -12,6 +12,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
+Plug 'jreybert/vimagit'
 Plug 'juev/vim-hugo'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
@@ -22,7 +23,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
@@ -43,12 +43,7 @@ set ttyfast                " Send more characters at a given time.
 set autoread               " reload files if changed externally
 set autowrite              " reload files if changed externally
 
-" set autoindent smartindent " auto/smart indent
-" set cindent                " Enables automatic C program indenting.
-" set nocopyindent           " Do not copy previous indentation on auto indent
-set ruler                  " Show the line and column number of the cursor position,
-                           " separated by a comma.
-set nocursorline             " Highlight current line
+set cursorline             " Highlight current line
 set splitbelow splitright  " how to split new windows.
 set mousehide              " When on, the mouse pointer is hidden when characters are typed.
 set wildmenu               " Hitting TAB in command mode will
@@ -64,7 +59,6 @@ set visualbell
 set t_vb=
 
 set foldcolumn=0             " Column with the specified width is shown at the side of the widow
-
 " --- search / regexp ---
 set magic                    " Enable extended regexes.
 set hlsearch               " highlight searches
@@ -77,7 +71,6 @@ set smarttab                 " At start of line, <Tab> inserts shift width
                              " spaces, <Bs> deletes shift width spaces.
 set nowrap                   " no wrap lines
 set laststatus=2             " Always show status line
-" set guicursor=a:blinkwait0,a:block-cursor
 
 " --- backup and swap files ---
 " I save all the time, those are annoying and unnecessary...
@@ -86,7 +79,7 @@ set nowritebackup
 set noswapfile
 
 set nomodeline                 " don't use modeline (security)
-" set backspace=eol,start,indent " allow backspacing over everything.
+set backspace=eol,start,indent " allow backspacing over everything.
 set backspace=2                " make backspace work like most other programs
 set nostartofline              " Make j/k respect the columns
 set softtabstop=4              " Tab key results in # spaces
@@ -95,6 +88,7 @@ set shiftwidth=4               " The # of spaces for indenting.
 
 " highlight a matching [{()}] when cursor is placed on start/end character
 set showmatch
+set signcolumn=yes
 
 " timeout
 setglobal timeoutlen=250 ttimeoutlen=3
@@ -143,11 +137,8 @@ endif
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
 
 " Keys
-" Change mapleader (easier to type), at the top since its used everywhere
 let mapleader="\<Space>"
 let maplocalleader="\<Space>"
-
-no ' ,
 
 no <silent> <Leader>1 :set invnumber<CR>
 ino <silent> <Leader>1 :set invnumber<CR>
@@ -169,8 +160,6 @@ vn > >gv
 
 nn Y y$
 
-" nn <silent> vv    <C-w>v
-" nn <silent> ss    <C-w>s
 no <silent> <leader>0 <C-w>o
 
 " easier navigation between split windows
@@ -184,9 +173,6 @@ nn Q gqap
 
 nn <leader>fef gg=G
 
-" nn <silent> <BS> :noh<CR> :let @/=""<CR>
-" nn <silent> <BS> :noh<CR>
-" nn S :%s//g<LEFT><LEFT>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 command! Q q
@@ -200,17 +186,6 @@ vmap =j :%!python -m json.tool<CR>
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
-map <Leader>ev :edit $MYVIMRC<CR>
-map <Leader>es :source $MYVIMRC<CR>
-
-" Keys for clipboard
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-noremap <Leader>Y "+y
-noremap <Leader>P "+p
-
-set signcolumn=yes
-
 " Airline
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
@@ -223,19 +198,6 @@ let g:go_highlight_functions = 1
 
 " Ansible
 let g:ansible_unindent_after_newline = 1
-
-" Diff
-if &diff
-    set cursorline
-    map ] ]c
-    map [ [c
-    map <leader>1 :diffget LOCAL<CR>
-    map <leader>2 :diffget BASE<CR>
-    map <leader>3 :diffget REMOTE<CR>
-    let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=patience")'
-    set diffopt+=iwhite
-    set diffexpr=""
-endif
 
 " vim-markdown
 let g:vim_markdown_conceal = 0
