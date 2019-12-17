@@ -12,7 +12,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'jreybert/vimagit'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -20,7 +20,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegu
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'racer-rust/vim-racer'
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
@@ -34,11 +34,6 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-" set wildmode=full
-" set switchbuf=useopen
-
-" clipboard system by default
-" set clipboard+=unnamedplus
 
 let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
@@ -146,6 +141,10 @@ nnoremap <leader>s :Rg<Space>
 
 " This is the default extra key bindings
 let g:fzf_layout = { 'down': '~40%' }
+
+if executable('fd')
+  let $FZF_DEFAULT_COMMAND = 'fd --type f --color=never'
+endif
 
 " vim-rooter
 let g:rooter_resolve_links = 1
