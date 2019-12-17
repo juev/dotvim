@@ -19,6 +19,7 @@ Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
+Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'sheerun/vim-polyglot'
@@ -31,6 +32,14 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
+
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -163,3 +172,9 @@ let g:better_whitespace_enabled = 1
 
 " vimwiki
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
+
+" neomake
+call neomake#configure#automake('nrwi', 500)
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
