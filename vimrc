@@ -9,14 +9,16 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'WolfgangMehner/bash-support'
+Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 Plug 'jreybert/vimagit'
 Plug 'juev/vim-hugo'
+Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
-Plug 'mhinz/vim-signify'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer'
 Plug 'sheerun/vim-polyglot'
@@ -28,92 +30,15 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-scripts/bash-support.vim'
 Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-" --- performance / buffer ---
-set hidden                 " can put buffer to the background without writing
-set lazyredraw             " don't update the display while executing macros
-set ttyfast                " Send more characters at a given time.
-                           " to disk, will remember history/marks.
-
-" --- history / file handling ---
-set autoread               " reload files if changed externally
-set autowrite              " reload files if changed externally
-
-set cursorline             " Highlight current line
-set splitbelow splitright  " how to split new windows.
-set mousehide              " When on, the mouse pointer is hidden when characters are typed.
-set wildmenu               " Hitting TAB in command mode will
-set wildmode=full          " Complete first full match, next match, etc.  (the default)
-set switchbuf=useopen      " useopen If included, jump to the first open window that
-                           " contains the specified buffer (if there is one).
-set scrolloff=4            " Minimal number of screen lines to keep above and below the cursor.
-set sidescrolloff=4        " Start scrolling n chars before end of screen.
-
-" --- remove sounds effects ---
-set noerrorbells
-set visualbell
-set t_vb=
-
-set foldcolumn=0             " Column with the specified width is shown at the side of the widow
-" --- search / regexp ---
-set magic                    " Enable extended regexes.
-set hlsearch               " highlight searches
-set ignorecase smartcase     " make searches case-insensitive, unless they
-                             " contain upper-case letters
-set incsearch                " show the `best match so far' astyped
-
-set expandtab                " Expand tabs to spaces
-set smarttab                 " At start of line, <Tab> inserts shift width
-                             " spaces, <Bs> deletes shift width spaces.
-set nowrap                   " no wrap lines
-set laststatus=2             " Always show status line
-
-" --- backup and swap files ---
-" I save all the time, those are annoying and unnecessary...
-set nobackup
-set nowritebackup
-set noswapfile
-
-set nomodeline                 " don't use modeline (security)
-set backspace=eol,start,indent " allow backspacing over everything.
-set backspace=2                " make backspace work like most other programs
-set nostartofline              " Make j/k respect the columns
-set softtabstop=4              " Tab key results in # spaces
-set tabstop=4                  " Tab is # spaces
-set shiftwidth=4               " The # of spaces for indenting.
-
-" highlight a matching [{()}] when cursor is placed on start/end character
-set showmatch
-set signcolumn=yes
-set updatetime=100
-
-" timeout
-setglobal timeoutlen=250 ttimeoutlen=50
-
-if !has('nvim')
-    set viminfo='100,n$HOME/.viminfo
-endif
-
-" persistent undo
-set undofile
-set undodir=~/.cache/vim/undodir
-
-set nrformats=
+" set wildmode=full
+" set switchbuf=useopen
 
 " clipboard system by default
 " set clipboard+=unnamedplus
-
-if exists('+breakindent')
-    set breakindent showbreak=\ +
-endif
-
-if exists('+macmeta')
-    setglobal macmeta
-endif
 
 let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
@@ -121,10 +46,6 @@ let no_buffers_menu = 1
 scriptencoding utf-8
 set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
-
-if has('mac') || has('unix')
-    set shell=bash
-endif
 
 " Colors
 set t_Co=256
