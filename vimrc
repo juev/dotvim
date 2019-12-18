@@ -12,6 +12,7 @@ Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'jceb/vim-orgmode'
 Plug 'jreybert/vimagit'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -160,3 +161,6 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext'
 
 " neomake
 call neomake#configure#automake('nrwi', 500)
+
+" org-mode
+let g:org_agenda_files = ['~/Dropbox/Apps/org/inbox.org','~/Dropbox/Apps/org/private.org', '~/Dropbox/Apps/org/work.org']
