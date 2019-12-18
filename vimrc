@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 
 "Add your bundles here
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
@@ -32,14 +31,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 call plug#end()
 
@@ -160,12 +151,6 @@ let g:rooter_resolve_links = 1
 let g:rooter_silent_chdir = 1
 let g:rooter_use_lcd = 1
 
-" UltiSnips
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-let g:UltiSnipsRemoveSelectModeMappings = 0
-
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
@@ -175,6 +160,3 @@ let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext'
 
 " neomake
 call neomake#configure#automake('nrwi', 500)
-
-" deoplete
-let g:deoplete#enable_at_startup = 1
