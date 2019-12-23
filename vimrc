@@ -59,11 +59,11 @@ let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 
 no <silent> <Leader>1 :set invnumber<CR>
-ino <silent> <Leader>1 :set invnumber<CR>
+" ino <silent> <Leader>1 :set invnumber<CR>
 
 " Toggle paste mode
 no <silent> <Leader>4 :set invpaste<CR>:set paste?<CR>
-ino <silent> <Leader>4 <ESC>:set invpaste<CR>:set paste?<CR>
+" ino <silent> <Leader>4 <ESC>:set invpaste<CR>:set paste?<CR>
 
 no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
