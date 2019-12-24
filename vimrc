@@ -36,6 +36,12 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
+set fillchars=diff:⣿,vert:│
+set fillchars=diff:⣿,vert:\|
+
+set notimeout
+set ttimeout
+set ttimeoutlen=10
 
 let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
@@ -104,6 +110,12 @@ vmap =j :%!python -m json.tool<CR>
 
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
+
+nnoremap K :q<cr>
+nnoremap s :w<cr>
+nnoremap - :wincmd =<cr>
+
+nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
 
 " Airline
 let g:airline_detect_spell = 0
