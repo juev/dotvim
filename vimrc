@@ -24,6 +24,7 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
+Plug 'sjl/clam.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -160,7 +161,9 @@ let g:better_whitespace_enabled = 1
 let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " neomake
-call neomake#configure#automake('nrwi', 500)
+if filereadable(expand("~/.vim/plugged/neomake/README.md"))
+    call neomake#configure#automake('nrwi', 500)
+endif
 
 " org-mode
 let g:org_agenda_files = ['~/Dropbox/Apps/org/inbox.org','~/Dropbox/Apps/org/private.org', '~/Dropbox/Apps/org/work.org']
