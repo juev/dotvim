@@ -14,3 +14,6 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 "
 " Resize panes when window/terminal gets resize
 autocmd VimResized * :wincmd =
+
+autocmd User GnuPG setl textwidth=72
+

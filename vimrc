@@ -12,6 +12,7 @@ Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'jamessan/vim-gnupg'
 Plug 'jceb/vim-orgmode'
 Plug 'jreybert/vimagit'
 Plug 'juev/vim-hugo'
@@ -113,7 +114,6 @@ nnoremap <silent> <S-Tab> :bp<CR>
 
 nnoremap K :q<cr>
 nnoremap s :w<cr>
-nnoremap - :wincmd =<cr>
 
 nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
 
