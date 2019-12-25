@@ -32,6 +32,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
