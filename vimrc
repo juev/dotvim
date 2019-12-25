@@ -47,6 +47,8 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 set t_Co=256
 set background=dark
 
+set shortmess+=I
+
 " Visual
 if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
     colorscheme badwolf
