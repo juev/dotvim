@@ -14,7 +14,6 @@ Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'jamessan/vim-gnupg'
 Plug 'jceb/vim-orgmode'
-Plug 'jreybert/vimagit'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
@@ -28,21 +27,17 @@ Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
 set fillchars=diff:⣿,vert:│
 set fillchars=diff:⣿,vert:\|
-
-set notimeout
-set ttimeout
-set ttimeoutlen=10
 
 let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
@@ -53,6 +48,7 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 " Colors
 set t_Co=256
+set background=dark
 
 " Visual
 if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
@@ -67,11 +63,9 @@ let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 
 no <silent> <Leader>1 :set invnumber<CR>
-" ino <silent> <Leader>1 :set invnumber<CR>
 
 " Toggle paste mode
 no <silent> <Leader>4 :set invpaste<CR>:set paste?<CR>
-" ino <silent> <Leader>4 <ESC>:set invpaste<CR>:set paste?<CR>
 
 no <silent> <Leader>q :bw<CR>
 no <silent> <leader>w :w!<CR>
@@ -112,10 +106,23 @@ vmap =j :%!python -m json.tool<CR>
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
-nnoremap K :q<cr>
-nnoremap s :w<cr>
-
 nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
+nnoremap <leader>eo :vsplit ~/Dropbox/Apps/org/inbox.org<cr>
+
+" Clipboard functionality (paste from system)
+vnoremap  <leader>y "+y
+nnoremap  <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
 
 " Airline
 let g:airline_detect_spell = 0
@@ -168,9 +175,6 @@ let g:rooter_use_lcd = 1
 " Better whitespace
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
-
-" vimwiki
-let g:vimwiki_list = [{'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md'}]
 
 " neomake
 if filereadable(expand("~/.vim/plugged/neomake/README.md"))
