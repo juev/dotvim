@@ -12,7 +12,6 @@ Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'jamessan/vim-gnupg'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
