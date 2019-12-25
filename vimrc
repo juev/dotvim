@@ -13,7 +13,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'jamessan/vim-gnupg'
-Plug 'jceb/vim-orgmode'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
@@ -35,9 +34,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
-
-set fillchars=diff:⣿,vert:│
-set fillchars=diff:⣿,vert:\|
 
 let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
@@ -78,8 +74,6 @@ no k gk
 vn < <gv
 vn > >gv
 
-nn Y y$
-
 no <silent> <leader>0 <C-w>o
 
 " easier navigation between split windows
@@ -107,7 +101,7 @@ nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
 nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
-nnoremap <leader>eo :vsplit ~/Dropbox/Apps/org/inbox.org<cr>
+nnoremap <leader>eh :vsplit ~/Projects/Github/hledger/2019.journal<cr>
 
 " Clipboard functionality (paste from system)
 vnoremap  <leader>y "+y
@@ -180,6 +174,3 @@ let g:better_whitespace_enabled = 1
 if filereadable(expand("~/.vim/plugged/neomake/README.md"))
     call neomake#configure#automake('nrwi', 500)
 endif
-
-" org-mode
-let g:org_agenda_files = ['~/Dropbox/Apps/org/inbox.org','~/Dropbox/Apps/org/private.org', '~/Dropbox/Apps/org/work.org']
