@@ -20,6 +20,7 @@ Plug 'ledger/vim-ledger'
 Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
