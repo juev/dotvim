@@ -11,6 +11,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'ervandew/supertab'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -177,3 +178,7 @@ let g:better_whitespace_enabled = 1
 if filereadable(expand("~/.vim/plugged/neomake/README.md"))
     call neomake#configure#automake('nrwi', 500)
 endif
+
+" supertab
+let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
