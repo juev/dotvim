@@ -6,11 +6,12 @@ set nocompatible             " Disable vi compatibility
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-"Add your bundles here
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'airblade/vim-rooter'
+Plug 'aperezdc/vim-template'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -177,3 +178,13 @@ let g:better_whitespace_enabled = 1
 if filereadable(expand("~/.vim/plugged/neomake/README.md"))
     call neomake#configure#automake('nrwi', 500)
 endif
+
+" vim-template
+let g:username = "Denis Evsyukov"
+let g:email = "@juev"
+let g:templates_no_autocmd = 1
+
+" ultisnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
