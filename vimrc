@@ -7,9 +7,9 @@ set nocompatible             " Disable vi compatibility
 call plug#begin('~/.vim/plugged')
 
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'SirVer/ultisnips'
 Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
-Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'fatih/vim-go', { 'for': 'go' }
@@ -20,7 +20,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
 Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
@@ -34,6 +33,11 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
+
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 call plug#end()
 
@@ -174,11 +178,6 @@ let g:rooter_use_lcd = 1
 let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
 let g:better_whitespace_enabled = 1
 
-" neomake
-if filereadable(expand("~/.vim/plugged/neomake/README.md"))
-    call neomake#configure#automake('nrwi', 500)
-endif
-
 " vim-template
 let g:username = "Denis Evsyukov"
 let g:email = "@juev"
@@ -188,3 +187,13 @@ let g:templates_no_autocmd = 1
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+" neomake
+if filereadable(expand("~/.vim/plugged/neomake/README.md"))
+    call neomake#configure#automake('nrwi', 500)
+endif
+
+" languageclient
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
