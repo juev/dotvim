@@ -12,13 +12,13 @@ Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
+Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'ledger/vim-ledger'
-Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'rhysd/vim-clang-format'
 Plug 'sheerun/vim-polyglot'
@@ -33,11 +33,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
-
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
 
 call plug#end()
 
@@ -188,12 +183,8 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" neomake
-if filereadable(expand("~/.vim/plugged/neomake/README.md"))
-    call neomake#configure#automake('nrwi', 500)
-endif
+" ale
+let g:ale_linters = {'rust': ['rls']}
+let g:ale_completion_enabled = 1
+let g:ale_rust_rls_toolchain = 'stable'
 
-" languageclient
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
-    \ }
