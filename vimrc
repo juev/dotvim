@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'WolfgangMehner/bash-support'
 Plug 'airblade/vim-gitgutter'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
 Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'fatih/vim-go', { 'for': 'go' }
