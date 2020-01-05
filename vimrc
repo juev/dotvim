@@ -184,7 +184,7 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " ale
-let g:ale_linters = {'rust': ['rls']}
+let g:ale_linters = {'rust': ['rls'], 'go': ['gopls']}
 let g:ale_completion_enabled = 1
 let g:ale_rust_rls_toolchain = 'stable'
 
