@@ -117,19 +117,19 @@ snippet head "File Header" b
 /******************************************************************************
 * File:             `!p snip.rv = fn`
 *
-* Author:           ${2}  
-* Created:          `date +%m/%d/%y` 
+* Author:           ${2}
+* Created:          `date +%m/%d/%y`
 * Description:      ${4:${VISUAL}}
 *****************************************************************************/
 ${0}
 endsnippet
 
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
-snippet func "Function Header" 
+snippet func "Function Header"
 /******************************************************************************
 * Function:         $1
 * Description:      ${4:${VISUAL}}
-* Where:`!p 
+* Where:`!p
 snip.rv = ""
 snip >> 2
 
@@ -146,4 +146,17 @@ ${1}($2){
 	${0}
 }
 endsnippet
+
+snippet while "while loop"
+while (${1:true}) {
+	${VISUAL}$0
+}
+endsnippet
+
+snippet if "if .. (if)"
+if (${1:/* condition */}) {
+	${VISUAL}$0
+}
+endsnippet
+
 # vim:ft=snippets:
