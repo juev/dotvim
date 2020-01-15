@@ -46,6 +46,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-jp/vim-cpp' | Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/xslt-syntax'
 Plug 'wellle/targets.vim'
+Plug 'wikitopian/hardmode'
 
 call plug#end()
 
@@ -124,6 +125,8 @@ vnoremap <leader>y "+y
 nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
+
+inoremap jj <Esc>
 
 " Airline
 let g:airline_detect_spell = 0
