@@ -120,19 +120,10 @@ nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
 nnoremap <leader>eh :vsplit ~/Projects/Github/hledger/2019.journal<cr>
 
 " Clipboard functionality (paste from system)
-vnoremap  <leader>y "+y
-nnoremap  <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
-
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " Airline
 let g:airline_detect_spell = 0
