@@ -18,5 +18,3 @@ autocmd VimResized * :wincmd =
 " c/cpp
 autocmd FileType c,cpp,objc ClangFormatAutoEnable
 
-autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
-

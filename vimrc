@@ -46,7 +46,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-jp/vim-cpp' | Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/xslt-syntax'
 Plug 'wellle/targets.vim'
-Plug 'wikitopian/hardmode'
 
 call plug#end()
 
