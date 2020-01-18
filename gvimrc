@@ -4,7 +4,7 @@ set vb t_vb=
 set guioptions=gtme
 set antialias
 
-let g:airline_theme='solarized'
+" let g:airline_theme='solarized'
 
 if has('mac')
   "set guifont=Dejavu\ Sans\ Mono\ for\ Powerline:h15
