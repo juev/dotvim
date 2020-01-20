@@ -11,7 +11,6 @@ Plug 'airblade/vim-rooter'
 Plug 'amadeus/vim-xml'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
-Plug 'dense-analysis/ale'
 Plug 'ekalinin/dockerfile.vim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
@@ -23,6 +22,7 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'mtdl9/vim-log-highlighting'
+Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pboettch/vim-cmake-syntax'
@@ -190,8 +190,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" ale
-let g:ale_linters = {'rust': ['rls']}
-let g:ale_completion_enabled = 1
-let g:ale_rust_rls_toolchain = 'stable'
-
+if filereadable(expand("~/.vim/plugged/neomake/README.md"))
+    call neomake#configure#automake('nrwi', 500)
+endif
