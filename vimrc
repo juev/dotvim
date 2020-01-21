@@ -20,6 +20,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegu
 Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'mtdl9/vim-log-highlighting'
 Plug 'neomake/neomake'
@@ -160,9 +161,10 @@ let g:netrw_altfile = 1
 " nnoremap ; :Buffers<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
-nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>s :Rg<Space>
+
+nnoremap <leader>f :SK<CR>
 
 " This is the default extra key bindings
 let g:fzf_layout = { 'down': '~40%' }
