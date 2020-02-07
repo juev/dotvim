@@ -23,7 +23,7 @@ Plug 'ledger/vim-ledger'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'mtdl9/vim-log-highlighting'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'othree/html5.vim'
 Plug 'pboettch/vim-cmake-syntax'
@@ -49,6 +49,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-jp/vim-cpp' | Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/xslt-syntax'
+Plug 'wellle/context.vim'
 Plug 'wellle/targets.vim'
 
 call plug#end()
