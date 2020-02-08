@@ -195,6 +195,6 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-if filereadable(expand("~/.vim/plugged/neomake/README.md"))
-    call neomake#configure#automake('nrwi', 500)
-endif
+" if filereadable(expand("~/.vim/plugged/neomake/README.md"))
+"     call neomake#configure#automake('nrwi', 500)
+" endif
