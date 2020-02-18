@@ -49,7 +49,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-jp/vim-cpp' | Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'vim-scripts/xslt-syntax'
-Plug 'wellle/context.vim'
 Plug 'wellle/targets.vim'
 
 call plug#end()
