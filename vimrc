@@ -8,10 +8,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'amadeus/vim-xml'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
-Plug 'ekalinin/dockerfile.vim'
+Plug 'dense-analysis/ale'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
@@ -23,14 +22,10 @@ Plug 'ledger/vim-ledger'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'mtdl9/vim-log-highlighting'
-" Plug 'neomake/neomake'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/html5.vim'
-Plug 'pboettch/vim-cmake-syntax'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rhysd/git-messenger.vim'
-Plug 'rhysd/vim-clang-format'
 Plug 'rust-lang/rust.vim'
 Plug 'sirver/ultisnips'
 Plug 'sjl/badwolf'
@@ -47,8 +42,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-jp/vim-cpp' | Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'vim-scripts/xslt-syntax'
 Plug 'wellle/targets.vim'
 
 call plug#end()
@@ -158,7 +151,6 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
 
 " fzf
-" nnoremap ; :Buffers<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
 nnoremap <leader>g :GFiles<CR>
@@ -192,6 +184,12 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
-" if filereadable(expand("~/.vim/plugged/neomake/README.md"))
-"     call neomake#configure#automake('nrwi', 500)
-" endif
+" Ale
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
+let g:ale_linters = {
+            \ 'rust': [ 'rls' ],
+            \ }
+let g:ale_rust_rls_toolchain = 'stable'
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
