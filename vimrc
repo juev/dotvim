@@ -21,12 +21,9 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'mattesgroeger/vim-bookmarks'
-Plug 'mtdl9/vim-log-highlighting'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sirver/ultisnips'
@@ -185,17 +182,6 @@ let g:templates_no_autocmd = 1
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-
-" vim-lsp
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'rls',
-        \ 'cmd': {server_info->['rustup', 'run', 'stable', 'rls']},
-        \ 'workspace_config': {'rust': {'clippy_preference': 'on'}},
-        \ 'whitelist': ['rust'],
-        \ })
-endif
-let g:lsp_diagnostics_enabled = 0
 
 " trim whitespace
 fun! TrimWhitespace()
