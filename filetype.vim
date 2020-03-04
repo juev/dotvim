@@ -4,17 +4,14 @@ au BufRead,BufNewFile {*.txt,*.md,*.mkd,*.markdown}                   setlocal s
 au! BufReadPost       {COMMIT_EDITMSG,*/COMMIT_EDITMSG}               set ft=gitcommit
 au! BufWritePost      *.snippet                                       call ReloadAllSnippets()
 " Remove trailing spaces
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Rust
 au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
-"
+autocmd FileType rust setlocal omnifunc=lsp#complete
+
 " Resize panes when window/terminal gets resize
 autocmd VimResized * :wincmd =
-
-" c/cpp
-autocmd FileType c,cpp,objc ClangFormatAutoEnable
-
