@@ -12,21 +12,19 @@ Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
 Plug 'elzr/vim-json'
-Plug 'fatih/vim-go'
+Plug 'govim/govim'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'sirver/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
@@ -126,10 +124,10 @@ let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 
 " Vim-Go
-let g:go_template_autocreate = 0
-let g:go_fmt_command = "goimports"
-let g:go_highlight_types = 1
-let g:go_highlight_functions = 1
+" let g:go_template_autocreate = 0
+" let g:go_fmt_command = "goimports"
+" let g:go_highlight_types = 1
+" let g:go_highlight_functions = 1
 
 " Ansible
 let g:ansible_unindent_after_newline = 1
@@ -143,7 +141,7 @@ let g:vim_markdown_folding_disabled = 1
 
 " Rust
 let g:rustfmt_autosave = 1
-let g:racer_cmd = "~/.cargo/bin/racer"
+" let g:racer_cmd = "~/.cargo/bin/racer"
 
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -179,9 +177,9 @@ let g:email = "@juev"
 let g:templates_no_autocmd = 1
 
 " ultisnips
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+" let g:UltiSnipsExpandTrigger = '<tab>'
+" let g:UltiSnipsJumpForwardTrigger = '<tab>'
+" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " trim whitespace
 fun! TrimWhitespace()
@@ -191,3 +189,12 @@ fun! TrimWhitespace()
 endfun
 command! TrimWhitespace call TrimWhitespace()
 
+" vimgo
+set mouse=a
+set ttymouse=sgr
+set updatetime=500
+set balloondelay=250
+if has("patch-8.1.1904")
+  set completeopt+=popup
+  set completepopup=align:menu,border:off,highlight:Pmenu
+endif
