@@ -12,7 +12,7 @@ Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
 Plug 'elzr/vim-json'
-Plug 'govim/govim'
+Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
@@ -124,10 +124,10 @@ let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 
 " Vim-Go
-" let g:go_template_autocreate = 0
-" let g:go_fmt_command = "goimports"
-" let g:go_highlight_types = 1
-" let g:go_highlight_functions = 1
+let g:go_template_autocreate = 0
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
 
 " Ansible
 let g:ansible_unindent_after_newline = 1
@@ -175,11 +175,6 @@ let g:better_whitespace_enabled = 1
 let g:username = "Denis Evsyukov"
 let g:email = "@juev"
 let g:templates_no_autocmd = 1
-
-" ultisnips
-" let g:UltiSnipsExpandTrigger = '<tab>'
-" let g:UltiSnipsJumpForwardTrigger = '<tab>'
-" let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 " trim whitespace
 fun! TrimWhitespace()
