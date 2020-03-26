@@ -153,7 +153,7 @@ nnoremap <leader>h :History<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>s :Rg<Space>
 
-nnoremap <leader>f :SK<CR>
+nnoremap <leader>f :Files<CR>
 
 " This is the default extra key bindings
 let g:fzf_layout = { 'down': '~40%' }
