@@ -120,6 +120,8 @@ nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
 vnoremap p "_dP
+vnoremap <leader>d "_d
+nnoremap <leader>d "_d
 
 " Airline
 let g:airline_detect_spell = 0
