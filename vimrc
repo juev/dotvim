@@ -119,6 +119,8 @@ nnoremap <leader>y "+y
 nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
+vnoremap p "_dP
+
 " Airline
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
