@@ -41,6 +41,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
+Plug 'mhinz/vim-startify'
 
 call plug#end()
 
@@ -209,3 +210,7 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+" coc
+let g:coc_global_extensions = ['coc-marketplace']
+let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml']
