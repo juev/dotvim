@@ -20,6 +20,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'mattesgroeger/vim-bookmarks'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
@@ -197,3 +198,14 @@ if has("patch-8.1.1904")
   set completeopt+=popup
   set completepopup=align:menu,border:off,highlight:Pmenu
 endif
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
