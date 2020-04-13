@@ -214,3 +214,6 @@ inoremap <silent><expr> <Tab>
 " coc
 let g:coc_global_extensions = ['coc-marketplace']
 let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml']
+
+" ale
+let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
