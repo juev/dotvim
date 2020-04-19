@@ -41,7 +41,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
-Plug 'mhinz/vim-startify'
 
 call plug#end()
 
