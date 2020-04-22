@@ -199,20 +199,11 @@ if has("patch-8.1.1904")
   set completepopup=align:menu,border:off,highlight:Pmenu
 endif
 
-" use <tab> for trigger completion and navigate to the next complete item
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
-
-inoremap <silent><expr> <Tab>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<Tab>" :
-      \ coc#refresh()
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc
 let g:coc_global_extensions = ['coc-marketplace']
-let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml']
+let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml', 'coc-lists']
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
