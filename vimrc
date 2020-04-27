@@ -24,6 +24,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
@@ -66,16 +67,18 @@ endif
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
 
 " Keys
-let mapleader="\<Space>"
-let maplocalleader="\<Space>"
+" let mapleader="\<Space>"
+" let maplocalleader="\<Space>"
+let mapleader=","
+let maplocalleader=","
 
 no <silent> <Leader>1 :set invnumber<CR>
 
 " Toggle paste mode
 no <silent> <Leader>4 :set invpaste<CR>:set paste?<CR>
 
-no <silent> <Leader>q :bw<CR>
-no <silent> <leader>w :w!<CR>
+" no <silent> <Leader>q :bw<CR>
+" no <silent> <leader>w :w!<CR>
 no <leader><leader> <C-^>
 
 no j gj
@@ -127,6 +130,7 @@ nnoremap <leader>d "_d
 " Airline
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
+let g:airline_powerline_fonts = 1
 
 " Vim-Go
 let g:go_template_autocreate = 0
