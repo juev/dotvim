@@ -67,10 +67,8 @@ endif
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
 
 " Keys
-" let mapleader="\<Space>"
-" let maplocalleader="\<Space>"
-let mapleader=","
-let maplocalleader=","
+let mapleader="\<Space>"
+let maplocalleader="\<Space>"
 
 no <silent> <Leader>1 :set invnumber<CR>
 
