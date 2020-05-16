@@ -11,6 +11,7 @@ Plug 'airblade/vim-rooter'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
+Plug 'elixir-editors/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
@@ -205,7 +206,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc
 let g:coc_global_extensions = ['coc-marketplace']
-let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml', 'coc-lists']
+let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml', 'coc-lists', 'coc-elixir']
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
