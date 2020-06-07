@@ -14,6 +14,7 @@ Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
+Plug 'jceb/vim-orgmode'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
@@ -206,7 +207,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " coc
 let g:coc_global_extensions = ['coc-marketplace']
-let g:coc_global_extensions+= ['coc-go', 'coc-rust-analyzer', 'coc-yaml', 'coc-lists', 'coc-elixir']
+let g:coc_global_extensions+= ['coc-rust-analyzer', 'coc-yaml', 'coc-lists']
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
