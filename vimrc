@@ -14,9 +14,11 @@ Plug 'dense-analysis/ale'
 Plug 'elixir-editors/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
+Plug 'hashivim/vim-terraform'
 Plug 'jceb/vim-orgmode'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
+Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
@@ -211,3 +213,9 @@ let g:coc_global_extensions+= ['coc-rust-analyzer', 'coc-yaml', 'coc-lists']
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
+
+" terraform
+let g:terraform_align=1
+let g:terraform_fold_sections=1
+let g:terraform_fmt_on_save=1
+
