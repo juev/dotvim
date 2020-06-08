@@ -24,7 +24,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'mattesgroeger/vim-bookmarks'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
@@ -204,12 +203,6 @@ if has("patch-8.1.1904")
   set completeopt+=popup
   set completepopup=align:menu,border:off,highlight:Pmenu
 endif
-
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" coc
-let g:coc_global_extensions = ['coc-marketplace']
-let g:coc_global_extensions+= ['coc-rust-analyzer', 'coc-yaml', 'coc-lists']
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
