@@ -161,6 +161,11 @@ let g:rustfmt_autosave = 1
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
 
+augroup ProjectDrawer
+  autocmd!
+  autocmd VimEnter * if argc() == 0 | Explore! | endif
+augroup END
+
 " fzf
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>h :History<CR>
