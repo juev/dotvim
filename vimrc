@@ -33,6 +33,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
+Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -41,6 +42,7 @@ Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
@@ -212,3 +214,5 @@ let g:terraform_align=1
 let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 
+" vim-hardtime
+let g:hardtime_allow_different_key = 1
