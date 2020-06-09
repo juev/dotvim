@@ -25,6 +25,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'mattesgroeger/vim-bookmarks'
+Plug 'michal-h21/vim-zettel'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
@@ -47,6 +48,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
+Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
 
 call plug#end()
@@ -216,4 +218,10 @@ let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 
 " vim-hardtime
+let g:hardtime_default_on = 1
 let g:hardtime_allow_different_key = 1
+
+" Settings for Vimwiki
+let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
+let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+
