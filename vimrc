@@ -24,6 +24,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegu
 Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
+Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'michal-h21/vim-zettel'
 Plug 'ntpeters/vim-better-whitespace'
@@ -225,3 +226,7 @@ let g:terraform_fmt_on_save=1
 let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
 let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
 let g:zettel_format = "%y%m%d%H%M"
+
+" which-key
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  '<Space>'<CR>
