@@ -35,7 +35,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
-Plug 'takac/vim-hardtime'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -217,11 +216,7 @@ let g:terraform_align=1
 let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 
-" vim-hardtime
-let g:hardtime_default_on = 1
-let g:hardtime_allow_different_key = 1
-
 " Settings for Vimwiki
 let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
 let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-
+let g:zettel_format = "%y%m%d%H%M"
