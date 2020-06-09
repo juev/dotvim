@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'ap/vim-css-color'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
