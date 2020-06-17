@@ -12,7 +12,7 @@ Plug 'ap/vim-css-color'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
 Plug 'dense-analysis/ale'
-Plug 'elixir-editors/vim-elixir'
+" Plug 'elixir-editors/vim-elixir'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'hashivim/vim-terraform'
@@ -24,9 +24,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegu
 Plug 'junegunn/vim-easy-align'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
-Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
+" Plug 'liuchengxu/vim-which-key', { 'on': ['WhichKey', 'WhichKey!'] }
 Plug 'mattesgroeger/vim-bookmarks'
-Plug 'michal-h21/vim-zettel'
+" Plug 'michal-h21/vim-zettel'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
@@ -48,7 +48,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
 
 call plug#end()
@@ -223,9 +223,9 @@ let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 
 " Settings for Vimwiki
-let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
-let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-let g:zettel_format = "%y%m%d%H%M"
+" let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
+" let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+" let g:zettel_format = "%y%m%d%H%M"
 
 " which-key
 nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
