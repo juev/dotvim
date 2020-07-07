@@ -6,6 +6,7 @@ set nocompatible             " Disable vi compatibility
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
+" Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'ap/vim-css-color'
@@ -27,13 +28,13 @@ Plug 'mattesgroeger/vim-bookmarks'
 Plug 'michal-h21/vim-zettel'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
-" Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
+Plug 'tomasr/molokai'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -65,8 +66,12 @@ set background=dark
 set shortmess+=I
 
 " Visual
-if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
-    colorscheme badwolf
+" if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
+"     colorscheme badwolf
+" endif
+
+if filereadable(expand("~/.vim/plugged/molokai/README.md"))
+    colorscheme molokai
 endif
 
 " Keymap
@@ -75,6 +80,9 @@ set keymap=russian-jcukenmac iminsert=0 imsearch=0
 " Keys
 let mapleader="\<Space>"
 let maplocalleader="\<Space>"
+
+" Remap escape
+inoremap jk <Esc>
 
 no <silent> <Leader>1 :set invnumber<CR>
 
@@ -225,3 +233,5 @@ let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/'}]
 " let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
 let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
 let g:zettel_format = "%y%m%d%H%M"
+
+let g:molokai_original = 1
