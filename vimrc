@@ -30,6 +30,7 @@ Plug 'michal-h21/vim-zettel'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
