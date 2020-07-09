@@ -12,6 +12,7 @@ Plug 'airblade/vim-rooter'
 Plug 'ap/vim-css-color'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
+Plug 'chrisbra/unicode.vim'
 Plug 'dense-analysis/ale'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
@@ -34,7 +35,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
-Plug 'tomasr/molokai'
 Plug 'tpope/vim-apathy'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -66,12 +66,8 @@ set background=dark
 set shortmess+=I
 
 " Visual
-" if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
-"     colorscheme badwolf
-" endif
-
-if filereadable(expand("~/.vim/plugged/molokai/README.md"))
-    colorscheme molokai
+if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
+    colorscheme badwolf
 endif
 
 " Keymap
