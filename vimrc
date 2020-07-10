@@ -27,6 +27,7 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'michal-h21/vim-zettel'
+Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
@@ -67,8 +68,9 @@ set background=dark
 set shortmess+=I
 
 " Visual
-if filereadable(expand("~/.vim/plugged/badwolf/README.markdown"))
-    colorscheme badwolf
+if filereadable(expand("~/.vim/plugged/gruvbox/README.md"))
+  let g:gruvbox_contrast_dark='hard'
+  colorscheme gruvbox
 endif
 
 " Keymap
