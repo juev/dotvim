@@ -84,7 +84,7 @@ inoremap jk <Esc>
 no <silent> <Leader>1 :set invnumber<CR>
 
 " Toggle paste mode
-no <silent> <Leader>4 :set invpaste<CR>:set paste?<CR>
+set pastetoggle=<leader>z
 
 " no <silent> <Leader>q :bw<CR>
 " no <silent> <leader>w :w!<CR>
@@ -124,7 +124,7 @@ nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
 nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
-nnoremap <leader>eh :vsplit ~/Projects/Github/hledger/2019.journal<cr>
+nnoremap <leader>eh :vsplit ~/Projects/Github/hledger/2020.journal<cr>
 
 " Clipboard functionality (paste from system)
 vnoremap <leader>y "+y
