@@ -50,8 +50,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
-Plug 'wolfgangmehner/lua-support'
-Plug 'wsdjeg/vim-lua'
 
 call plug#end()
 
