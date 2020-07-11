@@ -221,6 +221,7 @@ endif
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
+let g:ale_linters = {'rust': ['analyzer']}
 
 " terraform
 let g:terraform_align=1
