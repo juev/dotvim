@@ -92,8 +92,25 @@ set pastetoggle=<leader>z
 " no <silent> <leader>w :w!<CR>
 no <leader><leader> <C-^>
 
-no j gj
-no k gk
+noremap j gj
+noremap k gk
+noremap <Up> gk
+noremap <Down> gj
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Same when moving up and down
+noremap <C-d> <C-d>zz
+noremap <C-u> <C-u>zz
+
+" Remap H and L (top, bottom of screen to left and right end of line)
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L g_
 
 " Visual shifting (does not exit Visual mode)
 vn < <gv
