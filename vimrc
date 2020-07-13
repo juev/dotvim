@@ -23,6 +23,7 @@ Plug 'juev/vim-sensible'
 Plug 'juliosueiras/vim-terraform-completion'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/vim-peekaboo'
 Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'mattesgroeger/vim-bookmarks'
@@ -34,6 +35,7 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
+Plug 'sainnhe/gruvbox-material'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
@@ -54,6 +56,12 @@ Plug 'wellle/targets.vim'
 
 call plug#end()
 
+" plugin installed check
+let s:plug = { 'plugs': get(g:, 'plugs', {}) }
+function! s:plug.is_installed(name) abort
+  return has_key(self.plugs, a:name) ? isdirectory(self.plugs[a:name].dir) : 0
+endfunction
+
 let g:hugo_path = "~/Projects/juev.org"
 let no_buffers_menu = 1
 
@@ -67,10 +75,14 @@ set background=dark
 
 set shortmess+=I
 
-" Visual
-if filereadable(expand("~/.vim/plugged/gruvbox/README.md"))
-  let g:gruvbox_contrast_dark='hard'
-  colorscheme gruvbox
+" gruvbox-material
+if s:plug.is_installed('gruvbox-material')
+  set background=dark
+  let g:gruvbox_material_background = 'hard'
+  let g:gruvbox_material_transparent_background = 1
+  let g:gruvbox_material_enable_bold = 1
+  let g:gruvbox_material_disable_italic_comment = 1
+  colorscheme gruvbox-material
 endif
 
 " Keymap
@@ -154,6 +166,8 @@ vnoremap <leader>p "+p
 vnoremap p "_dP
 vnoremap <leader>d "_d
 nnoremap <leader>d "_d
+
+noremap S :w<CR>
 
 " Airline
 let g:airline_detect_spell = 0
