@@ -6,7 +6,7 @@ set nocompatible             " Disable vi compatibility
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Plug 'plasticboy/vim-markdown'
+" Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'ap/vim-css-color'
@@ -16,6 +16,7 @@ Plug 'chrisbra/unicode.vim'
 Plug 'dense-analysis/ale'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
+Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
 Plug 'jceb/vim-orgmode'
 Plug 'juev/vim-hugo'
@@ -32,6 +33,7 @@ Plug 'michal-h21/vim-zettel'
 Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
+Plug 'plasticboy/vim-markdown'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
@@ -52,7 +54,6 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vimwiki/vimwiki'
 Plug 'wellle/targets.vim'
 
 call plug#end()
@@ -185,11 +186,11 @@ let g:go_highlight_functions = 1
 let g:ansible_unindent_after_newline = 1
 
 " vim-markdown
-" let g:vim_markdown_conceal = 0
-" let g:vim_markdown_frontmatter = 1
-" let g:vim_markdown_toml_frontmatter = 1
-" let g:vim_markdown_auto_insert_bullets = 1
-" let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_auto_insert_bullets = 1
+let g:vim_markdown_folding_disabled = 1
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -261,10 +262,10 @@ let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 
 " Settings for Vimwiki
-let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/'}]
-" let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
-let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-let g:zettel_format = "%y%m%d%H%M"
-nmap <Nop> <Plug>VimwikiRemoveHeaderLevel
+" let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/'}]
+" " let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
+" let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
+" let g:zettel_format = "%y%m%d%H%M"
+" nmap <Nop> <Plug>VimwikiRemoveHeaderLevel
 
 let g:molokai_original = 1
