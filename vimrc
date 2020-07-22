@@ -253,6 +253,7 @@ let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
 
 " vim-coc
+let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-rls']
 set cmdheight=2
 set updatetime=300
 set shortmess+=c
