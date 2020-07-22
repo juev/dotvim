@@ -28,13 +28,12 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'markonm/traces.vim'
 Plug 'mattesgroeger/vim-bookmarks'
-Plug 'mattn/vim-lsp-settings'
 Plug 'michal-h21/vim-zettel'
 Plug 'morhetz/gruvbox'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
@@ -250,7 +249,6 @@ endif
 
 " ale
 let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
-let g:ale_linters = {'rust': ['analyzer']}
 
 " terraform
 let g:terraform_align=1
