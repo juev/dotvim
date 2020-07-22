@@ -6,7 +6,6 @@ set nocompatible             " Disable vi compatibility
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
-" Plug 'vimwiki/vimwiki'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'ap/vim-css-color'
@@ -29,11 +28,13 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'markonm/traces.vim'
 Plug 'mattesgroeger/vim-bookmarks'
+Plug 'mattn/vim-lsp-settings'
 Plug 'michal-h21/vim-zettel'
 Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
+Plug 'prabirshrestha/vim-lsp'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
@@ -77,14 +78,9 @@ set background=dark
 
 set shortmess+=I
 
-" gruvbox-material
-if s:plug.is_installed('gruvbox-material')
-  set background=dark
-  let g:gruvbox_material_background = 'hard'
-  let g:gruvbox_material_transparent_background = 0
-  let g:gruvbox_material_enable_bold = 1
-  let g:gruvbox_material_disable_italic_comment = 1
-  colorscheme gruvbox-material
+" Theme
+if s:plug.is_installed('badwolf')
+  colorscheme badwolf
 endif
 
 " Keymap
@@ -156,8 +152,9 @@ vmap =j :%!python -m json.tool<CR>
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
-nnoremap <leader>eg :vsplit ~/.gitconfig<cr>
-nnoremap <leader>eh :vsplit ~/Projects/Github/hledger/2020.journal<cr>
+nnoremap <leader>eg :e ~/.gitconfig<cr>
+nnoremap <leader>eh :e ~/Projects/Github/hledger/2020.journal<cr>
+nnoremap <leader>ev :e ~/.vim/vimrc<cr>
 
 " Clipboard functionality (paste from system)
 vnoremap <leader>y "+y
@@ -186,7 +183,7 @@ let g:go_highlight_functions = 1
 let g:ansible_unindent_after_newline = 1
 
 " vim-markdown
-let g:vim_markdown_conceal = 0
+set conceallevel=2
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_auto_insert_bullets = 1
@@ -194,7 +191,6 @@ let g:vim_markdown_folding_disabled = 1
 
 " Rust
 let g:rustfmt_autosave = 1
-" let g:racer_cmd = "~/.cargo/bin/racer"
 
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
@@ -260,12 +256,3 @@ let g:ale_linters = {'rust': ['analyzer']}
 let g:terraform_align=1
 let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
-
-" Settings for Vimwiki
-" let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/'}]
-" " let g:vimwiki_list = [{'path':'~/Dropbox/vimwiki/markdown/','ext':'.md','syntax':'markdown'}, {"path":"~/Dropbox/vimwiki/wiki/"}]
-" let g:zettel_fzf_command = "rg --column --line-number --ignore-case --no-heading --color=always "
-" let g:zettel_format = "%y%m%d%H%M"
-" nmap <Nop> <Plug>VimwikiRemoveHeaderLevel
-
-let g:molokai_original = 1
