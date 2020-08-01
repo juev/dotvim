@@ -27,9 +27,7 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'markonm/traces.vim'
 Plug 'mattesgroeger/vim-bookmarks'
-Plug 'michal-h21/vim-zettel'
 Plug 'morhetz/gruvbox'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
@@ -37,7 +35,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
-Plug 'sainnhe/gruvbox-material'
 Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
@@ -251,49 +248,3 @@ endif
 let g:terraform_align=1
 let g:terraform_fold_sections=1
 let g:terraform_fmt_on_save=1
-
-" vim-coc
-let g:coc_global_extensions = ['coc-emmet', 'coc-css', 'coc-html', 'coc-json', 'coc-rls', 'coc-python']
-set cmdheight=2
-set updatetime=300
-set shortmess+=c
-if has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window.
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
