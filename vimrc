@@ -27,6 +27,7 @@ Plug 'latex-box-team/latex-box'
 Plug 'ledger/vim-ledger'
 Plug 'markonm/traces.vim'
 Plug 'mattesgroeger/vim-bookmarks'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
