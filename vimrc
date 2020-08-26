@@ -32,7 +32,6 @@ Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pearofducks/ansible-vim'
 Plug 'plasticboy/vim-markdown'
-Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rust-lang/rust.vim'
@@ -40,7 +39,6 @@ Plug 'sjl/badwolf'
 Plug 'sjl/clam.vim'
 Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-apathy'
-Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
@@ -50,6 +48,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
+Plug 'tyru/caw.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'wellle/targets.vim'
 
@@ -87,7 +86,9 @@ let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 
 " Remap escape
-inoremap jj <Esc>
+inoremap jk <Esc>
+inoremap <C-C> <Esc>
+inoremap <C-L> <Esc>
 
 no <silent> <Leader>1 :set invnumber<CR>
 
