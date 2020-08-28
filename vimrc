@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
 Plug 'aperezdc/vim-template'
 Plug 'cespare/vim-toml'
@@ -50,6 +51,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'tyru/caw.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'
 
 call plug#end()
@@ -69,13 +71,18 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 " Colors
 set t_Co=256
-set background=dark
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
 
 set shortmess+=I
 
 " Theme
-if s:plug.is_installed('badwolf')
-  colorscheme badwolf
+if s:plug.is_installed('vim-colors-solarized')
+  let g:solarized_termcolors=256
+  colorscheme solarized
 endif
 
 " Keymap
@@ -88,7 +95,6 @@ let maplocalleader="\<Space>"
 " Remap escape
 inoremap jk <Esc>
 inoremap <C-C> <Esc>
-inoremap <C-L> <Esc>
 
 no <silent> <Leader>1 :set invnumber<CR>
 
@@ -169,6 +175,7 @@ noremap S :w<CR>
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
 " Vim-Go
 let g:go_template_autocreate = 0
