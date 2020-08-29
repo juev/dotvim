@@ -93,7 +93,6 @@ let mapleader="\<Space>"
 let maplocalleader="\<Space>"
 
 " Remap escape
-inoremap jk <Esc>
 inoremap <C-C> <Esc>
 
 no <silent> <Leader>1 :set invnumber<CR>
