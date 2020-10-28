@@ -67,17 +67,21 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 set t_Co=256
 if has('gui_running')
     set background=light
+    " Theme
+    if s:plug.is_installed('vim-colors-solarized')
+      let g:solarized_termcolors=256
+      colorscheme solarized
+    endif
 else
     set background=dark
+    " Theme
+    if s:plug.is_installed('badwolf')
+      colorscheme badwolf
+    endif
 endif
 
 set shortmess+=I
 
-" Theme
-if s:plug.is_installed('vim-colors-solarized')
-  let g:solarized_termcolors=256
-  colorscheme solarized
-endif
 
 " Keymap
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
@@ -168,7 +172,10 @@ noremap S :w<CR>
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+
+if has('gui_running')
+    let g:airline_theme='solarized'
+endif
 
 " Vim-Go
 let g:go_template_autocreate = 0
@@ -245,6 +252,12 @@ endif
 
 " ale
 " let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
+let g:ale_sign_error = '●'
+let g:ale_sign_warning = '.'
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'haskell': ['stylish-haskell'],
+\}
 
 " terraform
 let g:terraform_align=1
