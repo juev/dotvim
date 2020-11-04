@@ -12,7 +12,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
 Plug 'aperezdc/vim-template'
 Plug 'chrisbra/unicode.vim'
-Plug 'dense-analysis/ale'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'hashivim/vim-terraform'
@@ -25,10 +24,8 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'ledger/vim-ledger'
 Plug 'markonm/traces.vim'
 Plug 'mattesgroeger/vim-bookmarks'
-Plug 'mattn/vim-lsp-settings'
 Plug 'morhetz/gruvbox'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'prabirshrestha/vim-lsp'
 Plug 'rhysd/clever-f.vim'
 Plug 'rhysd/git-messenger.vim'
 Plug 'sheerun/vim-polyglot'
@@ -45,7 +42,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
-Plug 'tyru/caw.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wellle/targets.vim'
@@ -251,15 +247,6 @@ if has("patch-8.1.1904")
   set completeopt+=popup
   set completepopup=align:menu,border:off,highlight:Pmenu
 endif
-
-" ale
-" let g:ale_yaml_yamllint_options = "{extends: relaxed, rules: {line-length: {max: 120}}}"
-let g:ale_sign_error = '●'
-let g:ale_sign_warning = '.'
-let g:ale_fix_on_save = 1
-let g:ale_fixers = {
-\   'haskell': ['stylish-haskell'],
-\}
 
 " terraform
 let g:terraform_align=1
