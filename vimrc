@@ -151,7 +151,7 @@ nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
 
 nnoremap <leader>eg :e ~/.gitconfig<cr>
-nnoremap <leader>eh :e ~/Projects/Github/hledger/2020.journal<cr>
+nnoremap <leader>eh :e ~/Projects/Github/hledger/2021.journal<cr>
 nnoremap <leader>ev :e ~/.vim/vimrc<cr>
 
 " Clipboard functionality (paste from system)
