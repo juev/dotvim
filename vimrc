@@ -63,19 +63,25 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 " Colors
 set t_Co=256
-if has('gui_running')
-    set background=light
-    " Theme
-    if s:plug.is_installed('vim-colors-solarized')
-      let g:solarized_termcolors=256
-      colorscheme solarized
-    endif
-else
-    set background=dark
-    " Theme
-    if s:plug.is_installed('badwolf')
-      colorscheme badwolf
-    endif
+" if has('gui_running')
+"     set background=light
+"     " Theme
+"     if s:plug.is_installed('vim-colors-solarized')
+"       let g:solarized_termcolors=256
+"       colorscheme solarized
+"     endif
+" else
+"     set background=dark
+"     " Theme
+"     if s:plug.is_installed('badwolf')
+"       colorscheme badwolf
+"     endif
+" endif
+
+set background=dark
+" Theme
+if s:plug.is_installed('badwolf')
+    colorscheme badwolf
 endif
 
 set shortmess+=I
