@@ -246,14 +246,6 @@ fun! TrimWhitespace()
 endfun
 command! TrimWhitespace call TrimWhitespace()
 
-" vimgo
-set mouse=a
-" set ttymouse=sgr
-if has("patch-8.1.1904")
-  set completeopt+=popup
-  set completepopup=align:menu,border:off,highlight:Pmenu
-endif
-
 " terraform
 let g:terraform_align=1
 let g:terraform_fold_sections=1
