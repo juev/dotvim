@@ -9,42 +9,19 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'altercation/vim-colors-solarized'
-Plug 'ap/vim-css-color'
-Plug 'aperezdc/vim-template'
-Plug 'chrisbra/unicode.vim'
 Plug 'fatih/vim-go'
-Plug 'godlygeek/tabular'
-Plug 'hashivim/vim-terraform'
-Plug 'jceb/vim-orgmode'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/vim-peekaboo'
 Plug 'ledger/vim-ledger'
-Plug 'markonm/traces.vim'
-Plug 'mattesgroeger/vim-bookmarks'
-Plug 'morhetz/gruvbox'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'rhysd/clever-f.vim'
-Plug 'rhysd/git-messenger.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
-Plug 'sjl/clam.vim'
-Plug 'stephpy/vim-yaml'
-Plug 'tpope/vim-apathy'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-git'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-speeddating'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wellle/targets.vim'
 
 call plug#end()
 
@@ -63,21 +40,6 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 " Colors
 set t_Co=256
-" if has('gui_running')
-"     set background=light
-"     " Theme
-"     if s:plug.is_installed('vim-colors-solarized')
-"       let g:solarized_termcolors=256
-"       colorscheme solarized
-"     endif
-" else
-"     set background=dark
-"     " Theme
-"     if s:plug.is_installed('badwolf')
-"       colorscheme badwolf
-"     endif
-" endif
-
 set background=dark
 " Theme
 if s:plug.is_installed('badwolf')
@@ -85,7 +47,6 @@ if s:plug.is_installed('badwolf')
 endif
 
 set shortmess+=I
-
 
 " Keymap
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
@@ -102,8 +63,6 @@ no <silent> <Leader>1 :set invnumber<CR>
 " Toggle paste mode
 set pastetoggle=<leader>z
 
-" no <silent> <Leader>q :bw<CR>
-" no <silent> <leader>w :w!<CR>
 no <leader><leader> <C-^>
 
 noremap j gj
@@ -195,7 +154,7 @@ set conceallevel=2
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_auto_insert_bullets = 1
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 0
 
 " Rust
 let g:rustfmt_autosave = 1
@@ -203,11 +162,6 @@ let g:rustfmt_autosave = 1
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
-
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * if argc() == 0 | Explore! | endif
-augroup END
 
 " fzf
 nnoremap <leader>b :Buffers<CR>
@@ -229,15 +183,6 @@ let g:rooter_resolve_links = 1
 let g:rooter_silent_chdir = 1
 let g:rooter_cd_cmd="lcd"
 
-" Better whitespace
-let g:better_whitespace_filetypes_blacklist = ['vlime_input', 'quickrun', 'diff', 'gitcommit', 'unite', 'qf', 'help']
-let g:better_whitespace_enabled = 1
-
-" vim-template
-let g:username = "Denis Evsyukov"
-let g:email = "@juev"
-let g:templates_no_autocmd = 1
-
 " trim whitespace
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -245,8 +190,3 @@ fun! TrimWhitespace()
     call winrestview(l:save)
 endfun
 command! TrimWhitespace call TrimWhitespace()
-
-" terraform
-let g:terraform_align=1
-let g:terraform_fold_sections=1
-let g:terraform_fmt_on_save=1
