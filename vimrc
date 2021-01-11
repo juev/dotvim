@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -21,7 +20,6 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -58,49 +56,14 @@ let maplocalleader="\<Space>"
 " Remap escape
 inoremap <C-C> <Esc>
 
-no <silent> <Leader>1 :set invnumber<CR>
-
-" Toggle paste mode
-set pastetoggle=<leader>z
-
-no <leader><leader> <C-^>
-
 noremap j gj
 noremap k gk
 noremap <Up> gk
 noremap <Down> gj
 
-" Search mappings: These will make it so that going to the next one in a
-" search will center on the line it's found in.
-nnoremap n nzzzv
-nnoremap N Nzzzv
-
-" Same when moving up and down
-noremap <C-d> <C-d>zz
-noremap <C-u> <C-u>zz
-
-" Remap H and L (top, bottom of screen to left and right end of line)
-nnoremap H ^
-nnoremap L $
-vnoremap H ^
-vnoremap L g_
-
 " Visual shifting (does not exit Visual mode)
 vn < <gv
 vn > >gv
-
-no <silent> <leader>0 <C-w>o
-
-" easier navigation between split windows
-nn <c-j> <c-w>j
-nn <c-k> <c-w>k
-nn <c-h> <c-w>h
-nn <c-l> <c-w>l
-
-vn Q gq
-nn Q gqap
-
-nn <leader>fef gg=G
 
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
@@ -108,9 +71,6 @@ command! Q q
 command! W w
 
 cmap w!! w !sudo tee > /dev/null %
-
-" format json by =j
-vmap =j :%!python -m json.tool<CR>
 
 nnoremap <silent> <Tab> :bn<CR>
 nnoremap <silent> <S-Tab> :bp<CR>
@@ -136,10 +96,6 @@ let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_powerline_fonts = 1
 
-if has('gui_running')
-    let g:airline_theme='solarized'
-endif
-
 " Vim-Go
 let g:go_template_autocreate = 0
 let g:go_fmt_command = "goimports"
@@ -154,7 +110,7 @@ set conceallevel=2
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_auto_insert_bullets = 1
-let g:vim_markdown_folding_disabled = 0
+let g:vim_markdown_folding_disabled = 1
 
 " Rust
 let g:rustfmt_autosave = 1
