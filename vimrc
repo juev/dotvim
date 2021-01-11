@@ -11,10 +11,10 @@ Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' } | Plug 'junegunn/fzf.vim'
 Plug 'ledger/vim-ledger'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
@@ -118,21 +118,6 @@ let g:rustfmt_autosave = 1
 " Netrw
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_altfile = 1
-
-" fzf
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>h :History<CR>
-nnoremap <leader>g :GFiles<CR>
-nnoremap <leader>s :Rg<Space>
-
-nnoremap <leader>f :Files<CR>
-
-" This is the default extra key bindings
-let g:fzf_layout = { 'down': '~40%' }
-
-if executable('fd')
-  let $FZF_DEFAULT_COMMAND = 'fd --type f --color=never'
-endif
 
 " vim-rooter
 let g:rooter_resolve_links = 1
