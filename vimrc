@@ -10,7 +10,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
-Plug 'juev/vim-sensible'
 Plug 'ledger/vim-ledger'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
@@ -18,6 +17,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
+Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 
@@ -123,6 +123,11 @@ let g:netrw_altfile = 1
 let g:rooter_resolve_links = 1
 let g:rooter_silent_chdir = 1
 let g:rooter_cd_cmd="lcd"
+
+" ledger
+let g:ledger_bin = '/usr/local/bin/hledger'
+let g:ledger_accounts_cmd = 'cat ~/.hledger-accounts'
+let g:ledger_descriptions_cmd = 'hledger descriptions'
 
 " trim whitespace
 fun! TrimWhitespace()
