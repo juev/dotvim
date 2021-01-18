@@ -10,6 +10,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'ledger/vim-ledger'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
@@ -30,6 +32,8 @@ let no_buffers_menu = 1
 scriptencoding utf-8
 set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
+
+set noswapfile
 
 " Colors
 set t_Co=256
