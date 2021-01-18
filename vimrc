@@ -34,6 +34,7 @@ set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 set noswapfile
+set nobackup nowritebackup
 
 " Colors
 set t_Co=256
