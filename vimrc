@@ -95,5 +95,5 @@ let g:rooter_silent_chdir = 1
 
 " ledger
 let g:ledger_bin = 'hledger'
-let g:ledger_accounts_cmd = 'cat ~/.hledger-accounts'
-let g:ledger_descriptions_cmd = 'cat ~/.hledger-descriptions'
+let g:ledger_accounts_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-accounts'
+let g:ledger_descriptions_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-descriptions'
