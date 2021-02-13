@@ -19,7 +19,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rsi'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
@@ -33,8 +32,17 @@ scriptencoding utf-8
 set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 
+set hlsearch                    " Highlight found searches
 set noswapfile
 set nobackup nowritebackup
+set autoread
+set autowrite                " Automatically save before :next, :make etc.
+set hidden
+set nocursorcolumn           " speed up syntax highlighting
+set lazyredraw
+
+set mouse=a                     "Enable mouse mode
+set termguicolors
 
 " Colors
 set t_Co=256
@@ -50,8 +58,13 @@ set clipboard=unnamed
 vnoremap p "_dP
 
 " Keys
-let mapleader="\<Space>"
-let maplocalleader="\<Space>"
+let mapleader=","
+let maplocalleader=","
+
+" Center the screen
+nnoremap <space> zz
+" Close all but the current one
+nnoremap <leader>o :only<CR>
 
 " Remap escape
 inoremap <C-C> <Esc>
@@ -65,9 +78,38 @@ noremap <Down> gj
 vn < <gv
 vn > >gv
 
+" Remap H and L (top, bottom of screen to left and right end of line)
+nnoremap H ^
+nnoremap L $
+vnoremap H ^
+vnoremap L g_
+
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+" search
+nmap <Leader>h :History<cr>
+" search across files in the current directory
+nmap <Leader>f :Files<cr>
+
 cmap w!! w !sudo tee > /dev/null %
+
+if has('persistent_undo')
+  set undofile
+  set undodir=~/.cache/vim
+endif
+
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+if !has('gui_running')
+  set notimeout
+  set ttimeout
+  set ttimeoutlen=10
+  augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+  augroup END
+endif
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1

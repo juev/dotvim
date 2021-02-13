@@ -1,6 +1,0 @@
-{
-    "suggest.floatEnable": false,
-    "diagnostic.messageTarget": "echo",
-    "signature.target": "echo",
-    "coc.preferences.hoverTarget": "echo"
-}
