@@ -58,8 +58,8 @@ set clipboard=unnamed
 vnoremap p "_dP
 
 " Keys
-let mapleader=","
-let maplocalleader=","
+" let mapleader=","
+" let maplocalleader=","
 
 " Center the screen
 nnoremap <space> zz
@@ -87,9 +87,10 @@ vnoremap L g_
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " search
-nmap <Leader>h :History<cr>
+nmap <C-p> :History<cr>
 " search across files in the current directory
-nmap <Leader>f :Files<cr>
+" nmap <Leader>f :Files<cr>
+map <C-g> :Files<cr>
 
 cmap w!! w !sudo tee > /dev/null %
 
