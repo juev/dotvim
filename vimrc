@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
+Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ledger/vim-ledger'
@@ -32,15 +33,6 @@ scriptencoding utf-8
 set encoding=utf-8 nobomb    " BOM often causes trouble, UTF-8 is awsum.
 set fileencodings=utf-8,cp1251,cp866,koi8-r
 
-set hlsearch                    " Highlight found searches
-set noswapfile
-set nobackup nowritebackup
-set autoread
-set autowrite                " Automatically save before :next, :make etc.
-set hidden
-set nocursorcolumn           " speed up syntax highlighting
-set lazyredraw
-
 set mouse=a                     "Enable mouse mode
 set termguicolors
 
@@ -58,13 +50,8 @@ set clipboard=unnamed
 vnoremap p "_dP
 
 " Keys
-" let mapleader=","
-" let maplocalleader=","
-
-" Center the screen
-nnoremap <space> zz
-" Close all but the current one
-nnoremap <leader>o :only<CR>
+let mapleader="\<Space>"
+let maplocalleader="\<Space>"
 
 " Remap escape
 inoremap <C-C> <Esc>
@@ -86,31 +73,12 @@ vnoremap L g_
 
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
-" search
-nmap <C-p> :History<cr>
-" search across files in the current directory
-" nmap <Leader>f :Files<cr>
-map <C-g> :Files<cr>
-
 cmap w!! w !sudo tee > /dev/null %
 
-if has('persistent_undo')
-  set undofile
-  set undodir=~/.cache/vim
-endif
-
-" Time out on key codes but not mappings.
-" Basically this makes terminal Vim work sanely.
-if !has('gui_running')
-  set notimeout
-  set ttimeout
-  set ttimeoutlen=10
-  augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-  augroup END
-endif
+" fzf
+nmap <Leader>h :History<cr>
+nmap <Leader>f :Files<cr>
+nmap <Leader>b :Buffers<cr>
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1
