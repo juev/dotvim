@@ -8,13 +8,13 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ledger/vim-ledger'
+Plug 'lifepillar/vim-solarized8'
 Plug 'sheerun/vim-polyglot'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
@@ -43,7 +43,7 @@ set t_Co=256
 
 if has('gui_running')
     set background=light
-    colorscheme solarized
+    colorscheme solarized8
 else
     set background=dark
     colorscheme badwolf
@@ -85,6 +85,7 @@ cmap w!! w !sudo tee > /dev/null %
 nmap <Leader>h :History<cr>
 nmap <Leader>f :Files<cr>
 nmap <Leader>b :Buffers<cr>
+let g:fzf_preview_window = ''
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1

@@ -18,6 +18,4 @@ else
   set guifont=Fira\ Code\ 11
 end
 
-set background=light
-colorscheme solarized
 " set lines=999 columns=999
