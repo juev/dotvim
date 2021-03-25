@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'altercation/vim-colors-solarized'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -23,6 +24,7 @@ Plug 'tpope/vim-rsi'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -38,10 +40,14 @@ set termguicolors
 
 " Colors
 set t_Co=256
-set background=dark
-" Theme
-colorscheme badwolf
 
+if has('gui_running')
+    set background=light
+    colorscheme solarized
+else
+    set background=dark
+    colorscheme badwolf
+endif
 set shortmess+=I
 
 " Keymap
@@ -90,6 +96,9 @@ let g:vim_markdown_folding_disabled = 1
 let g:airline_detect_spell = 0
 let g:airline#extensions#keymap#enabled = 0
 let g:airline_powerline_fonts = 1
+if has('gui_running')
+    let g:airline_theme='solarized'
+endif
 
 " Vim-Go
 let g:go_template_autocreate = 0
