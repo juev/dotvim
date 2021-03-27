@@ -52,7 +52,7 @@ set shortmess+=I
 
 " Keymap
 set keymap=russian-jcukenmac iminsert=0 imsearch=0
-set clipboard=unnamed
+" set clipboard=unnamed
 vnoremap p "_dP
 
 " Keys
@@ -86,6 +86,8 @@ nmap <Leader>h :History<cr>
 nmap <Leader>f :Files<cr>
 nmap <Leader>b :Buffers<cr>
 let g:fzf_preview_window = ''
+
+nnoremap <silent> <C-Space> :call fzf#run(fzf#wrap({'source': 'find $HOME/Projects/ -maxdepth 2 -type d'}))<CR>
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1
