@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
+Plug 'benwainwright/fzf-project'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -87,8 +88,6 @@ nmap <Leader>f :Files<cr>
 nmap <Leader>b :Buffers<cr>
 let g:fzf_preview_window = ''
 
-nnoremap <silent> <C-Space> :call fzf#run(fzf#wrap({'source': 'find $HOME/Projects/ -maxdepth 2 -type d'}))<CR>
-
 " vim-markdown
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toml_frontmatter = 1
@@ -120,3 +119,7 @@ let g:rooter_silent_chdir = 1
 let g:ledger_bin = 'hledger'
 let g:ledger_accounts_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-accounts'
 let g:ledger_descriptions_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-descriptions'
+
+let g:fzfSwitchProjectWorkspaces = [ '~/Projects' ]
+let g:fzfSwitchProjectProjectDepth = 3
+nmap <Leader>p :FzfSwitchProject<cr>
