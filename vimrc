@@ -14,6 +14,7 @@ Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'ledger/vim-ledger'
 Plug 'lifepillar/vim-solarized8'
 Plug 'sheerun/vim-polyglot'
