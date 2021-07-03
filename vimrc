@@ -28,6 +28,14 @@ Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+if has("nvim")
+    Plug 'nvim-lua/popup.nvim'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
+
+    Plug 'kyazdani42/nvim-web-devicons'
+endif
+
 call plug#end()
 
 let g:hugo_path = "~/Projects/juev.org"
@@ -124,3 +132,10 @@ let g:ledger_descriptions_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-des
 let g:fzfSwitchProjectWorkspaces = [ '~/Projects' ]
 let g:fzfSwitchProjectProjectDepth = 3
 nmap <Leader>p :FzfSwitchProject<cr>
+
+" Telescope
+nnoremap <silent> ;f <cmd>Telescope find_files<cr>
+nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
+nnoremap <silent> \\ <cmd>Telescope buffers<cr>
+nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
+
