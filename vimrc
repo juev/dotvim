@@ -34,6 +34,11 @@ if has("nvim")
     Plug 'nvim-telescope/telescope.nvim'
 
     Plug 'kyazdani42/nvim-web-devicons'
+
+    " git
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'sindrets/diffview.nvim'
+    Plug 'TimUntersberger/neogit'
 endif
 
 call plug#end()
@@ -139,3 +144,5 @@ nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
 nnoremap <silent> \\ <cmd>Telescope buffers<cr>
 nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
 
+" Neogit
+nnoremap <silent> ;g <cmd>Neogit<cr>
