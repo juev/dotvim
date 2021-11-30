@@ -5,3 +5,4 @@ viminfo
 view/
 undodir/*
 sessions/
+cache/

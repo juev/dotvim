@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'benwainwright/fzf-project'
+Plug 'buoto/gotests-vim'
 Plug 'fatih/vim-go'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -52,6 +53,8 @@ set fileencodings=utf-8,cp1251,cp866,koi8-r
 
 set mouse=a                     "Enable mouse mode
 set termguicolors
+
+set viminfofile=~/.vim/cache/viminfo
 
 " Colors
 set t_Co=256
@@ -100,7 +103,7 @@ cmap w!! w !sudo tee > /dev/null %
 nmap <Leader>h :History<cr>
 nmap <Leader>f :Files<cr>
 nmap <Leader>b :Buffers<cr>
-let g:fzf_preview_window = ''
+let g:fzf_preview_window = []
 
 " vim-markdown
 let g:vim_markdown_frontmatter = 1
