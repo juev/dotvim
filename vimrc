@@ -10,7 +10,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'benwainwright/fzf-project'
 Plug 'buoto/gotests-vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'jiangmiao/auto-pairs'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -19,6 +20,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'ledger/vim-ledger'
 Plug 'lifepillar/vim-solarized8'
 Plug 'sheerun/vim-polyglot'
+Plug 'sirver/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -28,19 +30,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-if has("nvim")
-    Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-
-    Plug 'kyazdani42/nvim-web-devicons'
-
-    " git
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'sindrets/diffview.nvim'
-    Plug 'TimUntersberger/neogit'
-endif
 
 call plug#end()
 
@@ -55,6 +44,8 @@ set mouse=a                     "Enable mouse mode
 set termguicolors
 
 set viminfofile=~/.vim/cache/viminfo
+
+set updatetime=100
 
 " Colors
 set t_Co=256
@@ -124,6 +115,23 @@ let g:go_template_autocreate = 0
 let g:go_fmt_command = "goimports"
 let g:go_highlight_types = 1
 let g:go_highlight_functions = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_fmt_fail_silently = 1
+let g:go_addtags_transform = "camelcase"
+let g:go_list_type = "quickfix"
+let g:go_metalinter_autosave = 1
+let g:go_auto_type_info = 1
+
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+autocmd FileType go nmap <leader>b  <Plug>(go-build)
+autocmd FileType go nmap <leader>r  <Plug>(go-run)
+autocmd FileType go nmap <leader>t  <Plug>(go-test)
+
+autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4 
 
 " Netrw
 let g:netrw_altfile = 1
@@ -141,11 +149,3 @@ let g:fzfSwitchProjectWorkspaces = [ '~/Projects' ]
 let g:fzfSwitchProjectProjectDepth = 3
 nmap <Leader>p :FzfSwitchProject<cr>
 
-" Telescope
-nnoremap <silent> ;f <cmd>Telescope find_files<cr>
-nnoremap <silent> ;r <cmd>Telescope live_grep<cr>
-nnoremap <silent> \\ <cmd>Telescope buffers<cr>
-nnoremap <silent> ;; <cmd>Telescope help_tags<cr>
-
-" Neogit
-nnoremap <silent> ;g <cmd>Neogit<cr>
