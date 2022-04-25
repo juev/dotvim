@@ -19,6 +19,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'ledger/vim-ledger'
 Plug 'lifepillar/vim-solarized8'
+Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 Plug 'sheerun/vim-polyglot'
 Plug 'sirver/ultisnips'
 Plug 'sjl/badwolf'
