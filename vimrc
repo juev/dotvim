@@ -52,13 +52,15 @@ set updatetime=100
 " Colors
 set t_Co=256
 
-if has('gui_running')
-    set background=light
-    colorscheme solarized8
-else
-    set background=dark
-    colorscheme badwolf
-endif
+set background=light
+colorscheme solarized8
+" if has('gui_running')
+"     set background=light
+"     colorscheme solarized8
+" else
+"     set background=dark
+"     colorscheme badwolf
+" endif
 set shortmess+=I
 
 " Keymap
