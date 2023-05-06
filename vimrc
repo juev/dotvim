@@ -9,7 +9,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'benwainwright/fzf-project'
-Plug 'buoto/gotests-vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
@@ -18,9 +17,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'ledger/vim-ledger'
 Plug 'lifepillar/vim-solarized8'
-Plug 'psliwka/vim-dirtytalk', { 'do': ':DirtytalkUpdate' }
 Plug 'sheerun/vim-polyglot'
-Plug 'sirver/ultisnips'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-eunuch'
@@ -31,11 +28,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" Plug 'vimwiki/vimwiki'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
-"Plug 'golang/vscode-go'
-"Plug 'hrsh7th/vim-vsnip'
+
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
@@ -120,16 +114,16 @@ endif
 
 " Vim-Go
 " let g:go_template_autocreate = 0
-" let g:go_fmt_command = "goimports"
-" let g:go_highlight_types = 1
-" let g:go_highlight_functions = 1
-" let g:go_highlight_fields = 1
-" let g:go_highlight_function_calls = 1
-" let g:go_fmt_fail_silently = 1
-" let g:go_addtags_transform = "camelcase"
-" let g:go_list_type = "quickfix"
+let g:go_fmt_command = "goimports"
+let g:go_highlight_types = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_fmt_fail_silently = 1
+let g:go_addtags_transform = "camelcase"
+let g:go_list_type = "quickfix"
 " let g:go_metalinter_autosave = 1
-" let g:go_auto_type_info = 1
+let g:go_auto_type_info = 1
 
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
@@ -156,8 +150,4 @@ let g:ledger_descriptions_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-des
 let g:fzfSwitchProjectWorkspaces = [ '~/Projects' ]
 let g:fzfSwitchProjectProjectDepth = 3
 nmap <Leader>p :FzfSwitchProject<cr>
-
-" vimwiki
-" let g:vimwiki_list = [{'path': '~/Documents/wiki/',
-"            \ 'path_html': '~/Documents/wiki_public'}]
 
