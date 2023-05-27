@@ -10,6 +10,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'benwainwright/fzf-project'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'jiangmiao/auto-pairs'
 Plug 'juev/vim-hugo'
 Plug 'juev/vim-sensible'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -28,8 +29,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
-Plug 'jiangmiao/auto-pairs'
+Plug 'ziglang/zig.vim'
 
 call plug#end()
 
