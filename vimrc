@@ -88,6 +88,8 @@ nnoremap L $
 vnoremap H ^
 vnoremap L g_
 
+nmap <Leader>d :bd<cr>
+
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 cmap w!! w !sudo tee > /dev/null %
@@ -150,4 +152,3 @@ let g:ledger_descriptions_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-des
 let g:fzfSwitchProjectWorkspaces = [ '~/Projects' ]
 let g:fzfSwitchProjectProjectDepth = 3
 nmap <Leader>p :FzfSwitchProject<cr>
-
