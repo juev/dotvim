@@ -33,7 +33,7 @@ Plug 'ziglang/zig.vim'
 
 call plug#end()
 
-let g:hugo_path = "~/Projects/juev.org"
+let g:hugo_path = "~/src/juev.org"
 let no_buffers_menu = 1
 
 scriptencoding utf-8
@@ -50,7 +50,7 @@ set updatetime=100
 " Colors
 set t_Co=256
 
-set background=light
+set background=dark
 colorscheme solarized8_flat
 " if has('gui_running')
 "     set background=light
@@ -146,9 +146,9 @@ let g:rooter_silent_chdir = 1
 
 " ledger
 let g:ledger_bin = 'hledger'
-let g:ledger_accounts_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-accounts'
-let g:ledger_descriptions_cmd = 'cat ~/Projects/Github/hledger/tools/hledger-descriptions'
+let g:ledger_accounts_cmd = 'cat ~/src/hledger/tools/hledger-accounts'
+let g:ledger_descriptions_cmd = 'cat ~/src/hledger/tools/hledger-descriptions'
 
-let g:fzfSwitchProjectWorkspaces = [ '~/Projects' ]
+let g:fzfSwitchProjectWorkspaces = [ '~/src' ]
 let g:fzfSwitchProjectProjectDepth = 3
 nmap <Leader>p :FzfSwitchProject<cr>
