@@ -33,7 +33,7 @@ Plug 'ziglang/zig.vim'
 
 call plug#end()
 
-let g:hugo_path = "~/src/juev.org"
+let g:hugo_path = "~/src/github.com/juev/juev.org"
 let no_buffers_menu = 1
 
 scriptencoding utf-8
@@ -146,8 +146,8 @@ let g:rooter_silent_chdir = 1
 
 " ledger
 let g:ledger_bin = 'hledger'
-let g:ledger_accounts_cmd = 'cat ~/src/hledger/tools/hledger-accounts'
-let g:ledger_descriptions_cmd = 'cat ~/src/hledger/tools/hledger-descriptions'
+let g:ledger_accounts_cmd = 'cat ~/src/github.com/juev/hledger/tools/hledger-accounts'
+let g:ledger_descriptions_cmd = 'cat ~/src/github.com/juev/hledger/tools/hledger-descriptions'
 
 let g:fzfSwitchProjectWorkspaces = [ '~/src' ]
 let g:fzfSwitchProjectProjectDepth = 3
